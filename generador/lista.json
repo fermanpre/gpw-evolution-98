@@ -1,0 +1,277 @@
+{
+  "categorias": {
+    "race": {
+      "en": "Race",
+      "es": "Carrera"
+    },
+    "car": {
+      "en": "Car and set-up",
+      "es": "Coche y reglaje"
+    },
+    "ai": {
+      "en": "AI and strategy",
+      "es": "IA y estrategia"
+    },
+    "drivers": {
+      "en": "Drivers and attributes",
+      "es": "Pilotos y atributos"
+    },
+    "market": {
+      "en": "Market, contracts and sponsors",
+      "es": "Mercado, contratos y patrocinadores"
+    },
+    "interface": {
+      "en": "Interface and screens",
+      "es": "Interfaz y pantallas"
+    },
+    "graphics": {
+      "en": "Graphics and audio",
+      "es": "Gráficos y audio"
+    },
+    "circuits": {
+      "en": "Circuits",
+      "es": "Circuitos"
+    },
+    "other": {
+      "en": "Other",
+      "es": "Otra"
+    }
+  },
+  "estados": {
+    "proposed": {
+      "en": "Proposed",
+      "es": "Propuesta"
+    },
+    "partial": {
+      "en": "Partly done",
+      "es": "Hecha en parte"
+    },
+    "done": {
+      "en": "Done",
+      "es": "Hecha"
+    }
+  },
+  "propuestas": [
+    {
+      "numero": 1,
+      "categoria": "interface",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Type the amount on the sliders, or make + jump to the maximum",
+        "es": "Escribir la cantidad en las barras, o que «+» salte al máximo"
+      },
+      "pide": {
+        "en": "The + and − buttons on the mechanics, race strategy, VIP and engineer screens move the bar one step at a time. The proposal is a box where you type the amount or, at the very least, a + that goes straight to the maximum.",
+        "es": "Los botones + y − de las pantallas de mecánicos, estrategia de carrera, VIPs e ingenieros mueven la barra un paso cada vez. Se propone una caja donde escribir la cantidad o, como mínimo, un «+» que lleve la barra directamente al máximo."
+      },
+      "hoy": {
+        "en": "Nothing yet. The \"+ to maximum\" part looks small and feasible. The typing box would need new interface code on every screen that has bars.",
+        "es": "Todavía nada. Lo de «+ al máximo» parece pequeño y viable. La caja de texto exigiría código de interfaz nuevo en cada pantalla con barras."
+      }
+    },
+    {
+      "numero": 2,
+      "categoria": "market",
+      "estado": "partial",
+      "titulo": {
+        "en": "Top drivers should not end up at minor teams",
+        "es": "Los pilotos top no deberían acabar en equipos menores"
+      },
+      "pide": {
+        "en": "Top drivers such as Häkkinen or Schumacher should not sign for teams like Minardi or Tyrrell.",
+        "es": "Pilotos de primer nivel como Häkkinen o Schumacher no deberían firmar por equipos como Minardi o Tyrrell."
+      },
+      "hoy": {
+        "en": "Partly covered: a team now signs only a driver whose salary fits its income, which keeps most stars away from poor teams. It looks at money, not at the driver's level, so a rule by level is still open.",
+        "es": "Cubierta en parte: ahora un equipo solo ficha a quien cobre lo que permiten sus ingresos, lo que aleja a casi todas las estrellas de los equipos pobres. Mira el dinero y no el nivel del piloto, así que una regla por nivel sigue abierta."
+      }
+    },
+    {
+      "numero": 3,
+      "categoria": "market",
+      "estado": "proposed",
+      "titulo": {
+        "en": "No test-driver deals that make no sense",
+        "es": "Nada de fichajes de probador que no tienen sentido"
+      },
+      "pide": {
+        "en": "A driver like Eddie Irvine should not suddenly sign as a test driver for a team such as Sauber.",
+        "es": "Un piloto como Eddie Irvine no debería firmar de pronto como probador de un equipo como Sauber."
+      },
+      "hoy": {
+        "en": "Not addressed yet. The end-of-season market fills the test-driver slot with whoever is free. It still has to be checked whether any level or salary filter applies to that role.",
+        "es": "Todavía no se ha abordado. El mercado de fin de temporada rellena la plaza de probador con quien esté libre. Falta comprobar si algún filtro de nivel o de sueldo se aplica a ese puesto."
+      }
+    },
+    {
+      "numero": 4,
+      "categoria": "market",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Effectively permanent contracts",
+        "es": "Contratos prácticamente permanentes"
+      },
+      "pide": {
+        "en": "Some deals should be practically permanent, for example Ferrari always using Ferrari engines.",
+        "es": "Algunos acuerdos deberían ser prácticamente permanentes, por ejemplo que Ferrari use siempre motores Ferrari."
+      },
+      "hoy": {
+        "en": "Not addressed yet. Supplier contracts have a limited length and can change hands when they end. It still has to be checked whether a team with its own engine can lose it.",
+        "es": "Todavía no se ha abordado. Los contratos con proveedores tienen una duración limitada y pueden cambiar de manos al vencer. Falta comprobar si un equipo con motor propio puede perderlo."
+      }
+    },
+    {
+      "numero": 5,
+      "categoria": "interface",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Live championship standings during the race",
+        "es": "Clasificación del campeonato en vivo durante la carrera"
+      },
+      "pide": {
+        "en": "A screen with the Drivers' and Constructors' championships that updates as positions change, to see at a glance how the current race affects both.",
+        "es": "Una pantalla con los campeonatos de pilotos y de constructores que se actualice según cambian las posiciones, para ver de un vistazo cómo afecta la carrera en curso a ambos."
+      },
+      "hoy": {
+        "en": "Not there yet. The race order panel shows positions and gaps but not championship points. It needs a points column or a new panel, which is interface work.",
+        "es": "Todavía no existe. El panel de orden de carrera enseña posiciones y diferencias, pero no puntos del campeonato. Haría falta una columna de puntos o un panel nuevo, y eso es trabajo de interfaz."
+      }
+    },
+    {
+      "numero": 6,
+      "categoria": "ai",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Optional refuelling ban, with the AI pitting by tyre wear",
+        "es": "Prohibir el repostaje como opción, con la IA parando por desgaste"
+      },
+      "pide": {
+        "en": "An option to abolish refuelling and make the AI pit according to tyre wear. It should be modular: mods set in the 90s and 00s keep refuelling, and mods set in the 10s and 20s do not.",
+        "es": "Una opción para abolir el repostaje y que la IA pare según el desgaste de los neumáticos. Debería ser modular: los mods de los noventa y los dos mil conservan el repostaje, y los de los diez y los veinte no."
+      },
+      "hoy": {
+        "en": "Not there yet. Refuelling and the AI's pit plan are closely tied: the plan decides how much fuel each stop adds, and fuel weight affects pace. Removing it touches the weight calculation, the pit stop time and the AI plan, so it is a big change.",
+        "es": "Todavía no existe. El repostaje y el plan de paradas de la IA están muy ligados: el plan decide cuánta gasolina añade cada parada, y el peso del combustible afecta al ritmo. Quitarlo toca el cálculo del peso, el tiempo de parada y el plan de la IA, así que es un cambio grande."
+      }
+    },
+    {
+      "numero": 7,
+      "categoria": "market",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Suppliers: Cash Rating first, and a preference for the own-name supplier",
+        "es": "Proveedores: primero el Cash Rating, y preferencia por el que lleva su nombre"
+      },
+      "pide": {
+        "en": "Teams should choose suppliers by their Cash Rating rather than their R&D rating, and prefer the supplier that carries their own name (Ferrari engines for Ferrari).",
+        "es": "Los equipos deberían elegir proveedor por su Cash Rating y no por su I+D, y preferir al proveedor que lleva su nombre (motores Ferrari para Ferrari)."
+      },
+      "hoy": {
+        "en": "Today the AI takes the best-rated supplier that has a free slot. A score that weighs money and name still has to be designed.",
+        "es": "Hoy la IA se queda con el proveedor mejor valorado que tenga hueco libre. Falta diseñar una puntuación que pese el dinero y el nombre."
+      }
+    },
+    {
+      "numero": 8,
+      "categoria": "market",
+      "estado": "proposed",
+      "titulo": {
+        "en": "A team trait for tyres",
+        "es": "Un rasgo de equipo para los neumáticos"
+      },
+      "pide": {
+        "en": "A team trait such as \"prefers good wet-weather tyres\", so that a team goes for Goodyear first. With engines the choice is simpler; with tyres it needs a trait like this.",
+        "es": "Un rasgo de equipo como «prefiere buenos neumáticos de lluvia», para que un equipo vaya primero a por Goodyear. Con los motores la elección es más sencilla; con los neumáticos hace falta un rasgo así."
+      },
+      "hoy": {
+        "en": "Not there yet. Tyre suppliers are chosen in the same way as the rest.",
+        "es": "Todavía no existe. Los proveedores de neumáticos se eligen igual que el resto."
+      }
+    },
+    {
+      "numero": 9,
+      "categoria": "drivers",
+      "estado": "partial",
+      "titulo": {
+        "en": "Attributes from 1 to 10 instead of 1 to 5",
+        "es": "Atributos de 1 a 10 en lugar de 1 a 5"
+      },
+      "pide": {
+        "en": "Replace the 1–5 scale of attributes with 1–10, to tell drivers and staff apart better. The bars in the interface are the obstacle; one idea is to split one bar in two. Traits and favourite tracks would complement it (see No. 12).",
+        "es": "Cambiar la escala de 1 a 5 de los atributos por una de 1 a 10, para diferenciar mejor a pilotos y personal. El obstáculo son las barras de la interfaz; una idea es partir una barra en dos. Los rasgos y los circuitos favoritos lo complementarían (véase el n.º 12)."
+      },
+      "hoy": {
+        "en": "Partly done: the weight of each star has been raised, so a star now counts for much more in lap time. The 1–10 scale itself is not done, because the interface bars have five steps.",
+        "es": "Hecha en parte: se ha subido el peso de cada estrella, de modo que una estrella cuenta mucho más en el tiempo por vuelta. La escala de 1 a 10 como tal no está hecha, porque las barras de la interfaz tienen cinco tramos."
+      }
+    },
+    {
+      "numero": 10,
+      "categoria": "drivers",
+      "estado": "partial",
+      "titulo": {
+        "en": "Drivers should weigh much more in pace",
+        "es": "Los pilotos deberían pesar mucho más en el ritmo"
+      },
+      "pide": {
+        "en": "In the dry, drivers hardly make a difference. The proposal is that Speed, from 1 to 5, should add up to a gap of around two seconds of pace, with variance inside that range. A driver a little below the best would be a 3 or a 4, not a 1.",
+        "es": "En seco, los pilotos apenas marcan diferencias. Se propone que Speed, de 1 a 5, sume una diferencia de unos dos segundos de ritmo, con variación dentro de ese rango. Un piloto algo por debajo del mejor sería un 3 o un 4, no un 1."
+      },
+      "hoy": {
+        "en": "Partly done: the weights of Speed, Skill and the car were multiplied several times, so drivers matter more than in the original game. Whether to go further is still open.",
+        "es": "Hecha en parte: los pesos de Speed, Skill y del coche se han multiplicado varias veces, así que los pilotos importan más que en el juego original. Si conviene ir más lejos sigue abierto."
+      }
+    },
+    {
+      "numero": 11,
+      "categoria": "car",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Rework next season's car handling",
+        "es": "Rehacer el handling del coche de la temporada siguiente"
+      },
+      "pide": {
+        "en": "Change how next season's car handling is calculated: make each skill point worth more, add a bigger random part, and add a part based on last season's standing or the team's prestige.",
+        "es": "Cambiar cómo se calcula el handling del coche de la temporada siguiente: que cada punto de habilidad valga más, añadir una parte aleatoria mayor y otra que dependa de la clasificación del año anterior o del prestigio del equipo."
+      },
+      "hoy": {
+        "en": "Not changed. Related: during the season, the AI teams' chassis upgrades follow a fixed table by team level and round, with a dice roll.",
+        "es": "Sin cambios. Relacionado: durante la temporada, las mejoras de chasis de los equipos de la IA siguen una tabla fija por nivel de equipo y ronda, con una tirada de dado."
+      }
+    },
+    {
+      "numero": 12,
+      "categoria": "drivers",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Traits and favourite circuits for drivers",
+        "es": "Rasgos y circuitos favoritos para los pilotos"
+      },
+      "pide": {
+        "en": "Give drivers (and teams) traits and favourite circuits, to tell them apart beyond the 1–5 stars.",
+        "es": "Dar a los pilotos (y a los equipos) rasgos y circuitos favoritos, para diferenciarlos más allá de las estrellas de 1 a 5."
+      },
+      "hoy": {
+        "en": "Not there yet. The game keeps numeric attributes for each driver; whether it has a field for a favourite circuit or a trait has not been checked.",
+        "es": "Todavía no existe. El juego guarda atributos numéricos por piloto; no se ha comprobado si tiene algún campo para un circuito favorito o un rasgo."
+      }
+    },
+    {
+      "numero": 13,
+      "categoria": "car",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Make electronics matter",
+        "es": "Que la electrónica importe"
+      },
+      "pide": {
+        "en": "Electronics feel useless. Today the part only wears out when the driver's orders are changed.",
+        "es": "La electrónica parece inútil. Hoy esa pieza solo se desgasta cuando se cambian las órdenes del piloto."
+      },
+      "hoy": {
+        "en": "Not changed yet. Its effect on lap time and on failures still has to be measured, to see whether it deserves more weight.",
+        "es": "Sin cambios por ahora. Falta medir su efecto en el tiempo por vuelta y en las averías, para ver si merece más peso."
+      }
+    }
+  ]
+}

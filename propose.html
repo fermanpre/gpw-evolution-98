@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPW Evolution &#x27;98 · Send a proposal | Enviar una propuesta</title>
+<meta name="description" content="Community proposals for GPW Evolution '98, a Grand Prix World 1998 mod.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="sitio">
+  <div>
+    <div class="marca"><a href="index.html">GPW Evolution '98</a></div>
+    <div class="migas"><span class="i18n-en">Send a proposal</span><span class="i18n-es">Enviar una propuesta</span></div>
+  </div>
+  <div class="acciones">
+    <a class="boton-accion" href="index.html"><span class="i18n-en">See the list</span><span class="i18n-es">Ver la lista</span></a>
+    <div class="selector-idioma">
+      <button class="opcion-idioma" data-lang-opcion="en" type="button"><img class="bandera-boton" src="assets/flags/gb.svg" alt="EN"> ENG</button>
+      <button class="opcion-idioma" data-lang-opcion="es" type="button"><img class="bandera-boton" src="assets/flags/es.svg" alt="ES"> ESP</button>
+    </div>
+    <button class="boton-tema" type="button"><span class="i18n-en">Light / Dark</span><span class="i18n-es">Claro / oscuro</span></button>
+  </div>
+</header>
+
+<main>
+  <h1><span class="i18n-en">Send a proposal</span><span class="i18n-es">Enviar una propuesta</span></h1>
+  <p class="subtitulo"><span class="i18n-en bloque">One proposal per submission. You can write in English or Spanish. Check the list first: if your idea is already there, pick it in the last field to support it.</span><span class="i18n-es bloque">Una propuesta por envío. Puedes escribir en inglés o en español. Mira primero la lista: si tu idea ya está, elígela en el último campo para apoyarla.</span></p>
+  <form class="formulario" id="formulario-propuesta" novalidate>
+    <div class="campo"><label for="titulo"><span class="i18n-en">Short title</span><span class="i18n-es">Título corto</span></label><input type="text" id="titulo" maxlength="120" required><span class="ayuda"><span class="i18n-en">One line, for example: &quot;Favourite circuits for drivers&quot;.</span><span class="i18n-es">Una línea, por ejemplo: «Circuitos favoritos para los pilotos».</span></span></div>
+    <div class="campo"><label for="descripcion"><span class="i18n-en">Description</span><span class="i18n-es">Descripción</span></label><textarea id="descripcion" maxlength="2000" required></textarea><span class="ayuda"><span class="i18n-en">What would you change or add, and why? Please do not write your email address here.</span><span class="i18n-es">¿Qué cambiarías o añadirías, y por qué? Por favor, no escribas aquí tu correo electrónico.</span></span></div>
+    <div class="campo"><label for="categoria"><span class="i18n-en">Category</span><span class="i18n-es">Categoría</span></label><select id="categoria" required>
+      <option value="Race / Carrera" data-en="Race" data-es="Carrera">Race</option>
+      <option value="Car and set-up / Coche y reglaje" data-en="Car and set-up" data-es="Coche y reglaje">Car and set-up</option>
+      <option value="AI and strategy / IA y estrategia" data-en="AI and strategy" data-es="IA y estrategia">AI and strategy</option>
+      <option value="Drivers and attributes / Pilotos y atributos" data-en="Drivers and attributes" data-es="Pilotos y atributos">Drivers and attributes</option>
+      <option value="Market, contracts and sponsors / Mercado, contratos y patrocinadores" data-en="Market, contracts and sponsors" data-es="Mercado, contratos y patrocinadores">Market, contracts and sponsors</option>
+      <option value="Interface and screens / Interfaz y pantallas" data-en="Interface and screens" data-es="Interfaz y pantallas">Interface and screens</option>
+      <option value="Graphics and audio / Gráficos y audio" data-en="Graphics and audio" data-es="Gráficos y audio">Graphics and audio</option>
+      <option value="Circuits / Circuitos" data-en="Circuits" data-es="Circuitos">Circuits</option>
+      <option value="Other / Otra" data-en="Other" data-es="Otra">Other</option>
+    </select></div>
+    <div class="campo"><span class="rotulo"><span class="i18n-en">How do you want to appear?</span><span class="i18n-es">¿Cómo quieres que figure?</span></span><div class="opciones">
+      <label><input type="radio" name="figura" value="With my name / Con mi nombre" required> <span class="i18n-en">With my name</span><span class="i18n-es">Con mi nombre</span></label>
+      <label><input type="radio" name="figura" value="With my forum or Discord alias / Con mi alias del foro o de Discord"> <span class="i18n-en">With my forum or Discord alias</span><span class="i18n-es">Con mi alias del foro o de Discord</span></label>
+      <label><input type="radio" name="figura" value="Anonymous / Anónimo" checked> <span class="i18n-en">Anonymous</span><span class="i18n-es">Anónimo</span></label>
+    </div></div>
+    <div class="campo" id="campo-nombre" hidden><label for="nombre"><span class="i18n-en">Name or alias</span><span class="i18n-es">Nombre o alias</span></label><input type="text" id="nombre" maxlength="60"><span class="ayuda"><span class="i18n-en">Only shown if you did not choose anonymous.</span><span class="i18n-es">Solo se muestra si no has elegido anónimo.</span></span></div>
+    <div class="campo"><label for="apoyo"><span class="i18n-en">Do you support a proposal that is already on the list?</span><span class="i18n-es">¿Apoyas alguna propuesta que ya esté en la lista?</span></label><select id="apoyo">
+      <option value="" data-en="No: this is a new idea" data-es="No: es una idea nueva">No: this is a new idea</option>
+      <option value="not sure" data-en="I am not sure whether mine is already there" data-es="No estoy seguro de si la mía ya está">I am not sure whether mine is already there</option>
+      <option value="1 - Type the amount on the sliders, or make + jump to the maximum" data-en="No. 1 · Type the amount on the sliders, or make + jump to the maximum" data-es="N.º 1 · Escribir la cantidad en las barras, o que «+» salte al máximo">No. 1 · Type the amount on the sliders, or make + jump to the maximum</option>
+      <option value="2 - Top drivers should not end up at minor teams" data-en="No. 2 · Top drivers should not end up at minor teams" data-es="N.º 2 · Los pilotos top no deberían acabar en equipos menores">No. 2 · Top drivers should not end up at minor teams</option>
+      <option value="3 - No test-driver deals that make no sense" data-en="No. 3 · No test-driver deals that make no sense" data-es="N.º 3 · Nada de fichajes de probador que no tienen sentido">No. 3 · No test-driver deals that make no sense</option>
+      <option value="4 - Effectively permanent contracts" data-en="No. 4 · Effectively permanent contracts" data-es="N.º 4 · Contratos prácticamente permanentes">No. 4 · Effectively permanent contracts</option>
+      <option value="5 - Live championship standings during the race" data-en="No. 5 · Live championship standings during the race" data-es="N.º 5 · Clasificación del campeonato en vivo durante la carrera">No. 5 · Live championship standings during the race</option>
+      <option value="6 - Optional refuelling ban, with the AI pitting by tyre wear" data-en="No. 6 · Optional refuelling ban, with the AI pitting by tyre wear" data-es="N.º 6 · Prohibir el repostaje como opción, con la IA parando por desgaste">No. 6 · Optional refuelling ban, with the AI pitting by tyre wear</option>
+      <option value="7 - Suppliers: Cash Rating first, and a preference for the own-name supplier" data-en="No. 7 · Suppliers: Cash Rating first, and a preference for the own-name supplier" data-es="N.º 7 · Proveedores: primero el Cash Rating, y preferencia por el que lleva su nombre">No. 7 · Suppliers: Cash Rating first, and a preference for the own-name supplier</option>
+      <option value="8 - A team trait for tyres" data-en="No. 8 · A team trait for tyres" data-es="N.º 8 · Un rasgo de equipo para los neumáticos">No. 8 · A team trait for tyres</option>
+      <option value="9 - Attributes from 1 to 10 instead of 1 to 5" data-en="No. 9 · Attributes from 1 to 10 instead of 1 to 5" data-es="N.º 9 · Atributos de 1 a 10 en lugar de 1 a 5">No. 9 · Attributes from 1 to 10 instead of 1 to 5</option>
+      <option value="10 - Drivers should weigh much more in pace" data-en="No. 10 · Drivers should weigh much more in pace" data-es="N.º 10 · Los pilotos deberían pesar mucho más en el ritmo">No. 10 · Drivers should weigh much more in pace</option>
+      <option value="11 - Rework next season&#x27;s car handling" data-en="No. 11 · Rework next season&#x27;s car handling" data-es="N.º 11 · Rehacer el handling del coche de la temporada siguiente">No. 11 · Rework next season&#x27;s car handling</option>
+      <option value="12 - Traits and favourite circuits for drivers" data-en="No. 12 · Traits and favourite circuits for drivers" data-es="N.º 12 · Rasgos y circuitos favoritos para los pilotos">No. 12 · Traits and favourite circuits for drivers</option>
+      <option value="13 - Make electronics matter" data-en="No. 13 · Make electronics matter" data-es="N.º 13 · Que la electrónica importe">No. 13 · Make electronics matter</option>
+    </select></div>
+    <div class="trampa" aria-hidden="true"><label for="sitio_web">Website</label><input type="text" id="sitio_web" tabindex="-1" autocomplete="off"></div>
+    <button class="boton-enviar" type="submit"><span class="i18n-en">Send proposal</span><span class="i18n-es">Enviar propuesta</span></button>
+  </form>
+  <div class="mensaje" id="mensaje-exito" hidden><span class="i18n-en bloque">Thank you! Your proposal has been received. It will be reviewed by hand and added to the list if it is new.</span><span class="i18n-es bloque">¡Gracias! Tu propuesta ha llegado. Se revisará a mano y se añadirá a la lista si es nueva.</span></div>
+  <div class="mensaje error" id="mensaje-error" hidden><span class="i18n-en bloque">Something went wrong. Please check the required fields and try again in a minute.</span><span class="i18n-es bloque">Algo ha fallado. Revisa los campos obligatorios y vuelve a intentarlo dentro de un minuto.</span></div>
+  <p class="privacidad"><span class="i18n-en bloque">What is stored: your title, description, category and the name or alias you choose to give. We do not ask for your email. Answers go to a private sheet read only by the author; the public list never shows names unless you chose to appear. To have a proposal removed, ask the author.</span><span class="i18n-es bloque">Qué se guarda: tu título, la descripción, la categoría y el nombre o alias que decidas dar. No pedimos tu correo. Las respuestas van a una hoja privada que solo lee el autor; la lista pública no enseña nombres salvo que hayas elegido figurar. Para retirar una propuesta, pídeselo al autor.</span></p>
+
+</main>
+
+<footer class="pie">
+  <span class="i18n-en bloque">Unofficial fan project for Grand Prix World. Proposals are reviewed by hand; nothing goes into the mod without the author&#x27;s approval.</span><span class="i18n-es bloque">Proyecto de aficionados para Grand Prix World, sin carácter oficial. Las propuestas se revisan a mano; nada entra en el mod sin la aprobación del autor.</span>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>window.GPW_FORM = {"accion": "https://docs.google.com/forms/d/e/1FAIpQLSczlVTwBiNMLChP4Zcku0WrT3zHidiGHtb0p88NYvVz2jJdQQ/formResponse", "entradas": {"titulo": "entry.1522498969", "descripcion": "entry.22149054", "categoria": "entry.37095091", "figura": "entry.2145818082", "nombre": "entry.1244559914", "apoyo": "entry.475490917"}, "opcion_anonimo": "Anonymous / Anónimo"};</script>
+<script src="assets/form.js"></script>
+</body>
+</html>

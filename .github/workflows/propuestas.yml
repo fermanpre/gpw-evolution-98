@@ -1,0 +1,33 @@
+# Acción diaria (y manual): descarga el CSV saneado de propuestas publicado desde la hoja de Google, cuenta los apoyos y regenera la página.
+# Solo usa el GITHUB_TOKEN del propio repositorio. La URL del CSV va en la variable de repositorio PUBLICO_CSV_URL (Settings > Secrets and variables > Actions > Variables).
+name: Actualizar propuestas
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  actualizar:
+    if: ${{ vars.PUBLICO_CSV_URL != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Descargar el CSV saneado
+        run: |
+          curl -sSfL "${{ vars.PUBLICO_CSV_URL }}" -o datos/publico.csv
+          head -c 300 datos/publico.csv
+      - name: Regenerar la página
+        env:
+          GPW_PUBLICO_CSV: datos/publico.csv
+        run: python generador/generar_pagina.py .
+      - name: Guardar los cambios, si los hay
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Actualizar propuestas y apoyos"
+          git push

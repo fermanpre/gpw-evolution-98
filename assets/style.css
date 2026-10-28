@@ -1,0 +1,172 @@
+/* Estilo de la página de propuestas del minimod de GPW. Adaptado del sitio de F1 Lap Times & Gap Chart: mismos tokens de color (claro y oscuro), misma
+   cabecera, mismo selector de idioma y mismas tarjetas que el changelog. Solo dos idiomas (EN por defecto y ES). */
+:root {
+  color-scheme: light;
+  --surface-1: #fcfcfb;
+  --page-plane: #f9f9f7;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #565552;
+  --border: rgba(11,11,11,0.10);
+  --row-hover: rgba(11,11,11,0.04);
+  --link: #2a78d6;
+  --estado-propuesta: #2a78d6;
+  --estado-propuesta-fondo: rgba(42,120,214,0.12);
+  --estado-parcial: #8a6a00;
+  --estado-parcial-fondo: rgba(255,221,0,0.22);
+  --estado-hecha: #006300;
+  --estado-hecha-fondo: rgba(0,99,0,0.10);
+  --error: #d03b3b;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-1: #1a1a19;
+    --page-plane: #0d0d0d;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #9a988f;
+    --border: rgba(255,255,255,0.10);
+    --row-hover: rgba(255,255,255,0.06);
+    --link: #3987e5;
+    --estado-propuesta: #3987e5;
+    --estado-propuesta-fondo: rgba(57,135,229,0.18);
+    --estado-parcial: #fade25;
+    --estado-parcial-fondo: rgba(255,212,0,0.16);
+    --estado-hecha: #0ca30c;
+    --estado-hecha-fondo: rgba(12,163,12,0.16);
+    --error: #e66767;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-1: #1a1a19;
+  --page-plane: #0d0d0d;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted: #9a988f;
+  --border: rgba(255,255,255,0.10);
+  --row-hover: rgba(255,255,255,0.06);
+  --link: #3987e5;
+  --estado-propuesta: #3987e5;
+  --estado-propuesta-fondo: rgba(57,135,229,0.18);
+  --estado-parcial: #fade25;
+  --estado-parcial-fondo: rgba(255,212,0,0.16);
+  --estado-hecha: #0ca30c;
+  --estado-hecha-fondo: rgba(12,163,12,0.16);
+  --error: #e66767;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page-plane);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+a { color: var(--link); }
+
+/* Cabecera */
+header.sitio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-1);
+  flex-wrap: wrap;
+}
+header.sitio .marca { font-weight: 700; font-size: 16px; }
+header.sitio .marca a { color: inherit; text-decoration: none; }
+header.sitio .migas { color: var(--text-secondary); font-size: 13px; }
+header.sitio .acciones { display: flex; align-items: center; flex-wrap: wrap; max-width: 100%; gap: 8px; }
+.boton-tema, .boton-accion {
+  border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary);
+  border-radius: 6px; padding: 6px 10px; font-size: 12px; cursor: pointer; text-decoration: none;
+}
+.boton-accion { font-weight: 600; }
+.selector-idioma { display: flex; gap: 4px; }
+.opcion-idioma {
+  display: flex; align-items: center; gap: 4px;
+  border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary);
+  border-radius: 6px; padding: 6px 8px; font-size: 12px; cursor: pointer;
+}
+.opcion-idioma.activa { background: var(--row-hover); color: var(--text-primary); font-weight: 700; }
+.bandera-boton { width: 14px; height: 10px; object-fit: cover; border-radius: 1px; box-shadow: 0 0 0 1px var(--border); }
+
+/* Idiomas: inglés por defecto; el español se muestra con html[data-lang="es"] */
+.i18n-es { display: none; }
+html[data-lang="es"] .i18n-es { display: inline; }
+html[data-lang="es"] .i18n-en { display: none; }
+.i18n-es.bloque, .i18n-en.bloque { display: none; }
+.i18n-en.bloque { display: block; }
+html[data-lang="es"] .i18n-es.bloque { display: block; }
+html[data-lang="es"] .i18n-en.bloque { display: none; }
+
+main { padding: 20px; max-width: 860px; margin: 0 auto; }
+h1 { font-size: 20px; margin: 0 0 4px; }
+h2 { font-size: 16px; margin: 24px 0 10px; }
+p.subtitulo { color: var(--text-secondary); margin: 0 0 16px; font-size: 13px; }
+
+/* Filtros */
+.filtros { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+.filtro {
+  border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary);
+  border-radius: 999px; padding: 4px 12px; font-size: 12px; cursor: pointer;
+}
+.filtro.activo { background: var(--row-hover); color: var(--text-primary); font-weight: 700; }
+.contador-resultados { color: var(--text-muted); font-size: 12px; margin: 0 0 10px; }
+
+/* Tarjetas: mismo aspecto que las entradas del changelog de F1 stats */
+.lista-propuestas { display: flex; flex-direction: column; gap: 14px; }
+.propuesta { border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: var(--surface-1); }
+.propuesta[hidden] { display: none; }
+.propuesta .cabecera-propuesta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; color: var(--text-muted); font-size: 12px; font-weight: 600; }
+.propuesta .numero { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.propuesta h3 { color: var(--text-primary); font-size: 15px; margin: 4px 0 8px; }
+.propuesta ul { margin: 0; padding-left: 20px; }
+.propuesta ul li { margin: 4px 0; }
+.propuesta .etiqueta-detalle { color: var(--text-secondary); font-weight: 700; }
+.propuesta .apoyos { margin-top: 8px; color: var(--text-muted); font-size: 12px; }
+
+/* Etiquetas de estado */
+.estado { border-radius: 999px; padding: 1px 9px; font-size: 11px; font-weight: 700; line-height: 18px; }
+.estado.proposed { color: var(--estado-propuesta); background: var(--estado-propuesta-fondo); }
+.estado.partial { color: var(--estado-parcial); background: var(--estado-parcial-fondo); }
+.estado.done { color: var(--estado-hecha); background: var(--estado-hecha-fondo); }
+.categoria { color: var(--text-muted); font-weight: 400; }
+
+/* Formulario */
+.formulario { border: 1px solid var(--border); border-radius: 8px; padding: 16px; background: var(--surface-1); display: flex; flex-direction: column; gap: 14px; }
+.campo { display: flex; flex-direction: column; gap: 4px; }
+.campo label, .campo .rotulo { font-weight: 700; font-size: 13px; }
+.campo .ayuda { color: var(--text-muted); font-size: 12px; }
+.campo input[type="text"], .campo textarea, .campo select {
+  width: 100%; border: 1px solid var(--border); border-radius: 6px; background: var(--page-plane); color: var(--text-primary);
+  padding: 8px 10px; font: inherit;
+}
+.campo textarea { min-height: 120px; resize: vertical; }
+.campo .opciones { display: flex; flex-direction: column; gap: 4px; }
+.campo .opciones label { font-weight: 400; display: flex; gap: 6px; align-items: center; }
+.campo[hidden] { display: none; }
+.trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.boton-enviar {
+  align-self: flex-start; border: 1px solid var(--link); background: var(--link); color: #fff;
+  border-radius: 6px; padding: 8px 16px; font-size: 13px; font-weight: 700; cursor: pointer;
+}
+.boton-enviar:disabled { opacity: 0.6; cursor: default; }
+.mensaje { border-radius: 8px; padding: 12px 14px; border: 1px solid var(--border); background: var(--surface-1); }
+.mensaje[hidden] { display: none; }
+.mensaje.error { border-color: var(--error); color: var(--error); }
+.privacidad { color: var(--text-secondary); font-size: 12px; }
+
+footer.pie { padding: 16px 20px 28px; color: var(--text-muted); font-size: 12px; text-align: center; }
+footer.pie a { color: var(--text-secondary); }
+
+@media (max-width: 640px) {
+  main { padding: 14px; }
+  .boton-tema, .boton-accion, .opcion-idioma { min-height: 40px; }
+}

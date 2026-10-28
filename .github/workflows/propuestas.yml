@@ -1,9 +1,7 @@
-# Acción diaria (y manual): descarga el CSV saneado de propuestas publicado desde la hoja de Google, cuenta los apoyos y regenera la página.
+# Acción manual (se lanza a mano para revisar antes de publicar): descarga el CSV saneado de propuestas publicado desde la hoja de Google, cuenta los apoyos y regenera la página.
 # Solo usa el GITHUB_TOKEN del propio repositorio. La URL del CSV va en la variable de repositorio PUBLICO_CSV_URL (Settings > Secrets and variables > Actions > Variables).
 name: Actualizar propuestas
 on:
-  schedule:
-    - cron: "17 6 * * *"
   workflow_dispatch:
 permissions:
   contents: write

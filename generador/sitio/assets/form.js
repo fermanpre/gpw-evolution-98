@@ -17,6 +17,7 @@
   var campoTrampa = document.getElementById('sitio_web');
   var mensajeExito = document.getElementById('mensaje-exito');
   var mensajeError = document.getElementById('mensaje-error');
+  var mensajeEspera = document.getElementById('mensaje-espera');
   var botonEnviar = formulario.querySelector('.boton-enviar');
 
   function figuraElegida() {
@@ -49,21 +50,24 @@
   });
   actualizarNombre();
 
-  function mostrarError() { mensajeError.hidden = false; mensajeExito.hidden = true; botonEnviar.disabled = false; }
+  function mostrarError() { mensajeError.hidden = false; mensajeEspera.hidden = true; mensajeExito.hidden = true; botonEnviar.disabled = false; }
+  // Las medidas antispam tienen su propio mensaje: no es un fallo de los campos ni del envío
+  function mostrarEspera() { mensajeEspera.hidden = false; mensajeError.hidden = true; mensajeExito.hidden = true; botonEnviar.disabled = false; }
 
   formulario.addEventListener('submit', function (evento) {
     evento.preventDefault();
     mensajeError.hidden = true;
+    mensajeEspera.hidden = true;
     mensajeExito.hidden = true;
 
     var titulo = campoTitulo.value.trim();
     var descripcion = campoDescripcion.value.trim();
     if (!titulo || !descripcion || !campoCategoria.value || !figuraElegida()) { mostrarError(); return; }
     if (campoTrampa.value) { mensajeExito.hidden = false; return; }                       // un robot rellenó la trampa: se finge que ha ido bien
-    if (Date.now() - cargadoEn < SEGUNDOS_MINIMOS * 1000) { mostrarError(); return; }     // demasiado rápido para una persona
+    if (Date.now() - cargadoEn < SEGUNDOS_MINIMOS * 1000) { mostrarEspera(); return; }     // demasiado rápido para una persona
     var ultimoEnvio = 0;
     try { ultimoEnvio = parseInt(localStorage.getItem('gpw-ultimo-envio') || '0', 10); } catch (error) { ultimoEnvio = 0; }
-    if (Date.now() - ultimoEnvio < MILISEGUNDOS_ENTRE_ENVIOS) { mostrarError(); return; }
+    if (Date.now() - ultimoEnvio < MILISEGUNDOS_ENTRE_ENVIOS) { mostrarEspera(); return; }
     if (!configuracion) { mostrarError(); return; }                                       // el formulario aún no está conectado a la hoja
 
     var datos = new URLSearchParams();

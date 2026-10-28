@@ -248,6 +248,10 @@ def generar_formulario(datos):
         "Something went wrong. Please check the required fields and try again in a minute.",
         "Algo ha fallado. Revisa los campos obligatorios y vuelve a intentarlo dentro de un minuto."))
 
+    partes.append('  <div class="mensaje error" id="mensaje-espera" hidden>%s</div>\n' % bloque(
+        "Please wait a moment: to avoid spam, the form accepts one proposal per minute and not in the first seconds after the page loads. Try again shortly.",
+        "Espera un momento: para evitar el spam, el formulario admite una propuesta por minuto y no en los primeros segundos tras cargar la página. Inténtalo de nuevo enseguida."))
+
     partes.append('  <p class="privacidad">%s</p>\n' % bloque(
         "What is stored: your title, description, category and the name or alias you choose to give. We do not ask for your email. Answers go to a private sheet read only by the author; the public list never shows names unless you chose to appear. To have a proposal removed, ask the author.",
         "Qué se guarda: tu título, la descripción, la categoría y el nombre o alias que decidas dar. No pedimos tu correo. Las respuestas van a una hoja privada que solo lee el autor; la lista pública no enseña nombres salvo que hayas elegido figurar. Para retirar una propuesta, pídeselo al autor."))

@@ -1,0 +1,35 @@
+CREDITS AND LICENCES (Evolution '98, version 0.1)
+=================================================
+
+Grand Prix World is a game developed by Edward Grabowski Communications Limited for MicroProse (1999), the successor of Grand Prix Manager and Grand Prix Manager 2. This pack is an unofficial fan modification. It only contains files that differ from the original game, and it needs the
+original game to run. All rights to the game belong to their owners.
+
+GRAPHICS
+- Most of the 1998 liveries, cars, driver portraits and related data come from the 1998 mod by Simul810. Used with permission.
+- Ferrim's own adjustments are the Tyrrell, Benetton and Sauber textures and two driver portraits.
+
+EXECUTABLE AND TEXTS
+- The executable is built on top of REMASTERED, Ferrim's own unreleased base: the unofficial 1.03 patch by Veedub edited with GPWEdit (test drivers, number of laps,
+  overtaking and rain values of the circuits and other data), and on the patch tradition of the GPW community: the fixes and tools by Veedub and the editors' authors.
+  Without that work this pack would not exist.
+- The new code, news texts, mail texts, Race Control messages and the circuit pit-lane maps were written by Ferrim with the help of ClaudIA.
+
+AUDIO
+- The Race Control announcements for the limit of two hours, the Safety Car, investigations and penalties (2HLIM1-4, SAFETY1-3, INVEST and the like) were generated with
+  Coqui XTTS v2, using voice references taken from the game's own Manager clips. XTTS v2 is licensed for NON-COMMERCIAL use only (CPML): do not sell this pack or use it in
+  any commercial product.
+- The rest of the voice clips in the speeche folder come from the original game or from Simul810's mod.
+
+OTHER
+- GPWEdit and the GPW tools by their authors are not included in this pack.
+- The pit-stop statistics used to calibrate the pit lane come from the public Formula 1 results archive (1997-2001).
+
+If you spot a missing credit, tell Ferrim and it will be added.
+
+CONTACT
+- Email: fmanpre@gmail.com
+- GitHub: https://github.com/fermanpre
+- Proposals and known issues: https://fermanpre.github.io/gpw-evolution-98/
+- GPM Planet forum: https://gpmplanet.proboards.com/thread/239/bugs-grand-prix-world-dislike (bugs thread)
+- GPM Planet Discord: https://discord.gg/qz7SYyx
+- LinkedIn: https://www.linkedin.com/in/fernandomanzanarespreciado/

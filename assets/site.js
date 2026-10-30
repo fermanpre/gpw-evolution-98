@@ -44,6 +44,20 @@
     });
   });
 
+  // Copiar la huella SHA-256 (página de descarga); sin portapapeles, el texto sigue siendo seleccionable
+  document.querySelectorAll('.copiar').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+      var origen = document.getElementById(boton.getAttribute('data-copiar'));
+      if (!origen || !navigator.clipboard) return;
+      var original = boton.textContent;
+      var indice = document.documentElement.getAttribute('data-lang') === 'es' ? 1 : 0;
+      navigator.clipboard.writeText(origen.textContent.trim()).then(function () {
+        boton.textContent = boton.getAttribute('data-ok').split(' / ')[indice];
+        setTimeout(function () { boton.textContent = original; }, 1500);
+      }, function () { /* sin permiso: no pasa nada */ });
+    });
+  });
+
   // Filtros de la lista: por estado y por categoría (se combinan)
   var tarjetas = document.querySelectorAll('.propuesta');
   var botonesFiltro = document.querySelectorAll('.filtro');

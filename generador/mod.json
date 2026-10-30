@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "estado": "pre-release",
+  "estado_es": "pre-lanzamiento",
+  "fecha_en": "30 Oct 2026",
+  "fecha_es": "30/10/2026",
+  "fichero": "GPW_Evolution_98_v0.1.zip",
+  "tamano": "11.9 MB",
+  "entradas": 349,
+  "sha256": "a431a88fb02e8d62a28088abbec6836f5e11481fcadf07d94105c6add2caca3a",
+  "url_descarga": "https://github.com/fermanpre/gpw-evolution-98/releases/download/v0.1/GPW_Evolution_98_v0.1.zip",
+  "url_release": "https://github.com/fermanpre/gpw-evolution-98/releases/tag/v0.1",
+  "url_dxwnd": "https://sourceforge.net/projects/dxwnd/files/",
+  "readme": "descargas/README_EVOLUTION_98.txt",
+  "creditos": "descargas/CREDITS.txt",
+  "perfil_dxwnd": "descargas/GPW_Evolution_98.dxw",
+  "contacto": [
+    ["Email", "<a href=\"mailto:fmanpre@gmail.com\">fmanpre@gmail.com</a>"],
+    ["GitHub", "<a href=\"https://github.com/fermanpre\">github.com/fermanpre</a>"],
+    ["Forum", "<a href=\"https://gpmplanet.proboards.com/thread/239/bugs-grand-prix-world-dislike\">GPM Planet, bugs thread</a>"],
+    ["Discord", "<a href=\"https://discord.gg/qz7SYyx\">GPM Planet Discord</a>"],
+    ["LinkedIn", "<a href=\"https://www.linkedin.com/in/fernandomanzanarespreciado/\">Fernando Manzanares Preciado</a>"],
+    ["Proposals", "<a href=\"index.html\">GPW Evolution &rsquo;98 proposals</a>"]
+  ]
+}

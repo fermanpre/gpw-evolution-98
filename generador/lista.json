@@ -272,6 +272,227 @@
         "en": "Not changed yet. Its effect on lap time and on failures still has to be measured, to see whether it deserves more weight.",
         "es": "Sin cambios por ahora. Falta medir su efecto en el tiempo por vuelta y en las averías, para ver si merece más peso."
       }
+    },
+    {
+      "numero": 14,
+      "categoria": "market",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Make driver signing and chief signing checks tougher",
+        "es": "Make driver signing and chief signing checks tougher"
+      },
+      "pide": {
+        "en": "There are already checks in place for when a team tries to sign a driver or department chief and the team isn't competitive (say, their estimated budget is low, WCC position is bad).\n\nHowever, these checks operate on random chance, and can be bypassed by asking the next round (or save scumming, that too). Which is how Minardi ends with Hakkinen and Adrian Newey. Would be better if those checks had a much much bigger chance of triggering. Like, I don't mind the \"Villeneuve goes to Tyrrell\" type news, but I mind them when it happens TOO often (aka all of year 1)",
+        "es": "There are already checks in place for when a team tries to sign a driver or department chief and the team isn't competitive (say, their estimated budget is low, WCC position is bad).\n\nHowever, these checks operate on random chance, and can be bypassed by asking the next round (or save scumming, that too). Which is how Minardi ends with Hakkinen and Adrian Newey. Would be better if those checks had a much much bigger chance of triggering. Like, I don't mind the \"Villeneuve goes to Tyrrell\" type news, but I mind them when it happens TOO often (aka all of year 1)"
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 15,
+      "categoria": "market",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Remove Sponsor royalty %",
+        "es": "Remove Sponsor royalty %"
+      },
+      "pide": {
+        "en": "Remove Sponsor royalty % contract for commercial director OR change it so that it reflects the skill (5 bar comm director asks for 5% max, 2 bar asks for 2% max).",
+        "es": "Remove Sponsor royalty % contract for commercial director OR change it so that it reflects the skill (5 bar comm director asks for 5% max, 2 bar asks for 2% max)."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 16,
+      "categoria": "ai",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Mejor uso de las \"Driver Orders\" por los pilotos de otros equipos.",
+        "es": "Mejor uso de las \"Driver Orders\" por los pilotos de otros equipos."
+      },
+      "pide": {
+        "en": "Actualmente, todos los pilotos de otros equipos generan sus \"Driver Orders\" de forma aleatoria. Esto provoca, por un lado, que no alcancen el nivel de rendimiento que pudieran obtener, y por otro que sufran más fallos por fiabilidad que el jugador. \n\nMi recomendación sería alterar la generación de las \"Driver Orders\" para que tuvieran reglas que seguir, y tratar de usar el máximo posible, más cierta variación dependiendo de estrategias y condición de carrera. Una idea general sería la siguiente:\n\nAcceleration: Máximo posible que permita que Clutch, Gearbox y Throttle lleguen a final de carrera. Reducir si se desea menor consumo y desgaste de neumáticos\nBraking: Máximo posible para que Brake, Clutch y Gearbox lleguen a final de carrera. Usar 1 si no se está atacando o defendiendo (reduce desgaste de neumáticos)\nTop Speed: Máximo Engine Rigidity + 1\nKerb Use: Máximo que permita que Driver Stamina, Gearbox y Suspension lleguen a final de Carrera\nOff Racing Line: Máximo que permita que Suspension llegue a final de carrera\nLine Defence: Aleatorio, tendiendo a Máximo (no afecta fiabilidad, solo posibilidades de incidente si uno de los pilotos usa Do-or-Die)\nOvertake: Máximo que permita que Hydraulics llegue a final de carrera, tender a 1 si no se está atacando. Bajar Overtake - Backmarkers preferiblemente.",
+        "es": "Actualmente, todos los pilotos de otros equipos generan sus \"Driver Orders\" de forma aleatoria. Esto provoca, por un lado, que no alcancen el nivel de rendimiento que pudieran obtener, y por otro que sufran más fallos por fiabilidad que el jugador. \n\nMi recomendación sería alterar la generación de las \"Driver Orders\" para que tuvieran reglas que seguir, y tratar de usar el máximo posible, más cierta variación dependiendo de estrategias y condición de carrera. Una idea general sería la siguiente:\n\nAcceleration: Máximo posible que permita que Clutch, Gearbox y Throttle lleguen a final de carrera. Reducir si se desea menor consumo y desgaste de neumáticos\nBraking: Máximo posible para que Brake, Clutch y Gearbox lleguen a final de carrera. Usar 1 si no se está atacando o defendiendo (reduce desgaste de neumáticos)\nTop Speed: Máximo Engine Rigidity + 1\nKerb Use: Máximo que permita que Driver Stamina, Gearbox y Suspension lleguen a final de Carrera\nOff Racing Line: Máximo que permita que Suspension llegue a final de carrera\nLine Defence: Aleatorio, tendiendo a Máximo (no afecta fiabilidad, solo posibilidades de incidente si uno de los pilotos usa Do-or-Die)\nOvertake: Máximo que permita que Hydraulics llegue a final de carrera, tender a 1 si no se está atacando. Bajar Overtake - Backmarkers preferiblemente."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 17,
+      "categoria": "other",
+      "estado": "proposed",
+      "titulo": {
+        "en": "sub mods",
+        "es": "sub mods"
+      },
+      "pide": {
+        "en": "Once a semi-working version of 1998 is implemented, ask the AI to make sub mods for other years (i'd love the 2001-adapted version).\nAnd, if it will ever be possible to easily build new tracks, make a sub mod for indycar, with its own drivers and circuits",
+        "es": "Once a semi-working version of 1998 is implemented, ask the AI to make sub mods for other years (i'd love the 2001-adapted version).\nAnd, if it will ever be possible to easily build new tracks, make a sub mod for indycar, with its own drivers and circuits"
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 18,
+      "categoria": "market",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Reducir el efecto de Morale sobre el esfuerzo de los departamentos",
+        "es": "Reducir el efecto de Morale sobre el esfuerzo de los departamentos"
+      },
+      "pide": {
+        "en": "Cada departamento tiene tiene una medida de esfuerzo que viene basada en el valor de Morale asignado. Sus efectos son de modificar el esfuerzo por 60, 80, 100, 110 y 120%. Los valores de Morale 4 y 5 hacen que sea muy fácil mantener un equipo competitivo ya que, entre otros, permiten construir un mayor número de Spares para mantener a los autos en mejor condición, hacer Testing mucho más rápido y firmar Sponsors mucho más rápido. También permite ahorrar mucho dinero ya que se puede firmar menos personal, y personal menor que es más barato.\n\nSugiero reducir el valor proporcionado por Morale 4 y 5 a 100% (no aumenta esfuerzo) o.a valores mínimos, como 102.5 y 105%, para que aún exista calor en formar mejor personal.",
+        "es": "Cada departamento tiene tiene una medida de esfuerzo que viene basada en el valor de Morale asignado. Sus efectos son de modificar el esfuerzo por 60, 80, 100, 110 y 120%. Los valores de Morale 4 y 5 hacen que sea muy fácil mantener un equipo competitivo ya que, entre otros, permiten construir un mayor número de Spares para mantener a los autos en mejor condición, hacer Testing mucho más rápido y firmar Sponsors mucho más rápido. También permite ahorrar mucho dinero ya que se puede firmar menos personal, y personal menor que es más barato.\n\nSugiero reducir el valor proporcionado por Morale 4 y 5 a 100% (no aumenta esfuerzo) o.a valores mínimos, como 102.5 y 105%, para que aún exista calor en formar mejor personal."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 19,
+      "categoria": "car",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Bugs en Diseño",
+        "es": "Bugs en Diseño"
+      },
+      "pide": {
+        "en": "Aquí una lista de bugs varios detectados en la sección de Diseño (Design)\n* Al completar un componente de Tecnología, el contador de progreso no se reinicia. Esto causa que, si se empieza a diseñar una nueva pieza está esté terminada en la ronda siguiente. El contador de progreso se reinicia de forma correcta si se inicia y luego se cancela la pieza. Lo mismo posiblemente ocurra con las Driving Aids.\n* Si las regulaciones de la FIA son favorables para el equipo, estos ganan puntos de progreso en el diseño del nuevo chassis. Sin embargo, al iniciar el diseño del nuevo chassis, estos puntos desaparecen.\n* POSIBLEMENTE el edificio CAD, el encargado de acelerar la fase 1 de diseño (Design) no tiene ningún efecto. Una revisión de código me indico que no tiene efecto. \n* Las fases que llevan más tiempo para el diseño son las fases 1 (Design), 4 (Wind Tunnel), 3 (Model Design) y 2 (CFD). Sin embargo, la efectividad de una mejora o nuevo chassis depende de las fases 1 (40%), 2 (30%), 3 (20%) y 4 (10%). La fase de Wind Tunnel es fácilmente skippeable usando Research, y apenas tiene efecto sobre el diseño. Recomiendo modificar los pesos de las fases de forma que el peso relativo sobre el diseño coincida con la dificultad de la fase.\n* Debido a como estan hechas las tablas, el Rendimiento 5 tiene el mismo efecto que Rendimiento 4 sobre el frío del auto.",
+        "es": "Aquí una lista de bugs varios detectados en la sección de Diseño (Design)\n* Al completar un componente de Tecnología, el contador de progreso no se reinicia. Esto causa que, si se empieza a diseñar una nueva pieza está esté terminada en la ronda siguiente. El contador de progreso se reinicia de forma correcta si se inicia y luego se cancela la pieza. Lo mismo posiblemente ocurra con las Driving Aids.\n* Si las regulaciones de la FIA son favorables para el equipo, estos ganan puntos de progreso en el diseño del nuevo chassis. Sin embargo, al iniciar el diseño del nuevo chassis, estos puntos desaparecen.\n* POSIBLEMENTE el edificio CAD, el encargado de acelerar la fase 1 de diseño (Design) no tiene ningún efecto. Una revisión de código me indico que no tiene efecto. \n* Las fases que llevan más tiempo para el diseño son las fases 1 (Design), 4 (Wind Tunnel), 3 (Model Design) y 2 (CFD). Sin embargo, la efectividad de una mejora o nuevo chassis depende de las fases 1 (40%), 2 (30%), 3 (20%) y 4 (10%). La fase de Wind Tunnel es fácilmente skippeable usando Research, y apenas tiene efecto sobre el diseño. Recomiendo modificar los pesos de las fases de forma que el peso relativo sobre el diseño coincida con la dificultad de la fase.\n* Debido a como estan hechas las tablas, el Rendimiento 5 tiene el mismo efecto que Rendimiento 4 sobre el frío del auto."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 20,
+      "categoria": "market",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Bugs en Suppliers",
+        "es": "Bugs en Suppliers"
+      },
+      "pide": {
+        "en": "Acá una lista de bugs o comportamiento mejorable en cuanto a Proveedores\n* El parámetro Reliability de motores no tiene ningún efecto, no afecta la vida del motor ni su tasa de desgaste\n* Debido a como están configuradas las tablas, el parámetros Grip de neumáticos pueden tener efectos negativos. Grip reduce errores, aumenta la tasa de consumo de combustible y aumenta el frío del auto hasta 5. De 6 en adelante, no aumenta más el grip, por lo que potencialmente un neumatico de grip 5 es más rápido que uno de grip 10 debido a menor consumo de combustible.\n* Los equipos buscan el Supplier con mayor valor de R&D primero.\n* Los equipos con contrato Works no usan la opción de diseñar motores, combustible o neumáticos. Deberían hacerlo en base a la habilidad de su Chief Mechanic (Chief Mechanic nivel 5 = mejoras cada 1 o 2 carreras, nivel 4 cada 2 o 3, y así)\n* Darle a los equipos un proveedor preferencial, es decir Ferrari busca firmar motores Ferrari. Mercedes busca firmar motores Mercedes. Toyota busca firmar motores Toyota.\n* Si un proveedor no es firmado por ningún equipo, añadir la probabilidad de que estos bajen su nivel de Cash. Si un proveedor tiene Cash 1 y no es firmado, añadir la posibilidad de que estos dejen la F1.\n* Si un proveedor ve buenos resultados, que exista la posibilidad de que aumenten su valor de Cash y/o R&D.\n* Aumentar las probabilidades de que proveedores entren a la F1, sobretodo si otros proveedores quieren salir\n\nY dos mejoras y un bug que aplica más a Sponsors en general, no solo a Suppliers.\n* Si se tiene Hospitality, VIP 3 es un patrocinador nuevo, y se tiene 0% en VIP 3 (y potencialmente al menos 1% en VIP 1), el patrocinador tendrá la ventaja de Hospitality en la ronda siguiente.\n* Aumentar la facilidad con la que se gana la ventaja de Hospitality, actualmente es imposible de obtener sin el bug previamente mencionado.\n* Permitir que los patrocinadores actuales, no solo los nuevos, tengan ventaja de Hospitality.",
+        "es": "Acá una lista de bugs o comportamiento mejorable en cuanto a Proveedores\n* El parámetro Reliability de motores no tiene ningún efecto, no afecta la vida del motor ni su tasa de desgaste\n* Debido a como están configuradas las tablas, el parámetros Grip de neumáticos pueden tener efectos negativos. Grip reduce errores, aumenta la tasa de consumo de combustible y aumenta el frío del auto hasta 5. De 6 en adelante, no aumenta más el grip, por lo que potencialmente un neumatico de grip 5 es más rápido que uno de grip 10 debido a menor consumo de combustible.\n* Los equipos buscan el Supplier con mayor valor de R&D primero.\n* Los equipos con contrato Works no usan la opción de diseñar motores, combustible o neumáticos. Deberían hacerlo en base a la habilidad de su Chief Mechanic (Chief Mechanic nivel 5 = mejoras cada 1 o 2 carreras, nivel 4 cada 2 o 3, y así)\n* Darle a los equipos un proveedor preferencial, es decir Ferrari busca firmar motores Ferrari. Mercedes busca firmar motores Mercedes. Toyota busca firmar motores Toyota.\n* Si un proveedor no es firmado por ningún equipo, añadir la probabilidad de que estos bajen su nivel de Cash. Si un proveedor tiene Cash 1 y no es firmado, añadir la posibilidad de que estos dejen la F1.\n* Si un proveedor ve buenos resultados, que exista la posibilidad de que aumenten su valor de Cash y/o R&D.\n* Aumentar las probabilidades de que proveedores entren a la F1, sobretodo si otros proveedores quieren salir\n\nY dos mejoras y un bug que aplica más a Sponsors en general, no solo a Suppliers.\n* Si se tiene Hospitality, VIP 3 es un patrocinador nuevo, y se tiene 0% en VIP 3 (y potencialmente al menos 1% en VIP 1), el patrocinador tendrá la ventaja de Hospitality en la ronda siguiente.\n* Aumentar la facilidad con la que se gana la ventaja de Hospitality, actualmente es imposible de obtener sin el bug previamente mencionado.\n* Permitir que los patrocinadores actuales, no solo los nuevos, tengan ventaja de Hospitality."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 21,
+      "categoria": "drivers",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Statistics for No -F1 drivers",
+        "es": "Statistics for No -F1 drivers"
+      },
+      "pide": {
+        "en": "In mods, some unused drivers can be Verstappen/Zanardi etc\n\nWould be good to be able to add historical stats for them",
+        "es": "In mods, some unused drivers can be Verstappen/Zanardi etc\n\nWould be good to be able to add historical stats for them"
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 22,
+      "categoria": "circuits",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Up to 20 races",
+        "es": "Up to 20 races"
+      },
+      "pide": {
+        "en": "Explore the feasibility of extending the calendar (includes adding new tracks)",
+        "es": "Explore the feasibility of extending the calendar (includes adding new tracks)"
+      },
+      "hoy": {
+        "en": "Not looked at yet. The game ships with 16 circuits.",
+        "es": "Sin revisar todavía. El juego trae 16 circuitos."
+      }
+    },
+    {
+      "numero": 23,
+      "categoria": "drivers",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Test Drivers develop",
+        "es": "Test Drivers develop"
+      },
+      "pide": {
+        "en": "Young test drivers (say under 25) should have the ability for a random attribute to increase, somehow tied to the amount of testing they do.\n\nIE, 500km + it triggers",
+        "es": "Young test drivers (say under 25) should have the ability for a random attribute to increase, somehow tied to the amount of testing they do.\n\nIE, 500km + it triggers"
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 24,
+      "categoria": "car",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Reparar Wear y Damage usa la habilidad del personal Comercial",
+        "es": "Reparar Wear y Damage usa la habilidad del personal Comercial"
+      },
+      "pide": {
+        "en": "Las Time Units que el juego usar para la reparación de Wear y Damage causado por pruebas y carreras depende del personal Comercial, no del personal Mecánico.",
+        "es": "Las Time Units que el juego usar para la reparación de Wear y Damage causado por pruebas y carreras depende del personal Comercial, no del personal Mecánico."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 25,
+      "categoria": "other",
+      "estado": "proposed",
+      "titulo": {
+        "en": "More team personnel",
+        "es": "More team personnel"
+      },
+      "pide": {
+        "en": "adding 2 race engineers to team personnel, so every team has 6 named employees",
+        "es": "adding 2 race engineers to team personnel, so every team has 6 named employees"
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
+    },
+    {
+      "numero": 26,
+      "categoria": "drivers",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Driver Age",
+        "es": "Driver Age"
+      },
+      "pide": {
+        "en": "Reduce tendency of AI to sign drivers over 38\n\nId prefer default retirement at 40 but this feels like a good compromise",
+        "es": "Reduce tendency of AI to sign drivers over 38\n\nId prefer default retirement at 40 but this feels like a good compromise"
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
     }
   ]
 }

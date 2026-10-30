@@ -28,9 +28,14 @@ OPCION_ALIAS = "With my forum or Discord alias / Con mi alias del foro o de Disc
 OPCION_ANONIMO = "Anonymous / Anónimo"
 
 
+def con_saltos(cadena):
+    """Escapa el texto y convierte sus saltos de línea en <br>, para respetar los párrafos y las listas de las propuestas literales."""
+    return html.escape(cadena).replace("\r\n", "\n").replace("\n", "<br>")
+
+
 def texto(ingles, espanol):
     """Un texto en línea con las dos lenguas; el CSS muestra solo la elegida."""
-    return '<span class="i18n-en">%s</span><span class="i18n-es">%s</span>' % (html.escape(ingles), html.escape(espanol))
+    return '<span class="i18n-en">%s</span><span class="i18n-es">%s</span>' % (con_saltos(ingles), con_saltos(espanol))
 
 
 def bloque(ingles, espanol):

@@ -129,6 +129,20 @@ def contar_apoyos():
     return apoyos
 
 
+def etiqueta_idioma_original(propuesta):
+    """Marca con el idioma en que se escribió la propuesta; en la otra lengua de la página avisa de que el texto es una traducción."""
+    original = propuesta.get("idioma_original")
+    if original not in ("en", "es"):
+        return ""
+    if original == "en":
+        en = "Original: English"
+        es = "Original: inglés · traducido"
+    else:
+        en = "Original: Spanish · translated"
+        es = "Original: español"
+    return ' <span class="idioma-original">%s</span>' % texto(en, es)
+
+
 def generar_lista(datos, apoyos):
     categorias = datos["categorias"]
     estados = datos["estados"]
@@ -167,8 +181,9 @@ def generar_lista(datos, apoyos):
         estado = estados[propuesta["estado"]]
         categoria = categorias[propuesta["categoria"]]
         partes.append('<article class="propuesta" id="p%d" data-estado="%s" data-categoria="%s">\n' % (numero, propuesta["estado"], propuesta["categoria"]))
-        partes.append('  <div class="cabecera-propuesta"><span class="numero">%s</span> <span class="estado %s">%s</span> <span class="categoria">· %s</span></div>\n' % (
-            texto("No. %d" % numero, "N.º %d" % numero), propuesta["estado"], texto(estado["en"], estado["es"]), texto(categoria["en"], categoria["es"])))
+        partes.append('  <div class="cabecera-propuesta"><span class="numero">%s</span> <span class="estado %s">%s</span> <span class="categoria">· %s</span>%s</div>\n' % (
+            texto("No. %d" % numero, "N.º %d" % numero), propuesta["estado"], texto(estado["en"], estado["es"]), texto(categoria["en"], categoria["es"]),
+            etiqueta_idioma_original(propuesta)))
         partes.append("  <h3>%s</h3>\n" % texto(propuesta["titulo"]["en"], propuesta["titulo"]["es"]))
         partes.append("  <ul>\n")
         partes.append('    <li><span class="etiqueta-detalle">%s</span> %s</li>\n' % (texto("What it asks:", "Qué pide:"), texto(propuesta["pide"]["en"], propuesta["pide"]["es"])))

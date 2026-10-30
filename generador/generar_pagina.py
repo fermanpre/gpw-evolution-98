@@ -8,6 +8,7 @@ import csv
 import html
 import json
 import os
+import re
 import shutil
 import sys
 
@@ -271,13 +272,13 @@ def generar_formulario(datos):
     return "".join(partes)
 
 
+def texto_html(ingles, espanol):
+    return '<span class="i18n-en">%s</span><span class="i18n-es">%s</span>' % (ingles, espanol)
+
+
 def bloque_html(ingles, espanol):
     """Como bloque(), pero el texto ya es HTML de confianza (lleva enlaces propios); no se escapa."""
     return '<span class="i18n-en bloque">%s</span><span class="i18n-es bloque">%s</span>' % (ingles, espanol)
-
-
-def texto_html(ingles, espanol):
-    return '<span class="i18n-en">%s</span><span class="i18n-es">%s</span>' % (ingles, espanol)
 
 
 def cargar_datos_mod():
@@ -285,230 +286,95 @@ def cargar_datos_mod():
         return json.load(fichero)
 
 
-# Piezas gráficas: réplicas en HTML y SVG, no capturas. Los datos son de ejemplo.
-FILAS_TABLERO = [
-    # posición, piloto, gap, int, neumático (D seco, I intermedio, W lluvia)
-    ("1", "M. Hakkinen", "", "", "D"),
-    ("2", "D. Coulthard", "+4.812", "4.812", "D"),
-    ("3", "M. Schumacher", "+11.340", "6.528", "D"),
-    ("4", "E. Irvine", "+19.077", "7.737", "D"),
-    ("5", "J. Villeneuve", "+26.351", "7.274", "I"),
-    ("6", "H. Frentzen", "+31.905", "5.554", "I"),
-    ("7", "G. Fisichella", "+49.220", "17.315", "D"),
-    ("8", "A. Wurz", "+1L", "9.804", "D"),
-]
-FILAS_PARADAS = [
-    ("M. Hakkinen", "L22", "27.6s", "L48", "26.9s", "", ""),
-    ("D. Coulthard", "L21", "28.1s", "L47", "27.3s", "", ""),
-    ("M. Schumacher", "L18", "26.4s", "L38", "27.0s", "L55", "26.8s"),
-    ("E. Irvine", "L23", "29.5s", "", "", "", ""),
-]
+def enlazar(texto_plano):
+    """Escapa el texto y convierte las direcciones http(s) en enlaces."""
+    escapado = html.escape(texto_plano)
+    return re.sub(r"(https?://[^\s<]+?)([.,;)]*(?:\s|$))", r'<a href="\1">\1</a>\2', escapado)
 
 
-def tablero_html():
-    filas = []
-    for posicion, piloto, hueco, intervalo, neumatico in FILAS_TABLERO:
-        filas.append('<tr><td class="c-pos">%s</td><td class="c-piloto">%s</td><td class="c-num">%s</td><td class="c-num">%s</td>'
-                     '<td class="c-ty ty-%s">%s</td></tr>' % (posicion, piloto, hueco or "&ndash;", intervalo or "&ndash;", neumatico, neumatico))
-    paradas = []
-    for piloto, v1, t1, v2, t2, v3, t3 in FILAS_PARADAS:
-        celdas = ""
-        for vuelta, tiempo in ((v1, t1), (v2, t2), (v3, t3)):
-            celdas += '<td class="c-num">%s</td>' % (("%s&nbsp;&nbsp;%s" % (vuelta, tiempo)) if vuelta else "&ndash;")
-        paradas.append('<tr><td class="c-piloto">%s</td>%s</tr>' % (piloto, celdas))
-    return """
-    <figure class="tablero" aria-labelledby="pie-tablero">
-      <div class="tablero-paneles">
-        <table class="panel-juego" aria-label="Race Order">
-          <caption>Race Order</caption>
-          <thead><tr><th scope="col">Pos</th><th scope="col">Driver</th><th scope="col">Gap</th><th scope="col">Int</th><th scope="col">Ty</th></tr></thead>
-          <tbody>%(filas)s</tbody>
-        </table>
-        <table class="panel-juego" aria-label="Pit Stops">
-          <caption>Pit Stops</caption>
-          <thead><tr><th scope="col">Driver</th><th scope="col">Pit 1</th><th scope="col">Pit 2</th><th scope="col">Pit 3</th></tr></thead>
-          <tbody>%(paradas)s</tbody>
-        </table>
-      </div>
-      <figcaption id="pie-tablero">%(pie)s</figcaption>
-    </figure>
-""" % {"filas": "".join(filas), "paradas": "".join(paradas),
-       "pie": texto("Race Order with the new Gap, Int and tyre (Ty) columns, and the Pit Stops panel. Recreated in HTML with example data; not a screenshot.",
-                    "Race Order con las columnas nuevas Gap, Int y neumático (Ty), y el panel Pit Stops. Recreado en HTML con datos de ejemplo; no es una captura.")}
+def readme_a_html(ruta_readme):
+    """Convierte las primeras secciones del README (hasta antes de «5. WHAT CHANGED», o sea sin el changelog) en HTML sencillo.
+    Cada párrafo del README está partido en líneas; se unen las líneas de continuación (más sangradas que la primera)."""
+    with open(ruta_readme, encoding="utf-8") as fichero:
+        lineas = fichero.read().split("\n")
+    limite = next(i for i, linea in enumerate(lineas) if linea.startswith("5. WHAT CHANGED"))
+    lineas = lineas[:limite]
 
+    # Se descarta el título (los dos primeros renglones) y el índice de contenidos
+    indice_contenido = next(i for i, linea in enumerate(lineas) if linea.strip() == "CONTENTS")
+    indice_primera_seccion = next(i for i, linea in enumerate(lineas) if re.match(r"^1\. ", linea))
+    introduccion = lineas[2:indice_contenido]
+    cuerpo = lineas[indice_primera_seccion:]
 
-def mapa_svg():
-    return """
-    <figure class="mapa">
-      <svg viewBox="0 0 420 230" role="img" aria-labelledby="mapa-t mapa-d">
-        <title id="mapa-t">Safety Car on the circuit map</title>
-        <desc id="mapa-d">A schematic circuit with a pit lane along the bottom straight. Six car circles are bunched behind a larger grey circle marked SC.</desc>
-        <path class="m-pista" d="M60 170 L60 70 Q60 38 92 38 L214 38 Q246 38 252 62 Q258 84 286 88 L336 94 Q372 98 372 130 Q372 170 336 170 Z"/>
-        <path class="m-boxes" d="M96 192 L330 192"/>
-        <path class="m-enlace" d="M72 170 L96 192 M318 192 L336 170"/>
-        <circle class="m-coche" cx="132" cy="38" r="7"/><circle class="m-coche" cx="152" cy="38" r="7"/>
-        <circle class="m-coche" cx="172" cy="38" r="7"/><circle class="m-coche" cx="192" cy="38" r="7"/>
-        <circle class="m-coche" cx="212" cy="38" r="7"/><circle class="m-coche" cx="232" cy="41" r="7"/>
-        <circle class="m-sc" cx="262" cy="70" r="11"/>
-        <text class="m-sc-txt" x="262" y="73.5" text-anchor="middle">SC</text>
-        <text class="m-etiqueta" x="96" y="214">pit lane</text>
-      </svg>
-      <figcaption>%s</figcaption>
-    </figure>
-""" % texto("While the Safety Car is out the field bunches up behind it. It waits in the pit lane before it comes out. Schematic: not a real circuit.",
-            "Con el Safety Car en pista, el pelotón se junta detrás. Espera en el carril de boxes antes de salir. Esquema: no es un circuito real.")
+    partes = []
 
+    def volcar_parrafos(bloque):
+        actual = []
+        for linea in bloque + [""]:
+            if linea.strip():
+                actual.append(linea.strip())
+            elif actual:
+                partes.append("<p>%s</p>" % enlazar(" ".join(actual)))
+                actual = []
 
-CAMBIOS = [
-    ("Safety Car", "Safety Car",
-     "It did not exist. A car stopped on the track changed nothing for the rest of the field.",
-     "No existía. Un coche parado en pista no cambiaba nada para el resto.",
-     "A ghost car leads the field, everyone bunches up behind it, and nobody overtakes. The AI reacts: it pits, saves fuel, changes worn tyres, or stays out.",
-     "Un coche fantasma lidera al pelotón, todos se juntan detrás y nadie adelanta. La IA reacciona: entra a boxes, ahorra combustible, cambia neumáticos gastados o se queda fuera."),
-    ("The AI's race", "La carrera de la IA",
-     "Pit plans were drawn at random: some stints were absurdly short, and every car left the grid with the same fuel.",
-     "Los planes de parada eran aleatorios: había tandas absurdamente cortas y todos los coches salían con el mismo combustible.",
-     "Plans depend on the tyre, fuel is loaded for the stint ahead, no stint is shorter than a fixed share of the race, and a change in the weather makes the AI think instead of panic.",
-     "Los planes dependen del neumático, el combustible se carga para la tanda siguiente, ninguna tanda baja de una parte fija de la carrera y un cambio de tiempo hace pensar a la IA en lugar de entrar en pánico."),
-    ("The pit lane", "El carril de boxes",
-     "Cars could leave in the wrong order, and they were not visible on the map while they were in there.",
-     "Los coches podían salir en el orden equivocado y no se veían en el mapa mientras estaban dentro.",
-     "The order is respected, the lane is drawn on all 16 circuit maps and the cars move along it.",
-     "Se respeta el orden, el carril está dibujado en los 16 mapas de circuito y los coches avanzan por él."),
-    ("Screens", "Pantallas",
-     "A race order without gaps, a Pit Stops panel with only the number of stops, and a speed selector from 50% to 150%.",
-     "Un orden de carrera sin diferencias, un panel Pit Stops con solo el número de paradas y un selector de velocidad de 50 % a 150 %.",
-     "Race Order shows Gap, Int and the tyre of every car. Pit Stops lists the lap and duration of each stop. The speed selector goes from 100% to 600%.",
-     "Race Order muestra Gap, Int y el neumático de cada coche. Pit Stops enseña la vuelta y la duración de cada parada. El selector de velocidad va de 100 % a 600 %."),
-    ("The paddock", "El paddock",
-     "Every contract expired on the same day, and nobody lost a seat during the season.",
-     "Todos los contratos vencían el mismo día y nadie perdía el puesto durante la temporada.",
-     "Contracts are staggered, free drivers lower their demands as the season runs out, and a driver who is not delivering can lose the seat to a better one.",
-     "Los contratos se escalonan, los pilotos libres rebajan sus exigencias al acabar la temporada y quien no rinde puede perder el asiento ante otro mejor."),
-    ("1998", "1998",
-     "A generic season.",
-     "Una temporada genérica.",
-     "1998 drivers, teams, sponsors, engines, chiefs and test drivers, 16 circuits with adjusted data, and the names in the game text to match.",
-     "Pilotos, equipos, patrocinadores, motores, jefes y probadores de 1998, 16 circuitos con datos ajustados y los nombres del texto del juego en consonancia."),
-    ("News and audio", "Noticias y audio",
-     "One wording per event.",
-     "Una sola redacción por evento.",
-     "Many events have several wordings, with their headlines, and the new ones (Safety Car, penalties, the two-hour limit, strategy) have their own. New Race Control audio.",
-     "Muchos eventos tienen varias redacciones con sus titulares, y los nuevos (Safety Car, sanciones, el límite de dos horas, estrategia) tienen los suyos. Audio nuevo de Dirección de Carrera."),
-]
+    volcar_parrafos(introduccion)
+
+    elementos = []          # lista de (tipo, texto) del cuerpo
+    for linea in cuerpo:
+        if re.match(r"^\d+\. [A-Z]", linea):
+            elementos.append(("h2", linea))
+        elif re.match(r"^  - ", linea):
+            elementos.append(("li", linea[4:].strip()))
+        elif re.match(r"^  \d+\. ", linea):
+            elementos.append(("pas", re.sub(r"^  \d+\. ", "", linea).strip()))
+        elif linea.strip() == "":
+            elementos.append(("blanco", ""))
+        elif linea.startswith("    ") and elementos and elementos[-1][0] in ("li", "pas", "p"):
+            tipo, previo = elementos[-1]
+            elementos[-1] = (tipo, previo + " " + linea.strip())
+        else:
+            elementos.append(("p", linea.strip()))
+
+    abierta = None
+    def cerrar():
+        nonlocal abierta
+        if abierta:
+            partes.append("</%s>" % abierta)
+            abierta = None
+
+    for tipo, contenido in elementos:
+        if tipo == "h2":
+            cerrar()
+            numero, titulo = contenido.split(". ", 1)
+            partes.append('<h2><span class="num">%s</span> %s</h2>' % (numero.zfill(2), html.escape(titulo.capitalize() if titulo.isupper() else titulo)))
+        elif tipo in ("li", "pas"):
+            etiqueta = "ul" if tipo == "li" else "ol"
+            if abierta != etiqueta:
+                cerrar()
+                partes.append("<%s>" % etiqueta)
+                abierta = etiqueta
+            partes.append("<li>%s</li>" % enlazar(contenido))
+        elif tipo == "p":
+            cerrar()
+            partes.append("<p>%s</p>" % enlazar(contenido))
+        # los renglones en blanco no generan nada: cada párrafo o lista ya queda separado por su propia etiqueta
+    cerrar()
+    return "\n".join(partes)
 
 
 def generar_mod(datos_mod):
     m = datos_mod
     partes = [cabecera_pagina("Download", "Descarga", "Download", "Descarga", "index.html", "Proposals", "Propuestas",
                               clase_body="pagina-mod", enlace_descarga=False)]
-    # Raíl izquierdo: ficha técnica e índice
-    partes.append('  <aside class="mod-rail">\n    <dl class="ficha">\n')
-    for rotulo_en, rotulo_es, valor in (
-            ("Version", "Versión", texto_html(m["version"] + " &middot; " + m["estado"], m["version"] + " &middot; " + m["estado_es"])),
-            ("Date", "Fecha", texto_html(m["fecha_en"], m["fecha_es"])),
-            ("Size", "Tamaño", html.escape(m["tamano"])),
-            ("Files", "Ficheros", str(m["entradas"])),
-            ("Needs", "Requiere", texto_html("the original game", "el juego original"))):
-        partes.append('      <div><dt>%s</dt><dd>%s</dd></div>\n' % (texto(rotulo_en, rotulo_es), valor))
-    partes.append('    </dl>\n    <nav class="indice" aria-label="%s"><ol>\n' % html.escape("Contents / Contenido"))
-    for ancla, en, es in (("descarga", "Download", "Descarga"), ("cambios", "What changes", "Qué cambia"), ("instalar", "Install", "Instalar"),
-                          ("antes", "Before you play", "Antes de jugar"), ("creditos", "Credits and contact", "Créditos y contacto")):
-        partes.append('      <li><a href="#%s">%s</a></li>\n' % (ancla, texto(en, es)))
-    partes.append("    </ol></nav>\n  </aside>\n")
-
-    partes.append('  <div class="mod-cuerpo">\n')
-    # Cabecera de la página
-    partes.append('    <header class="mod-titulo">\n      <h1>GPW Evolution &rsquo;98</h1>\n')
-    partes.append('      <p class="entradilla">%s</p>\n' % bloque(
-        "A mod for Grand Prix World that adds a Safety Car, makes the AI plan a race with some sense, and sets the game in the 1998 season. It keeps what makes GPW feel like GPW.",
-        "Un mod para Grand Prix World que añade un Safety Car, hace que la IA planifique la carrera con algo de sentido y sitúa el juego en la temporada 1998. Conserva lo que hace que GPW se sienta como GPW."))
-    partes.append('      <p class="estado-mod"><span class="marca-estado">%s</span> %s</p>\n    </header>\n' % (
-        texto("Pre-release", "Pre-lanzamiento"),
-        texto("Version 0.1. Most of it has been through real races, but expect rough edges.",
-              "Versión 0.1. La mayor parte ha pasado por carreras reales, pero habrá aristas.")))
-
-    # 01 Descarga
-    partes.append('    <section id="descarga">\n      <h2><span class="num">01</span> %s</h2>\n' % texto("Download", "Descarga"))
-    partes.append("""      <div class="descarga">
-        <a class="descarga-nombre" href="%(url)s">%(fichero)s</a>
-        <span class="descarga-meta">%(tamano)s</span>
-        <a class="boton-descarga" href="%(url)s">%(boton)s</a>
-      </div>
-      <p class="huella"><span class="rotulo-huella">SHA-256</span> <code id="huella-valor">%(sha)s</code>
-        <button type="button" class="copiar" data-copiar="huella-valor" data-ok="%(copiado)s">%(copiar)s</button></p>
-""" % {"url": html.escape(m["url_descarga"]), "fichero": html.escape(m["fichero"]), "tamano": html.escape(m["tamano"]),
-       "boton": texto("Download", "Descargar"), "sha": html.escape(m["sha256"]),
-       "copiar": texto("copy", "copiar"), "copiado": html.escape("copied / copiado")})
-    partes.append('      <ul class="recursos">\n')
-    partes.append('        <li><a href="%s">%s</a> %s</li>\n' % (html.escape(m["readme"]), "README_EVOLUTION_98.txt", texto("every change, what it was and what it is now", "cada cambio, cómo era y cómo es ahora")))
-    partes.append('        <li><a href="%s">%s</a> %s</li>\n' % (html.escape(m["creditos"]), "CREDITS.txt", texto("credits and licences", "créditos y licencias")))
-    partes.append('        <li><a href="%s">%s</a> %s</li>\n' % (html.escape(m["perfil_dxwnd"]), "GPW_Evolution_98.dxw", texto("DxWnd profile (also inside the zip)", "perfil de DxWnd (también dentro del zip)")))
-    partes.append('        <li><a href="%s">%s</a></li>\n      </ul>\n    </section>\n' % (html.escape(m["url_release"]), texto("Release page on GitHub", "Página de la release en GitHub")))
-
-    # Tablero y mapa
-    partes.append(tablero_html())
-
-    # 02 Qué cambia
-    partes.append('    <section id="cambios">\n      <h2><span class="num">02</span> %s</h2>\n' % texto("What changes", "Qué cambia"))
-    partes.append('      <p>%s</p>\n' % texto_html(
-        "The short version, area by area. The README lists all 65 changes in the same form: what the original did, and what this does now.",
-        "La versión corta, por áreas. El README lista los 65 cambios con la misma forma: qué hacía el original y qué hace ahora."))
-    partes.append(mapa_svg())
-    partes.append('      <div class="libro">\n')
-    for tema_en, tema_es, antes_en, antes_es, ahora_en, ahora_es in CAMBIOS:
-        partes.append('        <article class="cambio">\n          <h3>%s</h3>\n' % texto(tema_en, tema_es))
-        partes.append('          <p class="antes"><span class="rotulo">%s</span> %s</p>\n' % (texto("Was", "Antes"), texto(antes_en, antes_es)))
-        partes.append('          <p class="ahora"><span class="rotulo">%s</span> %s</p>\n        </article>\n' % (texto("Now", "Ahora"), texto(ahora_en, ahora_es)))
-    partes.append("      </div>\n    </section>\n")
-
-    # 03 Instalar
-    partes.append('    <section id="instalar">\n      <h2><span class="num">03</span> %s</h2>\n' % texto("Install", "Instalar"))
-    partes.append('      <ol class="pasos">\n')
-    for en, es in (
-            ("Install the original game into a new folder. Do not reuse an install that already has other mods. You do not need the 1.01 or 1.03 patches.",
-             "Instala el juego original en una carpeta nueva. No reutilices una instalación que ya tenga otros mods. No hacen falta los parches 1.01 ni 1.03."),
-            ("Extract the zip into that folder and accept every overwrite.",
-             "Extrae el zip en esa carpeta y acepta todas las sobrescrituras."),
-            ("Start gpw.exe, or the launcher you normally use.",
-             "Arranca gpw.exe, o el lanzador que uses normalmente."),
-            ("Start a new career. Saved games from other versions are not guaranteed to work.",
-             "Empieza una carrera nueva. No se garantiza que valgan las partidas guardadas de otras versiones.")):
-        partes.append("        <li>%s</li>\n" % texto(en, es))
-    partes.append("      </ol>\n")
-    partes.append('      <p>%s</p>\n' % texto_html(
-        'GPW does not run well on modern Windows by itself. I use <a href="%(dxwnd)s">DxWnd</a> in windowed mode: download it yourself (the latest build there, at the time of writing v2.06.16) and import the profile <a href="%(perfil)s">GPW_Evolution_98.dxw</a>, then right-click the entry, choose Modify and set the path to your gpw.exe. The path must not contain blank spaces. dgVoodoo2 also works as a DirectDraw wrapper.' % {"dxwnd": html.escape(m["url_dxwnd"]), "perfil": html.escape(m["perfil_dxwnd"])},
-        'GPW no funciona bien por sí solo en Windows modernos. Yo uso <a href="%(dxwnd)s">DxWnd</a> en ventana: descárgalo tú (la última compilación de esa página, en el momento de escribir esto la v2.06.16) e importa el perfil <a href="%(perfil)s">GPW_Evolution_98.dxw</a>; luego clic derecho en la entrada, Modificar y pon la ruta de tu gpw.exe. La ruta no puede llevar espacios. dgVoodoo2 también sirve como envoltorio de DirectDraw.' % {"dxwnd": html.escape(m["url_dxwnd"]), "perfil": html.escape(m["perfil_dxwnd"])}))
-    partes.append('      <p>%s</p>\n    </section>\n' % texto(
-        "To go back to the original, delete the folder and install the game again. The pack never touches anything outside the game folder.",
-        "Para volver al original, borra la carpeta e instala el juego de nuevo. El paquete no toca nada fuera de la carpeta del juego."))
-
-    # 04 Antes de jugar
-    partes.append('    <section id="antes">\n      <h2><span class="num">04</span> %s</h2>\n      <ul class="avisos">\n' % texto("Before you play", "Antes de jugar"))
-    for en, es in (
-            ("This is a pre-release. The Safety Car, the AI under it and the pit lane have been through several real races. The market changes, the new qualifying runs and the penalty process have been checked on a test bench, but not in many races.",
-             "Es un pre-lanzamiento. El Safety Car, la IA bajo él y el carril de boxes han pasado por varias carreras reales. Los cambios del mercado, las nuevas tandas de clasificación y el proceso de sanciones se han comprobado en banco de pruebas, pero en pocas carreras."),
-            ("Only the English texts are included. French and German are not up to date, so those languages keep the original game's texts.",
-             "Solo van los textos en inglés. El francés y el alemán no están al día, así que esos idiomas conservan los textos del juego original."),
-            ("The new audio was generated with a text-to-speech model licensed for non-commercial use only. Do not sell the pack or use it in anything commercial.",
-             "El audio nuevo se generó con un modelo de voz de uso solo no comercial. No vendas el paquete ni lo uses en nada comercial."),
-            ("The sound code leaks Windows event handles in very long sessions. Saving and restarting the game clears it.",
-             "El código de sonido pierde manejadores de eventos de Windows en sesiones muy largas. Guardar y reiniciar el juego lo limpia."),
-            ("The internal values (probabilities, times, weights) will change between versions. Do not rely on numbers copied from an older one.",
-             "Los valores internos (probabilidades, tiempos, pesos) cambiarán entre versiones. No te fíes de cifras copiadas de una anterior.")):
-        partes.append("        <li>%s</li>\n" % texto(en, es))
-    partes.append("      </ul>\n    </section>\n")
-
-    # 05 Créditos y contacto
-    partes.append('    <section id="creditos">\n      <h2><span class="num">05</span> %s</h2>\n' % texto("Credits and contact", "Créditos y contacto"))
-    partes.append('      <p>%s</p>\n' % texto_html(
-        'Unofficial fan modification of Grand Prix World, developed by Edward Grabowski Communications Limited for MicroProse. The 1998 graphics come from Simul810&rsquo;s 1998 mod, used with permission. The executable builds on Veedub&rsquo;s 1.03 patch and on my own unreleased base, edited with GPWEdit. Full credits and licences in <a href="%s">CREDITS.txt</a>.' % html.escape(m["creditos"]),
-        'Modificación no oficial de Grand Prix World, desarrollado por Edward Grabowski Communications Limited para MicroProse. Los gráficos de 1998 vienen del mod 1998 de Simul810, usados con permiso. El ejecutable se apoya en el parche 1.03 de Veedub y en mi propia base sin publicar, editada con GPWEdit. Créditos y licencias completos en <a href="%s">CREDITS.txt</a>.' % html.escape(m["creditos"])))
-    partes.append('      <p>%s</p>\n' % texto("Bugs, ideas and missing credits are welcome.", "Los fallos, las ideas y los créditos que falten son bienvenidos."))
-    partes.append('      <dl class="contacto">\n')
-    for rotulo, enlace in m["contacto"]:
-        partes.append('        <div><dt>%s</dt><dd>%s</dd></div>\n' % (html.escape(rotulo), enlace))
-    partes.append("      </dl>\n    </section>\n  </div>\n")
+    partes.append("  <h1>GPW Evolution &rsquo;98</h1>\n")
+    partes.append('  <p class="descarga-simple"><a href="%s">%s</a> (%s) &middot; %s</p>\n' % (
+        html.escape(m["url_descarga"]), html.escape(m["fichero"]), html.escape(m["tamano"]),
+        texto_html("version %s, %s" % (m["version"], m["estado"]), "versión %s, %s" % (m["version"], m["estado_es"]))))
+    partes.append('  <p class="huella-simple">SHA-256 <code>%s</code></p>\n' % html.escape(m["sha256"]))
+    partes.append('  <p class="recursos-simple"><a href="%s">README</a> &middot; <a href="%s">CREDITS</a> &middot; <a href="%s">DxWnd profile</a> &middot; <a href="%s">GitHub release</a></p>\n' % (
+        html.escape(m["readme"]), html.escape(m["creditos"]), html.escape(m["perfil_dxwnd"]), html.escape(m["url_release"])))
+    partes.append('  <div class="readme-simple">\n%s\n  </div>\n' % readme_a_html(os.path.join(CARPETA_PAQUETE, "README_EVOLUTION_98.txt")))
+    partes.append('  <p class="recursos-simple">The full list of changes, what the original game did and what this does now, is in the <a href="%s">README</a>.</p>\n' % html.escape(m["readme"]))
     partes.append(pie_pagina())
     return "".join(partes)
 

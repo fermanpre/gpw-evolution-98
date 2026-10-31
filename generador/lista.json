@@ -71,7 +71,7 @@
     {
       "numero": 1,
       "categoria": "interface",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Type the amount on the sliders, or make + jump to the maximum",
         "es": "Escribir la cantidad en las barras, o que «+» salte al máximo"
@@ -233,7 +233,7 @@
     {
       "numero": 10,
       "categoria": "drivers",
-      "estado": "partial",
+      "estado": "done",
       "titulo": {
         "en": "Drivers should weigh much more in pace",
         "es": "Los pilotos deberían pesar mucho más en el ritmo"
@@ -243,8 +243,8 @@
         "es": "En seco, los pilotos apenas marcan diferencias. Se propone que Speed, de 1 a 5, sume una diferencia de unos dos segundos de ritmo, con variación dentro de ese rango. Un piloto algo por debajo del mejor sería un 3 o un 4, no un 1."
       },
       "hoy": {
-        "en": "Partly done: the weights of Speed, Skill and the car were multiplied several times, so drivers matter more than in the original game. Whether to go further is still open.",
-        "es": "Hecha en parte: los pesos de Speed, Skill y del coche se han multiplicado varias veces, así que los pilotos importan más que en el juego original. Si conviene ir más lejos sigue abierto."
+        "en": "Done: the weights of Speed, Skill and the car were multiplied several times, so drivers matter more than in the original game.",
+        "es": "Hecha: los pesos de Speed, Skill y del coche se han multiplicado varias veces, así que los pilotos importan más que en el juego original."
       },
       "idioma_original": "en"
     },

@@ -233,7 +233,7 @@
     {
       "numero": 10,
       "categoria": "drivers",
-      "estado": "partial",
+      "estado": "done",
       "titulo": {
         "en": "Drivers should weigh much more in pace",
         "es": "Los pilotos deberían pesar mucho más en el ritmo"
@@ -243,8 +243,8 @@
         "es": "En seco, los pilotos apenas marcan diferencias. Se propone que Speed, de 1 a 5, sume una diferencia de unos dos segundos de ritmo, con variación dentro de ese rango. Un piloto algo por debajo del mejor sería un 3 o un 4, no un 1."
       },
       "hoy": {
-        "en": "Partly done: the weights of Speed, Skill and the car were multiplied several times, so drivers matter more than in the original game. Whether to go further is still open.",
-        "es": "Hecha en parte: los pesos de Speed, Skill y del coche se han multiplicado varias veces, así que los pilotos importan más que en el juego original. Si conviene ir más lejos sigue abierto."
+        "en": "Done: the weights of Speed, Skill and the car were multiplied several times, so drivers matter more than in the original game.",
+        "es": "Hecha: los pesos de Speed, Skill y del coche se han multiplicado varias veces, así que los pilotos importan más que en el juego original."
       },
       "idioma_original": "en"
     },
@@ -305,7 +305,7 @@
     {
       "numero": 14,
       "categoria": "market",
-      "estado": "proposed",
+      "estado": "partial",
       "titulo": {
         "en": "Make driver signing and chief signing checks tougher",
         "es": "Endurecer los controles de fichaje de pilotos y jefes de departamento"
@@ -315,8 +315,8 @@
         "es": "Ya existen controles para cuando un equipo intenta fichar a un piloto o a un jefe de departamento y el equipo no es competitivo (por ejemplo, su presupuesto estimado es bajo o su posición en el WCC es mala).\n\nSin embargo, estos controles funcionan por azar y se pueden eludir pidiendo en la ronda siguiente (o recargando la partida, también eso). Así es como Minardi acaba con Hakkinen y Adrian Newey. Sería mejor que esos controles tuvieran una probabilidad mucho, mucho mayor de saltar. Las noticias del tipo «Villeneuve se va a Tyrrell» no me molestan, pero sí cuando pasan DEMASIADO a menudo (es decir, durante todo el primer año)"
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "Partly covered: since 0.1 a team signs a driver only if his asked salary fits its estimated income, which keeps most stars away from poor teams. It does not look at the driver's level yet. Extending the same cap to department chiefs, with a final pass that fills empty seats, is being tested for 0.2.",
+        "es": "Cubierta en parte: desde la 0.1 un equipo ficha a un piloto solo si el sueldo que pide cabe en sus ingresos estimados, lo que mantiene a casi todas las estrellas lejos de los equipos pobres. Todavía no mira el nivel del piloto. Se está probando para la 0.2 aplicar el mismo tope a los jefes de departamento, con una pasada final que rellena las plazas vacías."
       },
       "idioma_original": "en"
     },

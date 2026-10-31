@@ -107,7 +107,7 @@
     {
       "numero": 3,
       "categoria": "market",
-      "estado": "proposed",
+      "estado": "partial",
       "titulo": {
         "en": "No test-driver deals that make no sense",
         "es": "Nada de fichajes de probador que no tienen sentido"
@@ -117,8 +117,8 @@
         "es": "Un piloto como Eddie Irvine no debería firmar de pronto como probador de un equipo como Sauber."
       },
       "hoy": {
-        "en": "Not addressed yet. The end-of-season market fills the test-driver slot with whoever is free. It still has to be checked whether any level or salary filter applies to that role.",
-        "es": "Todavía no se ha abordado. El mercado de fin de temporada rellena la plaza de probador con quien esté libre. Falta comprobar si algún filtro de nivel o de sueldo se aplica a ese puesto."
+        "en": "Partly covered: the test-driver slot already vetoes three top stars (Schumacher, Häkkinen and Coulthard) and pay drivers, and the salary cap by income applies to it. A driver like Irvine is not covered: there is no filter by level for that role yet.",
+        "es": "Cubierta en parte: la plaza de probador ya veta a tres grandes estrellas (Schumacher, Häkkinen y Coulthard) y a los pilotos de pago, y el tope de sueldo por ingresos también se aplica. Un piloto como Irvine no está cubierto: todavía no hay filtro por nivel para ese puesto."
       },
       "idioma_original": "en"
     },
@@ -233,7 +233,7 @@
     {
       "numero": 10,
       "categoria": "drivers",
-      "estado": "done",
+      "estado": "partial",
       "titulo": {
         "en": "Drivers should weigh much more in pace",
         "es": "Los pilotos deberían pesar mucho más en el ritmo"
@@ -243,8 +243,8 @@
         "es": "En seco, los pilotos apenas marcan diferencias. Se propone que Speed, de 1 a 5, sume una diferencia de unos dos segundos de ritmo, con variación dentro de ese rango. Un piloto algo por debajo del mejor sería un 3 o un 4, no un 1."
       },
       "hoy": {
-        "en": "Done: the weights of Speed, Skill and the car were multiplied several times, so drivers matter more than in the original game.",
-        "es": "Hecha: los pesos de Speed, Skill y del coche se han multiplicado varias veces, así que los pilotos importan más que en el juego original."
+        "en": "Partly done: the weights of Speed, Skill and the car were multiplied several times, so drivers matter more than in the original game. Whether to go further is still open.",
+        "es": "Hecha en parte: los pesos de Speed, Skill y del coche se han multiplicado varias veces, así que los pilotos importan más que en el juego original. Si conviene ir más lejos sigue abierto."
       },
       "idioma_original": "en"
     },

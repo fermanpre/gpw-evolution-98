@@ -519,6 +519,24 @@
         "es": "Sin revisar todavía."
       },
       "idioma_original": "en"
+    },
+    {
+      "numero": 27,
+      "categoria": "car",
+      "estado": "proposed",
+      "idioma_original": "es",
+      "titulo": {
+        "en": "Adjust the weather simulation in the race",
+        "es": "Ajustar la simulación de clima en carrera"
+      },
+      "pide": {
+        "en": "Currently the weather simulation in qualifying and in the race are handled differently. The qualifying one depends on the time in the session; the race one depends on the leader's lap.\n\nAdjust it so that in both cases it depends on the time in the session, and therefore it can't be predicted that the weather will change when the leader crosses the finish line, would improve the simulation.\n\nAdditionally, weather-related bugs:\n* Every problem related to wind speed, whether grip loss or the activation of problems such as \"High Pitch Sensitivity\", depends on the setup's Wind parameter, not on the wind speed. And because of how the tables are configured, using Wind parameters of 6, 8 or 10 makes it possible to avoid any grip loss caused by high wind speed or car problems. Parameters have to be modified, so that grip problems depend on wind speed, not on Wind.",
+        "es": "Actualmente la simulación de clima en calificación y carrera se manejan de forma distinta. La de calificación depende del tiempo en la sesión, la de carrera depende de la vuelta del líder.\n\nAjustarla para que en ambos casos dependa del tiempo en la sesión y por tanto no se pueda predecir que el clima cambiará cuando el líder cruza la línea de meta mejoraría la simulación.\n\nAdicionalmente, bug relacionados con clima:\n* Todo problema relacionado con la velocidad del viento, sea pérdida de grip o activación de problemas como \"High Pitch Sensitivity\" dependen del parámetro Wind del setup, no de la velocidad del viento. Y debido a como están configuradas las tablas, usar parámetros de Wind 6, 8 o 10 permiten evitar cualquier perdida de grip causada por alta velocidad del viento o problemas del auto. Hay que modificar parámetros, se forma que los problemas por grip dependan de la velocidad del viento, no de Wind."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      }
     }
   ]
 }

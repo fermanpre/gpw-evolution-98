@@ -42,6 +42,14 @@
       "en": "Proposed",
       "es": "Propuesta"
     },
+    "progress": {
+      "en": "In progress",
+      "es": "En curso"
+    },
+    "later": {
+      "en": "To see later",
+      "es": "A ver más adelante"
+    },
     "partial": {
       "en": "Partly done",
       "es": "Hecha en parte"
@@ -49,6 +57,14 @@
     "done": {
       "en": "Done",
       "es": "Hecha"
+    },
+    "unlikely": {
+      "en": "Unlikely",
+      "es": "Poco probable"
+    },
+    "rejected": {
+      "en": "Rejected",
+      "es": "Rechazada"
     }
   },
   "propuestas": [
@@ -307,7 +323,7 @@
     {
       "numero": 15,
       "categoria": "market",
-      "estado": "proposed",
+      "estado": "unlikely",
       "titulo": {
         "en": "Remove Sponsor royalty %",
         "es": "Quitar el % de royalties de patrocinio"
@@ -361,7 +377,7 @@
     {
       "numero": 18,
       "categoria": "market",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Reduce the effect of Morale on the departments' effort",
         "es": "Reducir el efecto de Morale sobre el esfuerzo de los departamentos"
@@ -469,7 +485,7 @@
     {
       "numero": 24,
       "categoria": "car",
-      "estado": "proposed",
+      "estado": "progress",
       "titulo": {
         "en": "Repairing Wear and Damage uses the Commercial staff's skill",
         "es": "Reparar Wear y Damage usa la habilidad del personal Comercial"
@@ -505,7 +521,7 @@
     {
       "numero": 26,
       "categoria": "drivers",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Driver Age",
         "es": "Edad de los pilotos"

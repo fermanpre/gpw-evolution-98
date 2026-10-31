@@ -190,3 +190,14 @@ footer.pie a { color: var(--text-secondary); }
 /* Idioma original de cada propuesta */
 .idioma-original { margin-left: auto; font-size: 11px; font-weight: 400; color: var(--text-muted); border: 1px solid var(--border); border-radius: 4px; padding: 0 6px; line-height: 18px; white-space: nowrap; }
 .idioma-original::before { content: "\2713\00a0"; }
+
+/* Estados añadidos el 31/10/2026: en curso, a ver más adelante, poco probable y rechazada */
+:root { --estado-curso: #6d3fc0; --estado-curso-fondo: rgba(109,63,192,0.12); --estado-luego: #0b6b78; --estado-luego-fondo: rgba(11,107,120,0.12); --estado-quiza: #8a4b00; --estado-quiza-fondo: rgba(138,75,0,0.12); --estado-no: #a32626; --estado-no-fondo: rgba(163,38,38,0.10); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --estado-curso: #b79cf0; --estado-curso-fondo: rgba(183,156,240,0.16); --estado-luego: #5fcfdc; --estado-luego-fondo: rgba(95,207,220,0.14); --estado-quiza: #f0a45a; --estado-quiza-fondo: rgba(240,164,90,0.14); --estado-no: #f08a8a; --estado-no-fondo: rgba(240,138,138,0.14); }
+}
+:root[data-theme="dark"] { --estado-curso: #b79cf0; --estado-curso-fondo: rgba(183,156,240,0.16); --estado-luego: #5fcfdc; --estado-luego-fondo: rgba(95,207,220,0.14); --estado-quiza: #f0a45a; --estado-quiza-fondo: rgba(240,164,90,0.14); --estado-no: #f08a8a; --estado-no-fondo: rgba(240,138,138,0.14); }
+.estado.progress { color: var(--estado-curso); background: var(--estado-curso-fondo); }
+.estado.later { color: var(--estado-luego); background: var(--estado-luego-fondo); }
+.estado.unlikely { color: var(--estado-quiza); background: var(--estado-quiza-fondo); }
+.estado.rejected { color: var(--estado-no); background: var(--estado-no-fondo); }

@@ -395,7 +395,7 @@
     {
       "numero": 19,
       "categoria": "car",
-      "estado": "proposed",
+      "estado": "progress",
       "titulo": {
         "en": "Bugs in Design",
         "es": "Bugs en Diseño"
@@ -405,8 +405,8 @@
         "es": "Aquí una lista de bugs varios detectados en la sección de Diseño (Design)\n* Al completar un componente de Tecnología, el contador de progreso no se reinicia. Esto causa que, si se empieza a diseñar una nueva pieza está esté terminada en la ronda siguiente. El contador de progreso se reinicia de forma correcta si se inicia y luego se cancela la pieza. Lo mismo posiblemente ocurra con las Driving Aids.\n* Si las regulaciones de la FIA son favorables para el equipo, estos ganan puntos de progreso en el diseño del nuevo chassis. Sin embargo, al iniciar el diseño del nuevo chassis, estos puntos desaparecen.\n* POSIBLEMENTE el edificio CAD, el encargado de acelerar la fase 1 de diseño (Design) no tiene ningún efecto. Una revisión de código me indico que no tiene efecto. \n* Las fases que llevan más tiempo para el diseño son las fases 1 (Design), 4 (Wind Tunnel), 3 (Model Design) y 2 (CFD). Sin embargo, la efectividad de una mejora o nuevo chassis depende de las fases 1 (40%), 2 (30%), 3 (20%) y 4 (10%). La fase de Wind Tunnel es fácilmente skippeable usando Research, y apenas tiene efecto sobre el diseño. Recomiendo modificar los pesos de las fases de forma que el peso relativo sobre el diseño coincida con la dificultad de la fase.\n* Debido a como estan hechas las tablas, el Rendimiento 5 tiene el mismo efecto que Rendimiento 4 sobre el frío del auto."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "In progress. Done in the 0.2 test build: the FIA points are no longer lost when you start the new chassis design; a completed Technology part or Driving Aid resets its progress counter; the CAD building now gives a bonus; the four design phases weigh 4, 1, 2 and 3 to follow how long each takes; and rating 5 of the suspension and of the reliability counters no longer repeats rating 4. Still to test in a race.",
+        "es": "En curso. Hecho en la versión de prueba 0.2: los puntos de la FIA ya no se pierden al iniciar el diseño del nuevo chasis; una pieza de Tecnología o una Driving Aid completada reinicia su contador de progreso; el edificio CAD ya da bono; las cuatro fases del diseño pesan 4, 1, 2 y 3 según lo que dura cada una; y el rating 5 de la suspensión y de los contadores de fiabilidad ya no repite el 4. Falta probarlo en carrera."
       },
       "idioma_original": "es"
     },
@@ -485,7 +485,7 @@
     {
       "numero": 24,
       "categoria": "car",
-      "estado": "progress",
+      "estado": "done",
       "titulo": {
         "en": "Repairing Wear and Damage uses the Commercial staff's skill",
         "es": "Reparar Wear y Damage usa la habilidad del personal Comercial"
@@ -495,8 +495,8 @@
         "es": "Las Time Units que el juego usar para la reparación de Wear y Damage causado por pruebas y carreras depende del personal Comercial, no del personal Mecánico."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "Done: the repair screen now uses the Mechanical staff's Time Units, not the Commercial staff's. It is in the 0.2 test build and has not been seen in a race yet.",
+        "es": "Hecha: la pantalla de reparación usa ahora las Time Units del personal Mecánico y no las del Comercial. Está en la versión de prueba 0.2 y todavía no se ha visto en una carrera."
       },
       "idioma_original": "es"
     },
@@ -553,6 +553,114 @@
         "en": "Not looked at yet.",
         "es": "Sin revisar todavía."
       }
+    },
+    {
+      "numero": 28,
+      "categoria": "race",
+      "estado": "proposed",
+      "titulo": {
+        "en": "AI wet weather strategy",
+        "es": "Estrategia de la IA con clima cambiante"
+      },
+      "pide": {
+        "en": "Now that W.W. skill and set up matter less, it has become even easier to beat the AI in the rain.\nHow about implementing a piece of code that says \"hey, it's raining, and the track has gotten wetter/less wet. Let's split strategies: the driver ahead on track pits for the tyres suitable to the new track dryness, and the other stays out as normal",
+        "es": "Ahora que la habilidad de lluvia (W.W.) y el reglaje pesan menos, es aún más fácil ganar a la IA en mojado.\n¿Y si se añade un código que diga: «oye, está lloviendo y la pista se ha mojado más o menos. Dividamos las estrategias: el piloto que va delante en pista entra a boxes por los neumáticos adecuados a la nueva humedad y el otro se queda fuera como siempre»?"
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
+    },
+    {
+      "numero": 29,
+      "categoria": "graphics",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Commercial sponsor page bug",
+        "es": "Error en la página de patrocinadores comerciales"
+      },
+      "pide": {
+        "en": "When, on a new game, checking the deals for next year of the engine sponsors, deals lasting longer than 1 year are shown at the top of that particular sponsors, which means they are shown as 'works deal' even though the actual sponsorship is a customer or partner deal",
+        "es": "En una partida nueva, al mirar los contratos del año siguiente de los patrocinadores de motores, los contratos de más de 1 año aparecen arriba en ese patrocinador, lo que hace que se muestren como «works deal» aunque el patrocinio real sea de cliente o de socio."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
+    },
+    {
+      "numero": 30,
+      "categoria": "race",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Decrease race start failure chance",
+        "es": "Reducir la probabilidad de fallo al inicio de la carrera"
+      },
+      "pide": {
+        "en": "This is simply a quality of life change: decrease the random failure chance the game has at the beginning of any race.\nIt's not fun to have both your driver's randomly retire within the first 2 laps, and then the following race have a 3rd failure on lap 1. What is this? The 2026 Aston Martin simulator???",
+        "es": "Es solo un cambio de calidad de vida: reducir la probabilidad de fallo aleatorio que tiene el juego al principio de cualquier carrera.\nNo es divertido que los dos pilotos se retiren al azar en las dos primeras vueltas y que en la carrera siguiente haya un tercer fallo en la vuelta 1. ¿Qué es esto? ¿El simulador del Aston Martin de 2026?"
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
+    },
+    {
+      "numero": 31,
+      "categoria": "race",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Penalty time added at the end of the race is bugged",
+        "es": "La penalización de tiempo añadida al final de la carrera falla"
+      },
+      "pide": {
+        "en": "If a driver, one lap or more behind the leader, receives a penalty as time added at the end of the race, the game fails to correctly apply the penalty",
+        "es": "Si un piloto que va una vuelta o más por detrás del líder recibe una penalización de tiempo añadido al final de la carrera, el juego no la aplica correctamente."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
+    },
+    {
+      "numero": 32,
+      "categoria": "race",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Player serving a penalty is bugged",
+        "es": "Cumplir una penalización en boxes falla para el jugador"
+      },
+      "pide": {
+        "en": "If your driver receives a penalty to serve in the pits, the game locks your 'pit now' order, waits 3 laps and serves the penalty. This is wrong",
+        "es": "Si tu piloto recibe una penalización para cumplir en boxes, el juego bloquea tu orden de «entrar ahora», espera 3 vueltas y la cumple. Esto está mal."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
+    },
+    {
+      "numero": 33,
+      "categoria": "ai",
+      "estado": "proposed",
+      "titulo": {
+        "en": "AI pits but doesn't fix broken wings (and other stuff)",
+        "es": "La IA entra a boxes pero no arregla alerones rotos (y otras cosas)"
+      },
+      "pide": {
+        "en": "If the AI driver breaks a wing, it pits, does nothing, and goes back on track, thus retiring soon after.\n\nAlso, as an addendum to this, make it so a driver who has any kind of car issue at the end of the race, and is running down the order, attempts to pit and 'check issue' so as to not pointlessly DNF.\nInstead, a driver running in the points, takes the risk to stay out and make it to the end",
+        "es": "Si el piloto de la IA rompe un alerón, entra a boxes, no hace nada y vuelve a pista, con lo que se retira poco después.\n\nAdemás, como adenda: que un piloto con cualquier problema en el coche al final de la carrera y que va bajando posiciones intente entrar y «revisar el problema» para no retirarse sin sentido.\nEn cambio, un piloto que va en los puntos se arriesga a quedarse fuera y llegar al final."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
     }
   ]
 }

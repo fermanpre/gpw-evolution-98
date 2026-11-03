@@ -46,6 +46,10 @@
       "en": "In progress",
       "es": "En curso"
     },
+    "testing": {
+      "en": "In testing",
+      "es": "En pruebas"
+    },
     "later": {
       "en": "To see later",
       "es": "A ver más adelante"
@@ -395,7 +399,7 @@
     {
       "numero": 19,
       "categoria": "car",
-      "estado": "progress",
+      "estado": "testing",
       "titulo": {
         "en": "Bugs in Design",
         "es": "Bugs en Diseño"
@@ -557,7 +561,7 @@
     {
       "numero": 28,
       "categoria": "race",
-      "estado": "proposed",
+      "estado": "testing",
       "titulo": {
         "en": "AI wet weather strategy",
         "es": "Estrategia de la IA con clima cambiante"
@@ -567,8 +571,8 @@
         "es": "Ahora que la habilidad de lluvia (W.W.) y el reglaje pesan menos, es aún más fácil ganar a la IA en mojado.\n¿Y si se añade un código que diga: «oye, está lloviendo y la pista se ha mojado más o menos. Dividamos las estrategias: el piloto que va delante en pista entra a boxes por los neumáticos adecuados a la nueva humedad y el otro se queda fuera como siempre»?"
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "In progress. Designed, built and tested in the 0.2 test build: when the track water level goes from 3 to 4 or from 4 to 3 (the intermediate-against-wet case the game ignores), in each AI team the number 1 (or the best-placed driver if there is none) pits for the right tyre with an 80% chance and, if not, his team-mate gets the same chance. Not yet seen in a race.",
+        "es": "En curso. Diseñada, hecha y comprobada en la versión de prueba 0.2: cuando el agua en pista pasa de 3 a 4 o de 4 a 3 (el caso de intermedio contra lluvia que el juego ignora), en cada equipo de la IA el número 1 (o el mejor clasificado si no hay) entra por el neumático correcto con un 80 % y, si no, su compañero tiene la misma oportunidad. Aún sin ver en carrera."
       },
       "idioma_original": "en"
     },
@@ -593,7 +597,7 @@
     {
       "numero": 30,
       "categoria": "race",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Decrease race start failure chance",
         "es": "Reducir la probabilidad de fallo al inicio de la carrera"
@@ -611,7 +615,7 @@
     {
       "numero": 31,
       "categoria": "race",
-      "estado": "proposed",
+      "estado": "testing",
       "titulo": {
         "en": "Penalty time added at the end of the race is bugged",
         "es": "La penalización de tiempo añadida al final de la carrera falla"
@@ -629,7 +633,7 @@
     {
       "numero": 32,
       "categoria": "race",
-      "estado": "proposed",
+      "estado": "testing",
       "titulo": {
         "en": "Player serving a penalty is bugged",
         "es": "Cumplir una penalización en boxes falla para el jugador"
@@ -647,7 +651,7 @@
     {
       "numero": 33,
       "categoria": "ai",
-      "estado": "proposed",
+      "estado": "testing",
       "titulo": {
         "en": "AI pits but doesn't fix broken wings (and other stuff)",
         "es": "La IA entra a boxes pero no arregla alerones rotos (y otras cosas)"

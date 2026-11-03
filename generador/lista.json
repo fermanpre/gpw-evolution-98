@@ -669,7 +669,7 @@
     {
       "numero": 34,
       "categoria": "race",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Time penalty is unbalanced",
         "es": "La penalización de tiempo está desequilibrada"
@@ -705,7 +705,7 @@
     {
       "numero": 36,
       "categoria": "race",
-      "estado": "proposed",
+      "estado": "testing",
       "titulo": {
         "en": "SC bug: SC stays out on track",
         "es": "Fallo del SC: el SC se queda en pista"

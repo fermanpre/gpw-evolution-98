@@ -665,6 +665,60 @@
         "es": "Sin revisar todavía."
       },
       "idioma_original": "en"
+    },
+    {
+      "numero": 34,
+      "categoria": "race",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Time penalty is unbalanced",
+        "es": "La penalización de tiempo está desequilibrada"
+      },
+      "pide": {
+        "en": "The 10s stop and go loses 30 seconds. So why should it be converted into a +25 seconds time penalty?\nTurn it into a +30 seconds time penalty",
+        "es": "El stop-go de 10 s hace perder 30 segundos. Entonces, ¿por qué se convierte en una penalización de +25 segundos?\nQue pase a ser una penalización de +30 segundos."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
+    },
+    {
+      "numero": 35,
+      "categoria": "car",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Car wear on certain tracks",
+        "es": "Desgaste del coche en ciertos circuitos"
+      },
+      "pide": {
+        "en": "Currently, after 0.1, there's 3 tracks with abnormally high car chassis wear. These are: Brazil (which was the case already in the base game), Germany and Belgium.\nPlease fix Germany and Belgium's high wears, it is almost impossible to make it to the end of the race.\n\nAnd if you feel magnanimous, reduce the wear rate also for Brazil: it makes it almost impossible with a small team to make it to race 5",
+        "es": "Ahora, tras la 0.1, hay 3 circuitos con un desgaste del chasis anormalmente alto: Brasil (que ya era así en el juego base), Alemania y Bélgica.\nPor favor, arregla el desgaste alto de Alemania y Bélgica: es casi imposible llegar al final de la carrera.\n\nY si te sientes magnánimo, reduce también el ritmo de desgaste de Brasil: con un equipo pequeño hace casi imposible llegar a la carrera 5."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
+    },
+    {
+      "numero": 36,
+      "categoria": "race",
+      "estado": "proposed",
+      "titulo": {
+        "en": "SC bug: SC stays out on track",
+        "es": "Fallo del SC: el SC se queda en pista"
+      },
+      "pide": {
+        "en": "The SC ghost, once it is supposed to come in at the end of the lap, has a chance to, by teleporting around, miss the pit entry: if this happens, the race resumes as normal, but the SC ghost stays out on track and keeps being teleported in front of the leader, which makes it more likely to miss the pit entry on the following laps.\nThis behaviour is more common at higher game speeds",
+        "es": "El fantasma del SC, cuando tiene que entrar a boxes al final de la vuelta, tiene probabilidad de pasarse la entrada de boxes al teletransportarse: si ocurre, la carrera se reanuda con normalidad, pero el fantasma del SC se queda en pista y sigue teletransportándose delante del líder, lo que hace más probable que se pase la entrada en las vueltas siguientes.\nEste comportamiento es más frecuente con velocidades de juego más altas."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
     }
   ]
 }

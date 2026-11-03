@@ -687,7 +687,7 @@
     {
       "numero": 35,
       "categoria": "car",
-      "estado": "proposed",
+      "estado": "testing",
       "titulo": {
         "en": "Car wear on certain tracks",
         "es": "Desgaste del coche en ciertos circuitos"

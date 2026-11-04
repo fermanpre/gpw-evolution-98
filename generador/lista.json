@@ -543,7 +543,7 @@
     {
       "numero": 27,
       "categoria": "car",
-      "estado": "proposed",
+      "estado": "testing",
       "idioma_original": "es",
       "titulo": {
         "en": "Adjust the weather simulation in the race",

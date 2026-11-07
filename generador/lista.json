@@ -129,7 +129,7 @@
     {
       "numero": 4,
       "categoria": "market",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Effectively permanent contracts",
         "es": "Contratos prácticamente permanentes"
@@ -165,7 +165,7 @@
     {
       "numero": 6,
       "categoria": "ai",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Optional refuelling ban, with the AI pitting by tyre wear",
         "es": "Prohibir el repostaje como opción, con la IA parando por desgaste"
@@ -183,7 +183,7 @@
     {
       "numero": 7,
       "categoria": "market",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Suppliers: Cash Rating first, and a preference for the own-name supplier",
         "es": "Proveedores: primero el Cash Rating, y preferencia por el que lleva su nombre"
@@ -201,7 +201,7 @@
     {
       "numero": 8,
       "categoria": "market",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "A team trait for tyres",
         "es": "Un rasgo de equipo para los neumáticos"
@@ -255,7 +255,7 @@
     {
       "numero": 11,
       "categoria": "car",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Rework next season's car handling",
         "es": "Rehacer el handling del coche de la temporada siguiente"
@@ -273,7 +273,7 @@
     {
       "numero": 12,
       "categoria": "drivers",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Traits and favourite circuits for drivers",
         "es": "Rasgos y circuitos favoritos para los pilotos"
@@ -291,7 +291,7 @@
     {
       "numero": 13,
       "categoria": "car",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Make electronics matter",
         "es": "Que la electrónica importe"
@@ -345,7 +345,7 @@
     {
       "numero": 16,
       "categoria": "ai",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Better use of \"Driver Orders\" by the drivers of other teams.",
         "es": "Mejor uso de las \"Driver Orders\" por los pilotos de otros equipos."
@@ -363,7 +363,7 @@
     {
       "numero": 17,
       "categoria": "other",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "sub mods",
         "es": "Submods"
@@ -435,7 +435,7 @@
     {
       "numero": 21,
       "categoria": "drivers",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Statistics for No -F1 drivers",
         "es": "Estadísticas para los pilotos que no son de F1"
@@ -453,7 +453,7 @@
     {
       "numero": 22,
       "categoria": "circuits",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Up to 20 races",
         "es": "Hasta 20 carreras"
@@ -471,7 +471,7 @@
     {
       "numero": 23,
       "categoria": "drivers",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Test Drivers develop",
         "es": "Los probadores se desarrollan"
@@ -507,7 +507,7 @@
     {
       "numero": 25,
       "categoria": "other",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "More team personnel",
         "es": "Más personal de equipo"
@@ -571,8 +571,8 @@
         "es": "Ahora que la habilidad de lluvia (W.W.) y el reglaje pesan menos, es aún más fácil ganar a la IA en mojado.\n¿Y si se añade un código que diga: «oye, está lloviendo y la pista se ha mojado más o menos. Dividamos las estrategias: el piloto que va delante en pista entra a boxes por los neumáticos adecuados a la nueva humedad y el otro se queda fuera como siempre»?"
       },
       "hoy": {
-        "en": "In progress. Designed, built and tested in the 0.2 test build: when the track water level goes from 3 to 4 or from 4 to 3 (the intermediate-against-wet case the game ignores), in each AI team the number 1 (or the best-placed driver if there is none) pits for the right tyre with an 80% chance and, if not, his team-mate gets the same chance. Not yet seen in a race.",
-        "es": "En curso. Diseñada, hecha y comprobada en la versión de prueba 0.2: cuando el agua en pista pasa de 3 a 4 o de 4 a 3 (el caso de intermedio contra lluvia que el juego ignora), en cada equipo de la IA el número 1 (o el mejor clasificado si no hay) entra por el neumático correcto con un 80 % y, si no, su compañero tiene la misma oportunidad. Aún sin ver en carrera."
+        "en": "In progress. Built and tested in the 0.2 test build, not yet seen in a race. When the track water level goes from 3 to 4 or from 4 to 3 (the intermediate-against-wet case the game ignored), in each AI team the number 1 (or the best-placed driver if there is none) pits for the right tyre with an 80% chance and, if not, his team-mate gets the same chance. The AI also re-plans its remaining stops from the laps left without delaying a stop it already had planned, the first stop now comes 2 or 3 laps later, the ideal tyre is the same for every driver (intermediate at level 3, wet at level 4), and the race weather moves with race time.",
+        "es": "En curso. Hecho y comprobado en la versión de prueba 0.2, aún sin ver en carrera. Cuando el agua en pista pasa de 3 a 4 o de 4 a 3 (el caso de intermedio contra lluvia que el juego ignoraba), en cada equipo de la IA el número 1 (o el mejor clasificado si no hay) entra por el neumático correcto con un 80 % y, si no, su compañero tiene la misma oportunidad. Además la IA rehace las paradas que le quedan según las vueltas restantes sin retrasar una parada que ya tuviera planificada, la primera parada llega 2 o 3 vueltas después, el neumático ideal es el mismo para todos los pilotos (intermedio en el nivel 3, lluvia en el nivel 4) y el clima de carrera avanza con el tiempo de carrera."
       },
       "idioma_original": "en"
     },
@@ -625,8 +625,8 @@
         "es": "Si un piloto que va una vuelta o más por detrás del líder recibe una penalización de tiempo añadido al final de la carrera, el juego no la aplica correctamente."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "In progress. In the 0.2 test build the final classification already applied the time penalty to cars on the same lap, and two gaps have been closed: a stop-go that was applied but not served when the flag fell now adds 25 s, and a car whose penalty makes it lose to cars with fewer laps drops behind them and counts as one lap down. The Race Order panel shows \"+N L\" for that car and the penalty in seconds in red after the name. Still to see in a real race with lapped cars.",
+        "es": "En curso. En la versión de prueba 0.2 la clasificación final ya aplicaba la penalización de tiempo entre coches de la misma vuelta, y se han cerrado dos huecos: un stop-go aplicado y sin cumplir al caer la bandera suma ahora 25 s, y un coche al que la penalización hace perder frente a coches con menos vueltas cae detrás de ellos y pasa a contar como doblado. El panel Race Order enseña «+N L» en ese coche y la penalización en segundos en rojo detrás del nombre. Falta verlo en una carrera real con coches doblados."
       },
       "idioma_original": "en"
     },
@@ -643,8 +643,8 @@
         "es": "Si tu piloto recibe una penalización para cumplir en boxes, el juego bloquea tu orden de «entrar ahora», espera 3 vueltas y la cumple. Esto está mal."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "In progress. In the 0.2 test build, with a stop-go penalty pending, the player keeps the 3-lap limit but can call the pits freely in the first two laps to refuel and change tyres (the \"Pit now\" button is back, and the stop is a normal one that leaves the penalty pending). On the third lap the penalty is served automatically as before. The AI does not change. Still to see on screen, in a race with a penalty.",
+        "es": "En curso. En la versión de prueba 0.2, con una sanción de stop-go pendiente, el jugador conserva el límite de 3 vueltas pero puede llamar libremente a boxes en las dos primeras para repostar y cambiar neumáticos (el botón «Pit now» vuelve a aparecer, y la parada es una normal que deja la sanción pendiente). En la tercera vuelta la sanción se cumple sola, como antes. La IA no cambia. Falta verlo en pantalla, en una carrera con una sanción."
       },
       "idioma_original": "en"
     },
@@ -661,8 +661,8 @@
         "es": "Si el piloto de la IA rompe un alerón, entra a boxes, no hace nada y vuelve a pista, con lo que se retira poco después.\n\nAdemás, como adenda: que un piloto con cualquier problema en el coche al final de la carrera y que va bajando posiciones intente entrar y «revisar el problema» para no retirarse sin sentido.\nEn cambio, un piloto que va en los puntos se arriesga a quedarse fuera y llegar al final."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "In progress. In the 0.2 test build the AI now really repairs a broken front wing (before, it pitted but the pit crew was never told to fix it), up to twice per car and not in the last 3 laps. A car with any other failure that is running outside the points (7th or lower) also pits to have it checked, while one in the points takes the risk and stays out. The repair can still fail (a quarter of the time, as in the base game). In addition, an unscheduled stop now counts as the first stop of a new plan: the AI refuels, changes tyres and re-plans its remaining stops from the laps left. Still to see in a race.",
+        "es": "En curso. En la versión de prueba 0.2 la IA repara ya de verdad el alerón delantero roto (antes entraba pero a los mecánicos nunca se les mandaba arreglarlo), hasta dos veces por coche y no en las tres últimas vueltas. Un coche con cualquier otra avería que va fuera de los puntos (7.º o peor) también entra a revisarla, y uno en los puntos se arriesga a seguir fuera. La reparación aún puede fallar (una cuarta parte de las veces, como en el juego base). Además, una parada imprevista cuenta ahora como la primera de un plan nuevo: la IA repuesta, cambia neumáticos y rehace las paradas que le quedan según las vueltas restantes. Falta verlo en carrera."
       },
       "idioma_original": "en"
     },
@@ -697,8 +697,8 @@
         "es": "Ahora, tras la 0.1, hay 3 circuitos con un desgaste del chasis anormalmente alto: Brasil (que ya era así en el juego base), Alemania y Bélgica.\nPor favor, arregla el desgaste alto de Alemania y Bélgica: es casi imposible llegar al final de la carrera.\n\nY si te sientes magnánimo, reduce también el ritmo de desgaste de Brasil: con un equipo pequeño hace casi imposible llegar a la carrera 5."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "In progress. In the 0.2 test build the general wear table has been redone: after a full race (race plus session close) Germany goes from 94.5 to 74.3 wear points, Belgium from 94.0 to 72.6 and Japan from 98.5 to 79.5; Brazil's rate goes from 0.9 to 0.8. Austria, Hungary and Luxembourg rise slightly (to 32, 23 and 20, from 21, 15 and 13 in the original 1.03). Part wear also changed in Monaco (150%). Still to see in a race with a small team.",
+        "es": "En curso. En la versión de prueba 0.2 se ha rehecho la tabla de desgaste general: tras una carrera completa (carrera más cierre de sesión) Alemania pasa de 94,5 a 74,3 puntos de desgaste, Bélgica de 94,0 a 72,6 y Japón de 98,5 a 79,5; la tasa de Brasil baja de 0,9 a 0,8. Austria, Hungría y Luxemburgo suben algo (a 32, 23 y 20, desde 21, 15 y 13 en el 1.03 original). También cambió el desgaste de piezas en Mónaco (150 %). Falta verlo en una carrera con un equipo pequeño."
       },
       "idioma_original": "en"
     },
@@ -715,15 +715,15 @@
         "es": "El fantasma del SC, cuando tiene que entrar a boxes al final de la vuelta, tiene probabilidad de pasarse la entrada de boxes al teletransportarse: si ocurre, la carrera se reanuda con normalidad, pero el fantasma del SC se queda en pista y sigue teletransportándose delante del líder, lo que hace más probable que se pase la entrada en las vueltas siguientes.\nEste comportamiento es más frecuente con velocidades de juego más altas."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "In progress, only partly. In the 0.2 test build the ghost slows down with the leader in the last lap and the limit before it is moved back is 5 sections instead of 3, which addresses the \"teleport\" that makes it miss the pit entry. What happens once it has missed the entry and stays out on track is not handled yet, and I have not checked whether the problem is worse at higher game speeds. To be seen in a race with a Safety Car.",
+        "es": "En curso, solo en parte. En la versión de prueba 0.2 el fantasma frena con el líder en la última vuelta y el límite antes de recolocarlo es de 5 secciones en lugar de 3, lo que ataca el «teletransporte» que le hace pasarse la entrada a boxes. Lo que ocurre cuando ya se ha pasado la entrada y se queda en pista no está resuelto todavía, y no he comprobado si empeora con más velocidad de juego. Falta verlo en una carrera con Safety Car."
       },
       "idioma_original": "en"
     },
     {
       "numero": 37,
       "categoria": "drivers",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Increase Driver Pool",
         "es": "Ampliar la plantilla de pilotos"
@@ -741,7 +741,7 @@
     {
       "numero": 38,
       "categoria": "drivers",
-      "estado": "proposed",
+      "estado": "later",
       "titulo": {
         "en": "Driver Injuries",
         "es": "Lesiones de pilotos"

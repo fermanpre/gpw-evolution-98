@@ -381,7 +381,7 @@
     {
       "numero": 18,
       "categoria": "market",
-      "estado": "later",
+      "estado": "testing",
       "titulo": {
         "en": "Reduce the effect of Morale on the departments' effort",
         "es": "Reducir el efecto de Morale sobre el esfuerzo de los departamentos"
@@ -391,8 +391,8 @@
         "es": "Cada departamento tiene tiene una medida de esfuerzo que viene basada en el valor de Morale asignado. Sus efectos son de modificar el esfuerzo por 60, 80, 100, 110 y 120%. Los valores de Morale 4 y 5 hacen que sea muy fácil mantener un equipo competitivo ya que, entre otros, permiten construir un mayor número de Spares para mantener a los autos en mejor condición, hacer Testing mucho más rápido y firmar Sponsors mucho más rápido. También permite ahorrar mucho dinero ya que se puede firmar menos personal, y personal menor que es más barato.\n\nSugiero reducir el valor proporcionado por Morale 4 y 5 a 100% (no aumenta esfuerzo) o.a valores mínimos, como 102.5 y 105%, para que aún exista calor en formar mejor personal."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "In progress. In the 0.2 test build, morale levels 4 and 5 now give +3% and +5% effort to the departments instead of +10% and +20%; levels 1 to 3 are unchanged. The exact values are open to discussion. Still to test in a game.",
+        "es": "En curso. En la versión de prueba 0.2, la moral 4 y 5 da ahora +3 % y +5 % de esfuerzo a los departamentos en lugar de +10 % y +20 %; los niveles 1 a 3 no cambian. Los valores exactos se pueden discutir. Falta probarlo en partida."
       },
       "idioma_original": "es"
     },
@@ -409,15 +409,15 @@
         "es": "Aquí una lista de bugs varios detectados en la sección de Diseño (Design)\n* Al completar un componente de Tecnología, el contador de progreso no se reinicia. Esto causa que, si se empieza a diseñar una nueva pieza está esté terminada en la ronda siguiente. El contador de progreso se reinicia de forma correcta si se inicia y luego se cancela la pieza. Lo mismo posiblemente ocurra con las Driving Aids.\n* Si las regulaciones de la FIA son favorables para el equipo, estos ganan puntos de progreso en el diseño del nuevo chassis. Sin embargo, al iniciar el diseño del nuevo chassis, estos puntos desaparecen.\n* POSIBLEMENTE el edificio CAD, el encargado de acelerar la fase 1 de diseño (Design) no tiene ningún efecto. Una revisión de código me indico que no tiene efecto. \n* Las fases que llevan más tiempo para el diseño son las fases 1 (Design), 4 (Wind Tunnel), 3 (Model Design) y 2 (CFD). Sin embargo, la efectividad de una mejora o nuevo chassis depende de las fases 1 (40%), 2 (30%), 3 (20%) y 4 (10%). La fase de Wind Tunnel es fácilmente skippeable usando Research, y apenas tiene efecto sobre el diseño. Recomiendo modificar los pesos de las fases de forma que el peso relativo sobre el diseño coincida con la dificultad de la fase.\n* Debido a como estan hechas las tablas, el Rendimiento 5 tiene el mismo efecto que Rendimiento 4 sobre el frío del auto."
       },
       "hoy": {
-        "en": "In progress. Done in the 0.2 test build: the FIA points are no longer lost when you start the new chassis design; a completed Technology part or Driving Aid resets its progress counter; the CAD building now gives a bonus; the four design phases weigh 4, 1, 2 and 3 to follow how long each takes; and rating 5 of the suspension and of the reliability counters no longer repeats rating 4. Still to test in a race.",
-        "es": "En curso. Hecho en la versión de prueba 0.2: los puntos de la FIA ya no se pierden al iniciar el diseño del nuevo chasis; una pieza de Tecnología o una Driving Aid completada reinicia su contador de progreso; el edificio CAD ya da bono; las cuatro fases del diseño pesan 4, 1, 2 y 3 según lo que dura cada una; y el rating 5 de la suspensión y de los contadores de fiabilidad ya no repite el 4. Falta probarlo en carrera."
+        "en": "In progress. Done in the 0.2 test build: the FIA points are no longer lost when you start the new chassis design; a completed Technology part or Driving Aid resets its progress counter; the CAD building now gives a bonus; the four design phases weigh 4, 1, 2 and 3 to follow how long each takes; and rating 5 of the suspension and of the reliability counters no longer repeats rating 4. The accumulator of the Technology parts is now also reset at the season change. Still to test in a race.",
+        "es": "En curso. Hecho en la versión de prueba 0.2: los puntos de la FIA ya no se pierden al iniciar el diseño del nuevo chasis; una pieza de Tecnología o una Driving Aid completada reinicia su contador de progreso; el edificio CAD ya da bono; las cuatro fases del diseño pesan 4, 1, 2 y 3 según lo que dura cada una; y el rating 5 de la suspensión y de los contadores de fiabilidad ya no repite el 4. El acumulador de las piezas de Tecnología también se reinicia ya en el cambio de temporada. Falta probarlo en carrera."
       },
       "idioma_original": "es"
     },
     {
       "numero": 20,
       "categoria": "market",
-      "estado": "proposed",
+      "estado": "partial",
       "titulo": {
         "en": "Bugs in Suppliers",
         "es": "Bugs en Suppliers"
@@ -427,8 +427,8 @@
         "es": "Acá una lista de bugs o comportamiento mejorable en cuanto a Proveedores\n* El parámetro Reliability de motores no tiene ningún efecto, no afecta la vida del motor ni su tasa de desgaste\n* Debido a como están configuradas las tablas, el parámetros Grip de neumáticos pueden tener efectos negativos. Grip reduce errores, aumenta la tasa de consumo de combustible y aumenta el frío del auto hasta 5. De 6 en adelante, no aumenta más el grip, por lo que potencialmente un neumatico de grip 5 es más rápido que uno de grip 10 debido a menor consumo de combustible.\n* Los equipos buscan el Supplier con mayor valor de R&D primero.\n* Los equipos con contrato Works no usan la opción de diseñar motores, combustible o neumáticos. Deberían hacerlo en base a la habilidad de su Chief Mechanic (Chief Mechanic nivel 5 = mejoras cada 1 o 2 carreras, nivel 4 cada 2 o 3, y así)\n* Darle a los equipos un proveedor preferencial, es decir Ferrari busca firmar motores Ferrari. Mercedes busca firmar motores Mercedes. Toyota busca firmar motores Toyota.\n* Si un proveedor no es firmado por ningún equipo, añadir la probabilidad de que estos bajen su nivel de Cash. Si un proveedor tiene Cash 1 y no es firmado, añadir la posibilidad de que estos dejen la F1.\n* Si un proveedor ve buenos resultados, que exista la posibilidad de que aumenten su valor de Cash y/o R&D.\n* Aumentar las probabilidades de que proveedores entren a la F1, sobretodo si otros proveedores quieren salir\n\nY dos mejoras y un bug que aplica más a Sponsors en general, no solo a Suppliers.\n* Si se tiene Hospitality, VIP 3 es un patrocinador nuevo, y se tiene 0% en VIP 3 (y potencialmente al menos 1% en VIP 1), el patrocinador tendrá la ventaja de Hospitality en la ronda siguiente.\n* Aumentar la facilidad con la que se gana la ventaja de Hospitality, actualmente es imposible de obtener sin el bug previamente mencionado.\n* Permitir que los patrocinadores actuales, no solo los nuevos, tengan ventaja de Hospitality."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "Partly done in the 0.2 test build: tyre Grip from 7 to 10 now adds performance (before, anything above 6 gave nothing while still raising consumption and temperature). Not looked at yet: engine Reliability, the AI choosing suppliers by R&D, a preferred supplier, Works teams designing, suppliers entering and leaving, and the Hospitality advantage.",
+        "es": "Hecha en parte en la versión de prueba 0.2: el Grip del neumático de 7 a 10 ya suma rendimiento (antes, por encima de 6 no daba nada y seguía subiendo el consumo y la temperatura). Sin revisar todavía: la Reliability del motor, que la IA elija proveedor por I+D, un proveedor preferente, que los equipos Works diseñen, la entrada y salida de proveedores y la ventaja de Hospitality."
       },
       "idioma_original": "es"
     },
@@ -554,8 +554,8 @@
         "es": "Actualmente la simulación de clima en calificación y carrera se manejan de forma distinta. La de calificación depende del tiempo en la sesión, la de carrera depende de la vuelta del líder.\n\nAjustarla para que en ambos casos dependa del tiempo en la sesión y por tanto no se pueda predecir que el clima cambiará cuando el líder cruza la línea de meta mejoraría la simulación.\n\nAdicionalmente, bug relacionados con clima:\n* Todo problema relacionado con la velocidad del viento, sea pérdida de grip o activación de problemas como \"High Pitch Sensitivity\" dependen del parámetro Wind del setup, no de la velocidad del viento. Y debido a como están configuradas las tablas, usar parámetros de Wind 6, 8 o 10 permiten evitar cualquier perdida de grip causada por alta velocidad del viento o problemas del auto. Hay que modificar parámetros, se forma que los problemas por grip dependan de la velocidad del viento, no de Wind."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "In progress. In the 0.2 test build the weather in a race advances with race time instead of with the leader's laps, and the wind now penalises by the deficit between twice the wind speed and the car's Wind setting (up to about 0.4 s per lap, adjustable). Still to measure in a race.",
+        "es": "En curso. En la versión de prueba 0.2, el clima en carrera avanza con el tiempo de carrera y no con las vueltas del líder, y el viento penaliza ya por el déficit entre el doble de su velocidad y el Wind del reglaje del coche (hasta unos 0,4 s por vuelta, ajustable). Falta medirlo en carrera."
       }
     },
     {
@@ -579,7 +579,7 @@
     {
       "numero": 29,
       "categoria": "graphics",
-      "estado": "proposed",
+      "estado": "testing",
       "titulo": {
         "en": "Commercial sponsor page bug",
         "es": "Error en la página de patrocinadores comerciales"
@@ -589,8 +589,8 @@
         "es": "En una partida nueva, al mirar los contratos del año siguiente de los patrocinadores de motores, los contratos de más de 1 año aparecen arriba en ese patrocinador, lo que hace que se muestren como «works deal» aunque el patrocinio real sea de cliente o de socio."
       },
       "hoy": {
-        "en": "Not looked at yet.",
-        "es": "Sin revisar todavía."
+        "en": "In progress. In the 0.2 test build, the list of continuing contracts shows the level the team signed (customer, partner or works) and keeps it the next year. Still to check in a new game.",
+        "es": "En curso. En la versión de prueba 0.2, la lista de contratos que continúan enseña el nivel que firmó el equipo (cliente, socio o works) y lo mantiene el año siguiente. Falta comprobarlo en una partida nueva."
       },
       "idioma_original": "en"
     },
@@ -713,6 +713,42 @@
       "pide": {
         "en": "The SC ghost, once it is supposed to come in at the end of the lap, has a chance to, by teleporting around, miss the pit entry: if this happens, the race resumes as normal, but the SC ghost stays out on track and keeps being teleported in front of the leader, which makes it more likely to miss the pit entry on the following laps.\nThis behaviour is more common at higher game speeds",
         "es": "El fantasma del SC, cuando tiene que entrar a boxes al final de la vuelta, tiene probabilidad de pasarse la entrada de boxes al teletransportarse: si ocurre, la carrera se reanuda con normalidad, pero el fantasma del SC se queda en pista y sigue teletransportándose delante del líder, lo que hace más probable que se pase la entrada en las vueltas siguientes.\nEste comportamiento es más frecuente con velocidades de juego más altas."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
+    },
+    {
+      "numero": 37,
+      "categoria": "drivers",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Increase Driver Pool",
+        "es": "Ampliar la plantilla de pilotos"
+      },
+      "pide": {
+        "en": "If we reduce driver signings over 38, would be good to increase the pool of drivers for more career variety in a save",
+        "es": "Si se reducen los fichajes de pilotos de más de 38 años, convendría ampliar la lista de pilotos para dar más variedad a una partida de carrera."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "en"
+    },
+    {
+      "numero": 38,
+      "categoria": "drivers",
+      "estado": "proposed",
+      "titulo": {
+        "en": "Driver Injuries",
+        "es": "Lesiones de pilotos"
+      },
+      "pide": {
+        "en": "Historically, there is normally at least 1 driver injury a season, look at slightly increasing the volume of injuries to reflect this\n\n(conscious it may be too easy to go too far)",
+        "es": "Históricamente suele haber al menos una lesión de piloto por temporada: convendría subir ligeramente el número de lesiones para reflejarlo.\n\n(Hay riesgo de pasarse con facilidad.)"
       },
       "hoy": {
         "en": "Not looked at yet.",

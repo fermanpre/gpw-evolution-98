@@ -147,7 +147,7 @@
     {
       "numero": 5,
       "categoria": "interface",
-      "estado": "proposed",
+      "estado": "testing",
       "titulo": {
         "en": "Live championship standings during the race",
         "es": "Clasificación del campeonato en vivo durante la carrera"
@@ -157,8 +157,8 @@
         "es": "Una pantalla con los campeonatos de pilotos y de constructores que se actualice según cambian las posiciones, para ver de un vistazo cómo afecta la carrera en curso a ambos."
       },
       "hoy": {
-        "en": "Not there yet. The race order panel shows positions and gaps but not championship points. It needs a points column or a new panel, which is interface work.",
-        "es": "Todavía no existe. El panel de orden de carrera enseña posiciones y diferencias, pero no puntos del campeonato. Haría falta una columna de puntos o un panel nuevo, y eso es trabajo de interfaz."
+        "en": "In progress. In the 0.2 test build there is a new race panel, \"Live Championship Standings\", reached with the panel arrows: the drivers' championship in one column and the constructors' in the other, as it would stand if the race ended now (season points plus the points of the current position, retired cars not counted). Each row shows the place, the name and the points, with a green arrow if the place goes up and a red one if it goes down compared with before the race; your own cars and team are in yellow. Still to see in a race: the real layout and whether the arrows show.",
+        "es": "En curso. En la versión de prueba 0.2 hay un panel de carrera nuevo, «Live Championship Standings», al que se llega con las flechas del panel: el campeonato de pilotos en una columna y el de constructores en la otra, como quedaría si la carrera acabara ahora (puntos de la temporada más los de la posición actual, sin contar a los retirados). Cada fila enseña el puesto, el nombre y los puntos, con una flecha verde si el puesto sube y una roja si baja respecto a antes de la carrera; tus coches y tu equipo van en amarillo. Falta verlo en una carrera: la disposición real y que las flechas se vean."
       },
       "idioma_original": "en"
     },

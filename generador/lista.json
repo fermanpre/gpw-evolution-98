@@ -391,8 +391,8 @@
         "es": "Cada departamento tiene tiene una medida de esfuerzo que viene basada en el valor de Morale asignado. Sus efectos son de modificar el esfuerzo por 60, 80, 100, 110 y 120%. Los valores de Morale 4 y 5 hacen que sea muy fácil mantener un equipo competitivo ya que, entre otros, permiten construir un mayor número de Spares para mantener a los autos en mejor condición, hacer Testing mucho más rápido y firmar Sponsors mucho más rápido. También permite ahorrar mucho dinero ya que se puede firmar menos personal, y personal menor que es más barato.\n\nSugiero reducir el valor proporcionado por Morale 4 y 5 a 100% (no aumenta esfuerzo) o.a valores mínimos, como 102.5 y 105%, para que aún exista calor en formar mejor personal."
       },
       "hoy": {
-        "en": "In progress. In the 0.2 test build, morale levels 4 and 5 now give +3% and +5% effort to the departments instead of +10% and +20%; levels 1 to 3 are unchanged. The exact values are open to discussion. Still to test in a game.",
-        "es": "En curso. En la versión de prueba 0.2, la moral 4 y 5 da ahora +3 % y +5 % de esfuerzo a los departamentos en lugar de +10 % y +20 %; los niveles 1 a 3 no cambian. Los valores exactos se pueden discutir. Falta probarlo en partida."
+        "en": "In progress. In the 0.2 test build, morale levels 4 and 5 now give +5% and +10% effort to the departments instead of +10% and +20%; levels 1 to 3 are unchanged. Still to test in a game.",
+        "es": "En curso. En la versión de prueba 0.2, la moral 4 y 5 da ahora +5 % y +10 % de esfuerzo a los departamentos en lugar de +10 % y +20 %; los niveles 1 a 3 no cambian. Falta probarlo en partida."
       },
       "idioma_original": "es"
     },

@@ -57,6 +57,7 @@ CONTENTS
   - manifiesto.csv: every file in the pack with its SHA-256, to check you have an intact copy.
   - GPW_Evolution_98.dxw: the DxWnd profile.
   - README_EVOLUTION_98.txt (this file) and CREDITS.txt.
+  - GPW_Evolution_98_v0.2_consolidated_narrative_EN.pdf: the narrative changelog, a plain-language tour of what each change does and why, covering 0.1 and everything since.
 
 
 5. WHAT IS NEW IN 0.2 (compared with 0.1): was / now

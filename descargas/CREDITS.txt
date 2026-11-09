@@ -1,4 +1,4 @@
-CREDITS AND LICENCES (Evolution '98, version 0.1)
+CREDITS AND LICENCES (Evolution '98, version 0.2)
 =================================================
 
 Grand Prix World is a game developed by Edward Grabowski Communications Limited for MicroProse (1999), the successor of Grand Prix Manager and Grand Prix Manager 2. This pack is an unofficial fan modification. It only contains files that differ from the original game, and it needs the
@@ -21,6 +21,8 @@ AUDIO
 - The rest of the voice clips in the speeche folder come from the original game or from Simul810's mod.
 
 OTHER
+- Many of the changes in 0.2 started as proposals from the community, through the form, the forum and the Discord: Acescheil, Jose21crisis and others who
+  prefer to stay anonymous. Thank you.
 - GPWEdit and the GPW tools by their authors are not included in this pack.
 - The pit-stop statistics used to calibrate the pit lane come from the public Formula 1 results archive (1997-2001).
 

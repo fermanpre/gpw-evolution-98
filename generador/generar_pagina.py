@@ -17,10 +17,11 @@ RAIZ = os.path.abspath(os.path.join(CARPETA, "..", ".."))
 RUTA_LISTA = os.path.join(CARPETA, "lista.json")
 RUTA_CONFIG_FORMULARIO = os.path.join(CARPETA, "form_config.json")
 RUTA_MOD = os.path.join(CARPETA, "mod.json")
-CARPETA_PAQUETE = os.path.join(RAIZ, "datos", "paquete_mod", "evolution_98_v0.1")
 RUTA_PUBLICO_CSV = os.environ.get("GPW_PUBLICO_CSV", os.path.join(RAIZ, "datos", "propuestas", "publico.csv"))
 CARPETA_SITIO = os.path.join(CARPETA, "sitio")
 CARPETA_SALIDA = sys.argv[1] if len(sys.argv) > 1 else os.path.join(RAIZ, "datos", "propuestas", "sitio_publico")
+# README, CREDITS y perfil de DxWnd del paquete: de la carpeta que diga GPW_PAQUETE o, si no, de descargas/ de la propia salida (lo ya publicado).
+CARPETA_PAQUETE = os.environ.get("GPW_PAQUETE") or os.path.join(CARPETA_SALIDA, "descargas")
 
 # Textos del formulario de Google tal como están en sus opciones (deben coincidir al enviar)
 OPCION_NOMBRE = "With my name / Con mi nombre"
@@ -313,11 +314,11 @@ def enlazar(texto_plano):
 
 
 def readme_a_html(ruta_readme):
-    """Convierte las primeras secciones del README (hasta antes de «5. WHAT CHANGED», o sea sin el changelog) en HTML sencillo.
+    """Convierte las primeras secciones del README (hasta antes de «5. WHAT…», o sea sin el changelog) en HTML sencillo.
     Cada párrafo del README está partido en líneas; se unen las líneas de continuación (más sangradas que la primera)."""
     with open(ruta_readme, encoding="utf-8") as fichero:
         lineas = fichero.read().split("\n")
-    limite = next(i for i, linea in enumerate(lineas) if linea.startswith("5. WHAT CHANGED"))
+    limite = next(i for i, linea in enumerate(lineas) if linea.startswith("5. WHAT"))
     lineas = lineas[:limite]
 
     # Se descarta el título (los dos primeros renglones) y el índice de contenidos
@@ -389,10 +390,17 @@ def generar_mod(datos_mod):
     partes.append("  <h1>GPW Evolution &rsquo;98</h1>\n")
     partes.append('  <p class="descarga-simple"><a href="%s">%s</a> (%s) &middot; %s</p>\n' % (
         html.escape(m["url_descarga"]), html.escape(m["fichero"]), html.escape(m["tamano"]),
-        texto_html("version %s, %s" % (m["version"], m["estado"]), "versión %s, %s" % (m["version"], m["estado_es"]))))
+        texto_html("version %s%s" % (m["version"], ", " + m["estado"] if m.get("estado") else ""),
+                   "versión %s%s" % (m["version"], ", " + m["estado_es"] if m.get("estado_es") else ""))))
     partes.append('  <p class="huella-simple">SHA-256 <code>%s</code></p>\n' % html.escape(m["sha256"]))
     partes.append('  <p class="recursos-simple"><a href="%s">README</a> &middot; <a href="%s">CREDITS</a> &middot; <a href="%s">DxWnd profile</a> &middot; <a href="%s">GitHub release</a></p>\n' % (
         html.escape(m["readme"]), html.escape(m["creditos"]), html.escape(m["perfil_dxwnd"]), html.escape(m["url_release"])))
+    if m.get("documentos"):
+        enlaces = " &middot; ".join('<a href="%s">%s</a>' % (html.escape(ruta_doc), texto_html(en, es)) for en, es, ruta_doc in m["documentos"])
+        partes.append('  <p class="recursos-simple">%s</p>\n' % enlaces)
+    if m.get("anteriores"):
+        enlaces = " &middot; ".join('<a href="%s">%s</a>' % (html.escape(url), html.escape(nombre)) for nombre, url in m["anteriores"])
+        partes.append('  <p class="recursos-simple">%s %s</p>\n' % (texto_html("Previous versions:", "Versiones anteriores:"), enlaces))
     partes.append('  <div class="readme-simple">\n%s\n  </div>\n' % readme_a_html(os.path.join(CARPETA_PAQUETE, "README_EVOLUTION_98.txt")))
     partes.append('  <p class="recursos-simple">The full list of changes, what the original game did and what this does now, is in the <a href="%s">README</a>.</p>\n' % html.escape(m["readme"]))
     partes.append(pie_pagina())
@@ -403,6 +411,8 @@ def copiar_descargas():
     """Copia a descargas/ lo que la página enlaza: README, CREDITS y perfil de DxWnd del paquete."""
     destino = os.path.join(CARPETA_SALIDA, "descargas")
     os.makedirs(destino, exist_ok=True)
+    if os.path.abspath(CARPETA_PAQUETE) == os.path.abspath(destino):
+        return
     for nombre in ("README_EVOLUTION_98.txt", "CREDITS.txt", "GPW_Evolution_98.dxw"):
         origen = os.path.join(CARPETA_PAQUETE, nombre)
         if os.path.exists(origen):

@@ -1,11 +1,11 @@
-GRAND PRIX WORLD - EVOLUTION '98, VERSION 0.1 (pre-release)
-===========================================================
+GRAND PRIX WORLD - EVOLUTION '98, VERSION 0.2
+=============================================
 
 A small pack for Grand Prix World (MicroProse) that you extract over a CLEAN installation of the original game. It brings a rebuilt gpw.exe plus the texts, audio,
-graphics and circuit-map files that go with it. The aim is to keep the GPW experience and fix what was broken. The only thing added on top of that is the Safety Car.
+graphics and circuit-map files that go with it. The aim is to keep the GPW experience and fix what was broken. The things added on top of that are the Safety Car and, in 0.2, the new race screens.
 
-This is version 0.1, not a finished release. Most of the new features have been checked on a test bench, and the main ones have been through real races, but expect rough
-edges. This file explains how to install it and, further down, what changed: for each change, what the original game did and what this pack does now.
+This is version 0.2. The new features have been checked on a test bench and in real races, but I can't have seen every circuit and condition, so tell me if you find a
+problem. This file explains how to install it and, further down, what changed: for each change, what the original game did and what this pack does now.
 It gives no numbers for the game's internal mechanics (probabilities, times, weights), because they are still being tuned and will change between versions. It does give the
 figures for everything you can see or look up: screens, the speed selector, the 1998 season data, wages, ratings and texts.
 
@@ -15,9 +15,10 @@ CONTENTS
   2. How to install
   3. Running it
   4. What is in the pack
-  5. What changed: was / now
-  6. Things you should know
-  7. Reporting bugs and credits
+  5. What is new in 0.2: was / now
+  6. What changed in 0.1: was / now (still valid)
+  7. Things you should know
+  8. Reporting bugs and credits
 
 
 1. WHAT YOU NEED
@@ -50,7 +51,7 @@ CONTENTS
 4. WHAT IS IN THE PACK
   - gpw.exe: the rebuilt executable (the 1998 variant).
   - english.txt and the text folder (COMME.TXT): the news variants, new events, injury texts, Race Control messages and the 1998 names. Only the English texts are included.
-  - speeche: seven new Race Control audio files (two-hour limit, Safety Car, investigation), plus other voice clips.
+  - speeche: seven new Race Control audio files (two-hour limit, Safety Car, investigation), the corrected voices of Takagi and Rosset, plus other voice clips.
   - bmp, car, textbl, tga and track: the 1998 graphics from Simul810's 1998 mod, with Ferrim's own adjustments to some textures and two driver portraits.
   - Tracks0 to Tracksf: the 16 circuit maps, with the pit lane drawn and the cars' circles redistributed to move more evenly.
   - manifiesto.csv: every file in the pack with its SHA-256, to check you have an intact copy.
@@ -58,17 +59,138 @@ CONTENTS
   - README_EVOLUTION_98.txt (this file) and CREDITS.txt.
 
 
-5. WHAT CHANGED: WAS / NOW
+5. WHAT IS NEW IN 0.2 (compared with 0.1): was / now
+   (Same rules as above: no numbers for the game's internal mechanics. "SC" is the Safety Car.)
+
+THE SAFETY CAR
+
+   1. The ghost car and the queue
+    Was:  The ghost could jump backwards just before coming in, and the cars far from the one in front were left behind instead of closing up.
+    Now:  The ghost brakes together with the leader on the last lap (just a bit less), it is given more room before the game moves it back, and cars that are far behind close up faster. The gaps between cars while the SC is out, and at the restart, are a bit smaller than in 0.1.
+
+   2. Blue flags under the SC
+    Was:  A lapped driver behind the SC could be investigated for ignoring blue flags, although nobody can overtake behind it.
+    Now:  There are no blue-flag investigations while the SC is out. Blue-flag messages may still appear, and in the first laps after the SC, with lapped cars behind it, a driver can still be investigated.
+
+WEATHER AND THE AI IN THE WET
+
+   3. The race weather runs on time
+    Was:  In a race the weather changed when the leader crossed the line, so it could be predicted.
+    Now:  It runs on race time, as in qualifying.
+
+   4. The AI re-plans when the track changes
+    Was:  When the track went from wet enough for intermediates to wet enough for wets, or the other way round, the AI did not re-plan: each car stayed on the tyre it had and only picked the right one at its next scheduled stop.
+    Now:  In each AI team the first driver goes for the right tyre and his team-mate gets the same chance if he doesn't. The first stop comes sooner after a re-plan, a re-plan never pushes back a stop the car already had planned, the ideal tyre is the same for every driver, and a minimum stint length applies.
+
+THE AI IN THE PITS
+
+   5. Stops for repairs
+    Was:  An AI car that came in with a broken front wing (or any other breakdown) was not repaired and often retired soon afterwards.
+    Now:  The wing is really repaired. A car that runs outside the points comes in to have any other breakdown checked, and one inside the points stays out. The repair can still fail, as in the original game. The unscheduled stop is also used: the car refuels, changes tyres and plans its remaining stops again from the laps left.
+
+   6. The pit stop bug
+    Was:  The fix that stops a car with a low number from overtaking one with a high number inside the pits had been left out of 0.1 by mistake.
+    Now:  It is back. It is still an experiment, but I'm highly confident that it works.
+
+   7. Pit lane speed
+    Was:  A few circuits used a general value, and compared with the real stops a stop cost too much in some and too little in others.
+    Now:  Australia, Brazil, Spain and Austria have their own value.
+
+WEAR, FAILURES AND DRIVING ORDERS
+
+   8. General wear
+    Was:  Germany and Belgium wore the cars as much as Brazil, to the point that a small team could not finish.
+    Now:  The wear table has been redone. Those two circuits are survivable, Brazil is a little kinder and the circuits with very little wear wear a bit more. Wear at the end of each session uses its own table too.
+
+   9. Monaco
+    Was:  Almost every car finished the race.
+    Now:  Parts wear more at Monaco, and every healthy car, yours included, has a small chance of hitting the barriers at the end of a lap.
+
+  10. The AI and its driving orders
+    Was:  The AI only eased off its orders when a part was nearly gone.
+    Now:  It does it in steps, as the counter of each part falls: brakes, suspension, clutch, gearbox, hydraulics and throttle. An order is never lowered more than one step per lap.
+
+  11. Illegal aids
+    Was:  The AI fitted illegal driving aids with little care.
+    Now:  It is less likely to, and the chance falls as the season goes on.
+
+  12. Parts and the design department
+    Was:  The two highest reliability ratings gave the same starting value for every part; the progress of a technology part and of a driving aid was not reset, so the next one came out already finished; the CAD building did nothing; and the four stages of the chassis design weighed in the opposite order to how long they take.
+    Now:  All of that is fixed.
+
+PACE, OVERTAKING AND THE CAR
+
+  13. Overtaking
+    Was:  The speed bonus in an overtake came from a ratio that did not reflect how much faster a car was, and the Overtaking value of the circuit was added to both the attacker and the defender, so it made no difference.
+    Now:  The faster car gets a bonus that depends on how much faster it is, with a limit, and the Overtaking value of the circuit counts only for the attacker.
+
+  14. The wind
+    Was:  The more wind you set up for, the more you lost, and with some settings you lost nothing at all.
+    Now:  The loss depends on how far the car's wind setting is below what the real wind asks for.
+
+  15. Tyre grip
+    Was:  Grip helped up to the middle of its scale and then did nothing, while still costing fuel and tyre temperature.
+    Now:  It keeps helping over the whole scale.
+
+  16. The FIA regulations
+    Was:  The caps almost never acted on engines, fuel and tyres; a continuist chassis regulation lost its progress when you pressed "Start New Chassis Design"; and the range of the regulations changed nothing for the field.
+    Now:  The caps are lower, the design starts by itself with the progress it was given, and the range of the regulations moves the base pace of the circuits.
+
+  17. Chassis and set-up
+    Was:  Five teams have seen their chassis handling slightly off, considering real-life performance. Set-up points earned in testing could pile up beyond the reserve the game was meant to hold.
+    Now:  Both are fixed, although I'll keep tweaking the handling values.
+
+PENALTIES AND QUALIFYING
+
+  18. Penalties at the end of the race
+    Was:  A stop-go not served when the flag fell, and a penalty to a lapped car, were not reflected in the final order.
+    Now:  They are. A car whose penalty drops it behind cars with fewer laps counts as lapped, and the Race Order panel shows it with the laps down and the penalty in red.
+
+  19. Your own stop-go
+    Was:  "Pit now" was blocked from the moment you got a stop-go until the penalty was served automatically.
+    Now:  You can call the pits freely in the first laps after it, to refuel and change tyres, and it is served by itself when its time comes.
+
+  20. Qualifying
+    Was:  If it rained, the AI left the pits all at once; a car that came back after a bad lap could stay there; and when the weather changed around the time the pole was set, the AI could think the pole had been set on a drier track than it was, and keep sending its cars out pointlessly.
+    Now:  The AI goes out at spread-out intervals, a car outside the 107% can go out again, and the state of the track when the pole is set is kept.
+
+  21. The result after the flag
+    Was:  A car that had already crossed the line after the flag could break down or crash before the race was over, and it was counted as retired: its place and its points went to the car behind.
+    Now:  It keeps its result. Until the race is over, the panel may still show it as retired.
+
+THE PADDOCK
+
+  22. Money, people and sponsors
+    Was:  The salary cap by income did not apply to department chiefs; three drivers could never be signed as test drivers; the pay drivers were paid instead of paying (because of the bug with GPWEdit 1.1); signing news did not tell test drivers from race drivers; repairs used the commercial staff; the highest morale gave too much extra effort; and the sponsors page showed multi-year supplier deals as works deals.
+    Now:  All of that is fixed.
+
+  23. Audio
+    Was:  Takagi's and Rosset's voice clips were swapped.
+    Now:  They are not.
+
+SCREENS AND SAVED GAMES
+
+  24. Live Championship Standings
+    Was:  Nothing in the race showed the championship.
+    Now:  A new panel, after Car Internals, with the drivers' and constructors' championship as it would be if the race ended now, with green and red arrows for who gains and loses places. Your cars and team are in yellow.
+
+  25. Car Internals, the Position tab and Race Order
+    Was:  No way to see the state of the parts in a race; the Position tab showed two cars ahead and two behind; Race Order looked random at lap zero.
+    Now:  A Car Internals tab with the seven large parts of each of your drivers; the Position tab shows five ahead and five behind; Race Order shows the grid at the start.
+
+  26. Saved games
+    Was:  A game saved in the middle of a race lost the times of the pit stops.
+    Now:  They are kept. Games saved with 0.1 still load, with those times at zero. A Safety Car that is out at the moment of saving is not kept.
+
+
+6. WHAT CHANGED IN 0.1: WAS / NOW (STILL VALID)
    (Short names such as "SC" are used for the Safety Car.)
 
 THE SAFETY CAR
 
    1. Safety Car
     Was:  It did not exist. A car stopped on the track changed nothing for the rest of the field.
-    Now:  When a car stops on the track after an accident, a mistake, a mechanical failure or a stall on the grid, the Safety Car may come out. How likely depends on the reason.
-          It can come out from the first lap, but not near the end of the race, and it is always called off with enough laps left to race again. A ghost car leaves the pit
-          lane, the field slows down and bunches up behind it, and nobody overtakes except stopped or retired cars (this applies to you as well). The race restarts when it
-          comes in.
+    Now:  When a car stops on the track after an accident, a mistake, a mechanical failure or a stall on the grid, the Safety Car may come out. How likely depends on the reason. It can come out from the first lap, but not near the end of the race, and it is always called off with enough laps left to race again. A ghost car leaves the pit lane, the field slows down and bunches up behind it, and nobody overtakes except stopped or retired cars (this applies to you as well). The race restarts when it comes in.
 
    2. Fuel, tyres and parts under the Safety Car
     Was:  Consumption and wear were always the same.
@@ -76,8 +198,7 @@ THE SAFETY CAR
 
    3. What the AI does about it
     Was:  The AI had no logic for it and followed its pit plan.
-    Now:  It re-plans: it refuels at once if it cannot reach the end, it comes in if its stop was due soon anyway, it takes a "free" stop when the cars behind are far enough away,
-          and it changes tyres that are worn.
+    Now:  It re-plans: it refuels at once if it cannot reach the end, it comes in if its stop was due soon anyway, it takes a "free" stop when the cars behind are far enough away, and it changes tyres that are worn.
 
    4. Safety Car on the map
     Was:  The map showed only the cars.
@@ -129,8 +250,7 @@ AI STRATEGY
 
   15. Length of the stints
     Was:  No limit on a soft-tyre stint, and hard-tyre cars could not stay out much longer than anyone.
-    Now:  A soft-tyre stint is capped to part of the distance, hard-tyre cars can stay out longer before their first stop, and no stint of an AI car is shorter than a fixed share
-          of the race distance (first, in between and last). Your cars are left exactly as you set them, and team-mates never plan to stop on the same lap.
+    Now:  A soft-tyre stint is capped to part of the distance, hard-tyre cars can stay out longer before their first stop, and no stint of an AI car is shorter than a fixed share of the race distance (first, in between and last). Your cars are left exactly as you set them, and team-mates never plan to stop on the same lap.
 
   16. Fuel
     Was:  At every stop the AI added a whole stint on top of what was left, and every car left the grid with the same amount of fuel whatever its plan.
@@ -141,8 +261,7 @@ AI STRATEGY
     Now:  The thresholds scale to the real race distance, a lapped car decides like the leader, and the first stop after a re-plan can no longer land too early and be skipped.
 
   18. A stop that was getting lost
-    Was:  When a car was due to stop while its team-mate was in the pits, it was supposed to wait a lap, but the code compared wrongly and the stop vanished. The car also skipped a
-          stretch of track while it decided.
+    Was:  When a car was due to stop while its team-mate was in the pits, it was supposed to wait a lap, but the code compared wrongly and the stop vanished. The car also skipped a stretch of track while it decided.
     Now:  The stop is postponed properly and the car stays where it was.
 
   19. Broken front wing
@@ -151,8 +270,7 @@ AI STRATEGY
 
   20. Qualifying runs
     Was:  A rotating pointer and a coin toss. Only one car could leave the pits at a time, and there was a limit on cars on track.
-    Now:  Each car makes several runs. The first and last are scheduled by how good the car is (slow cars go out early), the others are left to chance, and there is no limit on cars
-          on track. The AI stays in the pits if the track gets wetter than when the best time was set, unless it is the final stretch.
+    Now:  Each car makes several runs. The first and last are scheduled by how good the car is (slow cars go out early), the others are left to chance, and there is no limit on cars on track. The AI stays in the pits if the track gets wetter than when the best time was set, unless it is the final stretch.
 
   21. Constructors' table
     Was:  Teams with no points all received the same stored position, which fed the share prices and the news with wrong values.
@@ -180,8 +298,7 @@ FAILURES, WEAR AND PIT STOPS
 
   26. Mechanical failures
     Was:  Only the game's random failures, with a cap on retirements per circuit.
-    Now:  The cap is gone, and at a few moments of the race the game checks whether too few cars have retired and, if so, may give a healthy car a failure. The human player gets the
-          same extra failure risk in the first laps as the AI.
+    Now:  The cap is gone, and at a few moments of the race the game checks whether too few cars have retired and, if so, may give a healthy car a failure. The human player gets the same extra failure risk in the first laps as the AI.
 
   27. Two-hour limit
     Was:  A car finished when its own clock reached the limit, without crossing the line, and the order followed the physical order on track.
@@ -195,8 +312,7 @@ PENALTIES
 
   29. Race penalties (false start, pit lane speeding, blue and yellow flags)
     Was:  Applied on the spot, with no investigation.
-    Now:  They are held back for a few laps with an investigation notice, then applied as a stop-go or as time added to the result. If the decision comes too late to serve a stop-go,
-          it becomes a time penalty. The AI comes in a few laps after the decision.
+    Now:  They are held back for a few laps with an investigation notice, then applied as a stop-go or as time added to the result. If the decision comes too late to serve a stop-go, it becomes a time penalty. The AI comes in a few laps after the decision.
 
   30. Classification
     Was:  Cars on the same lap were ordered by race time alone.
@@ -277,8 +393,7 @@ NEWS AND TEXTS
 
   43. Wordings
     Was:  Every event had a single fixed wording.
-    Now:  Many events have several wordings, picked at random, with the matching headline. The pack adds 1,356 new texts in english.txt (news variants, events, Safety Car,
-          penalties, the two-hour limit and strategy news).
+    Now:  Many events have several wordings, picked at random, with the matching headline. The pack adds 1,356 new texts in english.txt (news variants, events, Safety Car, penalties, the two-hour limit and strategy news).
 
   44. Injuries
     Was:  The news and the mail did not say how long the injury would last.
@@ -298,8 +413,7 @@ NEWS AND TEXTS
 
   48. 1998 names
     Was:  Sponsor, driver and team names of the original season.
-    Now:  45 texts of the original are rewritten for 1998: sponsors, drivers and teams (for example "Buzzin Hornets" becomes "Benson and Hedges", "Marrano" becomes "Marlboro"
-          and "John Newhouse" becomes "Jacques Villeneuve"), the injury texts and the "GAME OVER" text, which now reads "SIMPLY LOVELY".
+    Now:  45 texts of the original are rewritten for 1998: sponsors, drivers and teams (for example "Buzzin Hornets" becomes "Benson and Hedges", "Marrano" becomes "Marlboro" and "John Newhouse" becomes "Jacques Villeneuve"), the injury texts and the "GAME OVER" text, which now reads "SIMPLY LOVELY".
 
 SCREENS AND SPEED
 
@@ -313,13 +427,11 @@ SCREENS AND SPEED
 
   51. Race Order panel
     Was:  It listed only the cars that had crossed the line on the current lap.
-    Now:  It always lists the whole field in the live order, over two pages of eleven cars, with the stops made, the tyre fitted (D dry, I intermediate in green, W wet in red), the gap to the leader and
-          the gap to the car ahead. The gap to the car ahead gives "+N L" only if the car is really that many laps behind the one in front.
+    Now:  It always lists the whole field in the live order, over two pages of eleven cars, with the stops made, the tyre fitted (D dry, I intermediate in green, W wet in red), the gap to the leader and the gap to the car ahead. The gap to the car ahead gives "+N L" only if the car is really that many laps behind the one in front.
 
   52. Pit Stops panel
     Was:  Number of stops and the fastest and slowest one.
-    Now:  Every driver who has stopped, in the live race order, with three blocks, Pit 1, Pit 2 and Pit 3: the lap of each of the first three stops (L before the number, for
-          example L22) and its duration in seconds, rounded to the tenth (for example 27.6s).
+    Now:  Every driver who has stopped, in the live race order, with three blocks, Pit 1, Pit 2 and Pit 3: the lap of each of the first three stops (L before the number, for example L22) and its duration in seconds, rounded to the tenth (for example 27.6s).
 
   53. Lap Times panel
     Was:  It only showed your own cars.
@@ -350,8 +462,7 @@ DATA TABLES AND THE 1998 SEASON
     Now:  The REMASTERED curve, smoother, with the same extremes.
 
   59. Engines
-    Was:  The 1.03 starting values: each of the eight engines added up to 42 points across its seven attributes (consumption, heat, power, reliability, response, stiffness and
-          weight).
+    Was:  The 1.03 starting values: each of the eight engines added up to 42 points across its seven attributes (consumption, heat, power, reliability, response, stiffness and weight).
     Now:  New starting values, more spread out. The totals are now Hart 28, Ferrari 38, Ford 32, Mercedes Benz 40, and 34, 30, 34 and 36 for the other four engines.
 
   60. Headquarters
@@ -359,45 +470,35 @@ DATA TABLES AND THE 1998 SEASON
     Now:  Capacity of 120, 160, 200, 240 and 280, and a cost per level of 3.2 M, 6.4 M, 9.6 M, 12.8 M and 16 M.
 
   61. Non-F1 drivers
-    Was:  Wages from 20,000 to 35,000, no bonuses, almost every skill at 1, and ages and nationalities from another line-up (for example Wilson: wage 26,000, Speed 1, Skill 1,
-          age 30).
-    Now:  Wages from 1 M to 5 M (De la Rosa and Gene are pay drivers, paying 6 M and 4 M), race and championship bonuses, skills from 2 to 4, and 1998 ages and nationalities
-          (Wilson: wage 1 M, Speed 2, Skill 3, age 23). WetWeather of De la Rosa, Gene, Junqueira and Rodriguez is 2 and Verstappen's is 3.
+    Was:  Wages from 20,000 to 35,000, no bonuses, almost every skill at 1, and ages and nationalities from another line-up (for example Wilson: wage 26,000, Speed 1, Skill 1, age 30).
+    Now:  Wages from 1 M to 5 M (De la Rosa and Gene are pay drivers, paying 6 M and 4 M), race and championship bonuses, skills from 2 to 4, and 1998 ages and nationalities (Wilson: wage 1 M, Speed 2, Skill 3, age 23). WetWeather of De la Rosa, Gene, Junqueira and Rodriguez is 2 and Verstappen's is 3.
 
   62. Circuits
     Was:  The 1.01 and 1.03 values (identical to each other).
-    Now:  Overtaking is one point lower at Australia (5 to 4), Argentina (3 to 2), Spain (3 to 2), Canada (4 to 3), France (5 to 4), Germany (6 to 5), Hungary (2 to 1),
-          Belgium (4 to 3), Italy (6 to 5), Luxembourg (5 to 4) and Japan (4 to 3), and four lower at San Marino (6 to 2). The starting rain set-up is one point higher at
-          Australia, Brazil, Argentina, San Marino, Spain, Monaco, France, Great Britain, Austria, Belgium, Italy and Luxembourg, and four higher at Japan (3 to 7). France has 72
-          laps (was 71) and Japan 53 (was 51).
+    Now:  Overtaking is one point lower at Australia (5 to 4), Argentina (3 to 2), Spain (3 to 2), Canada (4 to 3), France (5 to 4), Germany (6 to 5), Hungary (2 to 1), Belgium (4 to 3), Italy (6 to 5), Luxembourg (5 to 4) and Japan (4 to 3), and four lower at San Marino (6 to 2). The starting rain set-up is one point higher at Australia, Brazil, Argentina, San Marino, Spain, Monaco, France, Great Britain, Austria, Belgium, Italy and Luxembourg, and four higher at Japan (3 to 7). France has 72 laps (was 71) and Japan 53 (was 51).
           These values come from the REMASTERED base (Ferrim's own build, never released: the 1.03 patched with GPWEdit) and could already be set with GPWEdit; the pack keeps them as they are.
 
   63. Sponsors and suppliers
     Was:  The 1.03 starting ratings and classes.
-    Now:  The same 98 sponsors and the same starting split between teams, with ten values changed in nine of them. Ratings: Benson and Hedges 2 to 3, Gauloises 3 to 2, Red Bull 1
-          to 2, Winfield 5 to 4, and the engines Mugen-Honda and Peugeot 4 to 3. Classes: Bridgestone 4 to 5, Goodyear 5 to 4, and the engines Ford 5 to 4 and Peugeot 3 to 2.
+    Now:  The same 98 sponsors and the same starting split between teams, with ten values changed in nine of them. Ratings: Benson and Hedges 2 to 3, Gauloises 3 to 2, Red Bull 1 to 2, Winfield 5 to 4, and the engines Mugen-Honda and Peugeot 4 to 3. Classes: Bridgestone 4 to 5, Goodyear 5 to 4, and the engines Ford 5 to 4 and Peugeot 3 to 2.
 
   64. Department chiefs
     Was:  The 1.03 wages and bonuses, for example Commercial Manager 150,000, Chief Designer 250,000, Technical Director 500,000 and Chief Mechanic 150,000.
-    Now:  Wages rise for 43 of the 44 chiefs (and fall for one): Commercial Manager 600,000, Chief Designer 2,000,000, Technical Director 5,000,000 and Chief Mechanic 500,000.
-          Both bonuses rise for most chiefs, and the skill level of eleven chiefs and the age of eight also change.
+    Now:  Wages rise for 43 of the 44 chiefs (and fall for one): Commercial Manager 600,000, Chief Designer 2,000,000, Technical Director 5,000,000 and Chief Mechanic 500,000. Both bonuses rise for most chiefs, and the skill level of eleven chiefs and the age of eight also change.
 
   65. Test drivers
     Was:  Benetton, Jordan and Stewart had the test driver slot but empty: no age, wage or skills, listed as "Driver Unknown".
     Now:  They have an age, a wage and every skill at 1 (they still appear as "Driver Unknown"). These values come from the REMASTERED base (Ferrim's own build, never released: the 1.03 patched with GPWEdit) and could already be set with GPWEdit.
 
 
-6. THINGS YOU SHOULD KNOW
-  - Most of the new features have been checked on a test bench but not yet in many real races. The ones least seen in a race are the mid-season termination, the market changes, the new
-    qualifying runs, the penalty process, the new failure checks, the pit lane speed on circuits that were not calibrated, and the new screens.
-  - The sound code leaks Windows event handles in long sessions. The fix is included, but the number of open handles still grows, so very long sessions can lose the commentary sounds
-    or slow down. Saving and restarting the game clears it.
-  - A few circuits still use a general value for the pit lane speed. The times the AI uses to decide whether a stop is free under the Safety Car are estimates. The French and German
-    versions of the new texts are not included, because they are not up to date: those languages keep the original game's texts. Some 1998 numbers are Ferrim's best reading of the real season.
+7. THINGS YOU SHOULD KNOW
+  - Every feature in this pack has been through a test bench and through real races, but if you find something that does not work, tell me. The wind is a first version and I will take another look at it.
+  - The sound code leaks Windows event handles in long sessions. The fix is included, but the number of open handles still grows, so very long sessions can lose the commentary sounds or slow down. Saving and restarting the game clears it.
+  - A few circuits still use a general value for the pit lane speed. The times the AI uses to decide whether a stop is free under the Safety Car are estimates. The French and German versions of the new texts are not included, because they are not up to date: those languages keep the original game's texts. Some 1998 numbers are Ferrim's best reading of the real season.
   - The internal values of the game (probabilities, times, weights) can change between versions of this pack. Do not rely on numbers copied from an older version.
 
 
-7. REPORTING BUGS AND CREDITS
+8. REPORTING BUGS AND CREDITS
   Any bug or annoyance you have found over the years is welcome. Post it in the GPM Planet forum or on the Discord, with the circuit, the round and what you were doing.
   You can also propose ideas and see what is already on the list at https://fermanpre.github.io/gpw-evolution-98/. Other ways to reach Ferrim are in CREDITS.txt.
   Credits and licences are in CREDITS.txt (please read it: the new audio is licensed for non-commercial use only).

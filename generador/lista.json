@@ -147,7 +147,7 @@
     {
       "numero": 5,
       "categoria": "interface",
-      "estado": "testing",
+      "estado": "done",
       "titulo": {
         "en": "Live championship standings during the race",
         "es": "Clasificación del campeonato en vivo durante la carrera"
@@ -157,8 +157,8 @@
         "es": "Una pantalla con los campeonatos de pilotos y de constructores que se actualice según cambian las posiciones, para ver de un vistazo cómo afecta la carrera en curso a ambos."
       },
       "hoy": {
-        "en": "In progress. In the 0.2 test build there is a new race panel, \"Live Championship Standings\", reached with the panel arrows: the drivers' championship in one column and the constructors' in the other, as it would stand if the race ended now (season points plus the points of the current position, retired cars not counted). Each row shows the place, the name and the points, with a green arrow if the place goes up and a red one if it goes down compared with before the race; your own cars and team are in yellow. Still to see in a race: the real layout and whether the arrows show.",
-        "es": "En curso. En la versión de prueba 0.2 hay un panel de carrera nuevo, «Live Championship Standings», al que se llega con las flechas del panel: el campeonato de pilotos en una columna y el de constructores en la otra, como quedaría si la carrera acabara ahora (puntos de la temporada más los de la posición actual, sin contar a los retirados). Cada fila enseña el puesto, el nombre y los puntos, con una flecha verde si el puesto sube y una roja si baja respecto a antes de la carrera; tus coches y tu equipo van en amarillo. Falta verlo en una carrera: la disposición real y que las flechas se vean."
+        "en": "Done in 0.2. There is a new race panel, \"Live Championship Standings\", reached with the panel arrows: the drivers' championship in one column and the constructors' in the other, as it would stand if the race ended now (season points plus the points of the current position, retired cars not counted). Each row shows the place, the name and the points, with a green arrow if the place goes up and a red one if it goes down compared with before the race; your own cars and team are in yellow.",
+        "es": "Hecha en la 0.2. Hay un panel de carrera nuevo, «Live Championship Standings», al que se llega con las flechas del panel: el campeonato de pilotos en una columna y el de constructores en la otra, como quedaría si la carrera acabara ahora (puntos de la temporada más los de la posición actual, sin contar a los retirados). Cada fila enseña el puesto, el nombre y los puntos, con una flecha verde si el puesto sube y una roja si baja respecto a antes de la carrera; tus coches y tu equipo van en amarillo."
       },
       "idioma_original": "en"
     },
@@ -319,8 +319,8 @@
         "es": "Ya existen controles para cuando un equipo intenta fichar a un piloto o a un jefe de departamento y el equipo no es competitivo (por ejemplo, su presupuesto estimado es bajo o su posición en el WCC es mala).\n\nSin embargo, estos controles funcionan por azar y se pueden eludir pidiendo en la ronda siguiente (o recargando la partida, también eso). Así es como Minardi acaba con Hakkinen y Adrian Newey. Sería mejor que esos controles tuvieran una probabilidad mucho, mucho mayor de saltar. Las noticias del tipo «Villeneuve se va a Tyrrell» no me molestan, pero sí cuando pasan DEMASIADO a menudo (es decir, durante todo el primer año)"
       },
       "hoy": {
-        "en": "Partly covered: since 0.1 a team signs a driver only if his asked salary fits its estimated income, which keeps most stars away from poor teams. It does not look at the driver's level yet. Extending the same cap to department chiefs, with a final pass that fills empty seats, is being tested for 0.2.",
-        "es": "Cubierta en parte: desde la 0.1 un equipo ficha a un piloto solo si el sueldo que pide cabe en sus ingresos estimados, lo que mantiene a casi todas las estrellas lejos de los equipos pobres. Todavía no mira el nivel del piloto. Se está probando para la 0.2 aplicar el mismo tope a los jefes de departamento, con una pasada final que rellena las plazas vacías."
+        "en": "Partly covered: since 0.1 a team signs a driver only if his asked salary fits its estimated income, which keeps most stars away from poor teams. It does not look at the driver's level yet. Since 0.2 the same cap also applies to department chiefs, with a final pass at the end of the season that fills empty seats.",
+        "es": "Cubierta en parte: desde la 0.1 un equipo ficha a un piloto solo si el sueldo que pide cabe en sus ingresos estimados, lo que mantiene a casi todas las estrellas lejos de los equipos pobres. Todavía no mira el nivel del piloto. Desde la 0.2 el mismo tope se aplica también a los jefes de departamento, con una pasada final al cierre de la temporada que rellena las plazas vacías."
       },
       "idioma_original": "en"
     },
@@ -381,7 +381,7 @@
     {
       "numero": 18,
       "categoria": "market",
-      "estado": "testing",
+      "estado": "done",
       "titulo": {
         "en": "Reduce the effect of Morale on the departments' effort",
         "es": "Reducir el efecto de Morale sobre el esfuerzo de los departamentos"
@@ -391,15 +391,15 @@
         "es": "Cada departamento tiene tiene una medida de esfuerzo que viene basada en el valor de Morale asignado. Sus efectos son de modificar el esfuerzo por 60, 80, 100, 110 y 120%. Los valores de Morale 4 y 5 hacen que sea muy fácil mantener un equipo competitivo ya que, entre otros, permiten construir un mayor número de Spares para mantener a los autos en mejor condición, hacer Testing mucho más rápido y firmar Sponsors mucho más rápido. También permite ahorrar mucho dinero ya que se puede firmar menos personal, y personal menor que es más barato.\n\nSugiero reducir el valor proporcionado por Morale 4 y 5 a 100% (no aumenta esfuerzo) o.a valores mínimos, como 102.5 y 105%, para que aún exista calor en formar mejor personal."
       },
       "hoy": {
-        "en": "In progress. In the 0.2 test build, morale levels 4 and 5 now give +5% and +10% effort to the departments instead of +10% and +20%; levels 1 to 3 are unchanged. Still to test in a game.",
-        "es": "En curso. En la versión de prueba 0.2, la moral 4 y 5 da ahora +5 % y +10 % de esfuerzo a los departamentos en lugar de +10 % y +20 %; los niveles 1 a 3 no cambian. Falta probarlo en partida."
+        "en": "Done in 0.2. Morale levels 4 and 5 now give +5% and +10% effort to the departments instead of +10% and +20%; levels 1 to 3 are unchanged.",
+        "es": "Hecha en la 0.2. La moral 4 y 5 da ahora +5 % y +10 % de esfuerzo a los departamentos en lugar de +10 % y +20 %; los niveles 1 a 3 no cambian."
       },
       "idioma_original": "es"
     },
     {
       "numero": 19,
       "categoria": "car",
-      "estado": "testing",
+      "estado": "done",
       "titulo": {
         "en": "Bugs in Design",
         "es": "Bugs en Diseño"
@@ -409,8 +409,8 @@
         "es": "Aquí una lista de bugs varios detectados en la sección de Diseño (Design)\n* Al completar un componente de Tecnología, el contador de progreso no se reinicia. Esto causa que, si se empieza a diseñar una nueva pieza está esté terminada en la ronda siguiente. El contador de progreso se reinicia de forma correcta si se inicia y luego se cancela la pieza. Lo mismo posiblemente ocurra con las Driving Aids.\n* Si las regulaciones de la FIA son favorables para el equipo, estos ganan puntos de progreso en el diseño del nuevo chassis. Sin embargo, al iniciar el diseño del nuevo chassis, estos puntos desaparecen.\n* POSIBLEMENTE el edificio CAD, el encargado de acelerar la fase 1 de diseño (Design) no tiene ningún efecto. Una revisión de código me indico que no tiene efecto. \n* Las fases que llevan más tiempo para el diseño son las fases 1 (Design), 4 (Wind Tunnel), 3 (Model Design) y 2 (CFD). Sin embargo, la efectividad de una mejora o nuevo chassis depende de las fases 1 (40%), 2 (30%), 3 (20%) y 4 (10%). La fase de Wind Tunnel es fácilmente skippeable usando Research, y apenas tiene efecto sobre el diseño. Recomiendo modificar los pesos de las fases de forma que el peso relativo sobre el diseño coincida con la dificultad de la fase.\n* Debido a como estan hechas las tablas, el Rendimiento 5 tiene el mismo efecto que Rendimiento 4 sobre el frío del auto."
       },
       "hoy": {
-        "en": "In progress. Done in the 0.2 test build: the FIA points are no longer lost when you start the new chassis design; a completed Technology part or Driving Aid resets its progress counter; the CAD building now gives a bonus; the four design phases weigh 4, 1, 2 and 3 to follow how long each takes; and rating 5 of the suspension and of the reliability counters no longer repeats rating 4. The accumulator of the Technology parts is now also reset at the season change. Still to test in a race.",
-        "es": "En curso. Hecho en la versión de prueba 0.2: los puntos de la FIA ya no se pierden al iniciar el diseño del nuevo chasis; una pieza de Tecnología o una Driving Aid completada reinicia su contador de progreso; el edificio CAD ya da bono; las cuatro fases del diseño pesan 4, 1, 2 y 3 según lo que dura cada una; y el rating 5 de la suspensión y de los contadores de fiabilidad ya no repite el 4. El acumulador de las piezas de Tecnología también se reinicia ya en el cambio de temporada. Falta probarlo en carrera."
+        "en": "Done in 0.2: the FIA points are no longer lost when you start the new chassis design; a completed Technology part or Driving Aid resets its progress counter; the CAD building now gives a bonus; the four design phases weigh 4, 1, 2 and 3 to follow how long each takes; and rating 5 of the suspension and of the reliability counters no longer repeats rating 4. The accumulator of the Technology parts is now also reset at the season change.",
+        "es": "Hecha en la 0.2: los puntos de la FIA ya no se pierden al iniciar el diseño del nuevo chasis; una pieza de Tecnología o una Driving Aid completada reinicia su contador de progreso; el edificio CAD ya da bono; las cuatro fases del diseño pesan 4, 1, 2 y 3 según lo que dura cada una; y el rating 5 de la suspensión y de los contadores de fiabilidad ya no repite el 4. El acumulador de las piezas de Tecnología también se reinicia ya en el cambio de temporada."
       },
       "idioma_original": "es"
     },
@@ -427,8 +427,8 @@
         "es": "Acá una lista de bugs o comportamiento mejorable en cuanto a Proveedores\n* El parámetro Reliability de motores no tiene ningún efecto, no afecta la vida del motor ni su tasa de desgaste\n* Debido a como están configuradas las tablas, el parámetros Grip de neumáticos pueden tener efectos negativos. Grip reduce errores, aumenta la tasa de consumo de combustible y aumenta el frío del auto hasta 5. De 6 en adelante, no aumenta más el grip, por lo que potencialmente un neumatico de grip 5 es más rápido que uno de grip 10 debido a menor consumo de combustible.\n* Los equipos buscan el Supplier con mayor valor de R&D primero.\n* Los equipos con contrato Works no usan la opción de diseñar motores, combustible o neumáticos. Deberían hacerlo en base a la habilidad de su Chief Mechanic (Chief Mechanic nivel 5 = mejoras cada 1 o 2 carreras, nivel 4 cada 2 o 3, y así)\n* Darle a los equipos un proveedor preferencial, es decir Ferrari busca firmar motores Ferrari. Mercedes busca firmar motores Mercedes. Toyota busca firmar motores Toyota.\n* Si un proveedor no es firmado por ningún equipo, añadir la probabilidad de que estos bajen su nivel de Cash. Si un proveedor tiene Cash 1 y no es firmado, añadir la posibilidad de que estos dejen la F1.\n* Si un proveedor ve buenos resultados, que exista la posibilidad de que aumenten su valor de Cash y/o R&D.\n* Aumentar las probabilidades de que proveedores entren a la F1, sobretodo si otros proveedores quieren salir\n\nY dos mejoras y un bug que aplica más a Sponsors en general, no solo a Suppliers.\n* Si se tiene Hospitality, VIP 3 es un patrocinador nuevo, y se tiene 0% en VIP 3 (y potencialmente al menos 1% en VIP 1), el patrocinador tendrá la ventaja de Hospitality en la ronda siguiente.\n* Aumentar la facilidad con la que se gana la ventaja de Hospitality, actualmente es imposible de obtener sin el bug previamente mencionado.\n* Permitir que los patrocinadores actuales, no solo los nuevos, tengan ventaja de Hospitality."
       },
       "hoy": {
-        "en": "Partly done in the 0.2 test build: tyre Grip from 7 to 10 now adds performance (before, anything above 6 gave nothing while still raising consumption and temperature). Not looked at yet: engine Reliability, the AI choosing suppliers by R&D, a preferred supplier, Works teams designing, suppliers entering and leaving, and the Hospitality advantage.",
-        "es": "Hecha en parte en la versión de prueba 0.2: el Grip del neumático de 7 a 10 ya suma rendimiento (antes, por encima de 6 no daba nada y seguía subiendo el consumo y la temperatura). Sin revisar todavía: la Reliability del motor, que la IA elija proveedor por I+D, un proveedor preferente, que los equipos Works diseñen, la entrada y salida de proveedores y la ventaja de Hospitality."
+        "en": "Partly done in 0.2: tyre Grip from 7 to 10 now adds performance (before, anything above 6 gave nothing while still raising consumption and temperature). Not looked at yet: engine Reliability, the AI choosing suppliers by R&D, a preferred supplier, Works teams designing, suppliers entering and leaving, and the Hospitality advantage.",
+        "es": "Hecha en parte en la 0.2: el Grip del neumático de 7 a 10 ya suma rendimiento (antes, por encima de 6 no daba nada y seguía subiendo el consumo y la temperatura). Sin revisar todavía: la Reliability del motor, que la IA elija proveedor por I+D, un proveedor preferente, que los equipos Works diseñen, la entrada y salida de proveedores y la ventaja de Hospitality."
       },
       "idioma_original": "es"
     },
@@ -499,8 +499,8 @@
         "es": "Las Time Units que el juego usar para la reparación de Wear y Damage causado por pruebas y carreras depende del personal Comercial, no del personal Mecánico."
       },
       "hoy": {
-        "en": "Done: the repair screen now uses the Mechanical staff's Time Units, not the Commercial staff's. It is in the 0.2 test build and has not been seen in a race yet.",
-        "es": "Hecha: la pantalla de reparación usa ahora las Time Units del personal Mecánico y no las del Comercial. Está en la versión de prueba 0.2 y todavía no se ha visto en una carrera."
+        "en": "Done: the repair screen now uses the Mechanical staff's Time Units, not the Commercial staff's. It is in 0.2.",
+        "es": "Hecha: la pantalla de reparación usa ahora las Time Units del personal Mecánico y no las del Comercial. Está en la 0.2."
       },
       "idioma_original": "es"
     },
@@ -543,7 +543,7 @@
     {
       "numero": 27,
       "categoria": "car",
-      "estado": "testing",
+      "estado": "done",
       "idioma_original": "es",
       "titulo": {
         "en": "Adjust the weather simulation in the race",
@@ -554,14 +554,14 @@
         "es": "Actualmente la simulación de clima en calificación y carrera se manejan de forma distinta. La de calificación depende del tiempo en la sesión, la de carrera depende de la vuelta del líder.\n\nAjustarla para que en ambos casos dependa del tiempo en la sesión y por tanto no se pueda predecir que el clima cambiará cuando el líder cruza la línea de meta mejoraría la simulación.\n\nAdicionalmente, bug relacionados con clima:\n* Todo problema relacionado con la velocidad del viento, sea pérdida de grip o activación de problemas como \"High Pitch Sensitivity\" dependen del parámetro Wind del setup, no de la velocidad del viento. Y debido a como están configuradas las tablas, usar parámetros de Wind 6, 8 o 10 permiten evitar cualquier perdida de grip causada por alta velocidad del viento o problemas del auto. Hay que modificar parámetros, se forma que los problemas por grip dependan de la velocidad del viento, no de Wind."
       },
       "hoy": {
-        "en": "In progress. In the 0.2 test build the weather in a race advances with race time instead of with the leader's laps, and the wind now penalises by the deficit between twice the wind speed and the car's Wind setting (up to about 0.4 s per lap, adjustable). Still to measure in a race.",
-        "es": "En curso. En la versión de prueba 0.2, el clima en carrera avanza con el tiempo de carrera y no con las vueltas del líder, y el viento penaliza ya por el déficit entre el doble de su velocidad y el Wind del reglaje del coche (hasta unos 0,4 s por vuelta, ajustable). Falta medirlo en carrera."
+        "en": "Done in 0.2: the weather in a race advances with race time instead of with the leader's laps, and the wind now penalises by the deficit between twice the wind speed and the car's Wind setting (up to about 0.4 s per lap, adjustable). The wind is a first version and I will take another look at it.",
+        "es": "Hecha en la 0.2: el clima en carrera avanza con el tiempo de carrera y no con las vueltas del líder, y el viento penaliza ya por el déficit entre el doble de su velocidad y el Wind del reglaje del coche (hasta unos 0,4 s por vuelta, ajustable). El viento es una primera versión y le daré otro repaso."
       }
     },
     {
       "numero": 28,
       "categoria": "race",
-      "estado": "testing",
+      "estado": "done",
       "titulo": {
         "en": "AI wet weather strategy",
         "es": "Estrategia de la IA con clima cambiante"
@@ -571,15 +571,15 @@
         "es": "Ahora que la habilidad de lluvia (W.W.) y el reglaje pesan menos, es aún más fácil ganar a la IA en mojado.\n¿Y si se añade un código que diga: «oye, está lloviendo y la pista se ha mojado más o menos. Dividamos las estrategias: el piloto que va delante en pista entra a boxes por los neumáticos adecuados a la nueva humedad y el otro se queda fuera como siempre»?"
       },
       "hoy": {
-        "en": "In progress. Built and tested in the 0.2 test build, not yet seen in a race. When the track water level goes from 3 to 4 or from 4 to 3 (the intermediate-against-wet case the game ignored), in each AI team the number 1 (or the best-placed driver if there is none) pits for the right tyre with an 80% chance and, if not, his team-mate gets the same chance. The AI also re-plans its remaining stops from the laps left without delaying a stop it already had planned, the first stop now comes 2 or 3 laps later, the ideal tyre is the same for every driver (intermediate at level 3, wet at level 4), and the race weather moves with race time.",
-        "es": "En curso. Hecho y comprobado en la versión de prueba 0.2, aún sin ver en carrera. Cuando el agua en pista pasa de 3 a 4 o de 4 a 3 (el caso de intermedio contra lluvia que el juego ignoraba), en cada equipo de la IA el número 1 (o el mejor clasificado si no hay) entra por el neumático correcto con un 80 % y, si no, su compañero tiene la misma oportunidad. Además la IA rehace las paradas que le quedan según las vueltas restantes sin retrasar una parada que ya tuviera planificada, la primera parada llega 2 o 3 vueltas después, el neumático ideal es el mismo para todos los pilotos (intermedio en el nivel 3, lluvia en el nivel 4) y el clima de carrera avanza con el tiempo de carrera."
+        "en": "Done in 0.2. When the track water level goes from 3 to 4 or from 4 to 3 (the intermediate-against-wet case the game ignored), in each AI team the number 1 (or the best-placed driver if there is none) pits for the right tyre with an 80% chance and, if not, his team-mate gets the same chance. The AI also re-plans its remaining stops from the laps left without delaying a stop it already had planned, the first stop now comes 2 or 3 laps later, the ideal tyre is the same for every driver (intermediate at level 3, wet at level 4), and the race weather moves with race time.",
+        "es": "Hecha en la 0.2. Cuando el agua en pista pasa de 3 a 4 o de 4 a 3 (el caso de intermedio contra lluvia que el juego ignoraba), en cada equipo de la IA el número 1 (o el mejor clasificado si no hay) entra por el neumático correcto con un 80 % y, si no, su compañero tiene la misma oportunidad. Además la IA rehace las paradas que le quedan según las vueltas restantes sin retrasar una parada que ya tuviera planificada, la primera parada llega 2 o 3 vueltas después, el neumático ideal es el mismo para todos los pilotos (intermedio en el nivel 3, lluvia en el nivel 4) y el clima de carrera avanza con el tiempo de carrera."
       },
       "idioma_original": "en"
     },
     {
       "numero": 29,
       "categoria": "graphics",
-      "estado": "testing",
+      "estado": "done",
       "titulo": {
         "en": "Commercial sponsor page bug",
         "es": "Error en la página de patrocinadores comerciales"
@@ -589,8 +589,8 @@
         "es": "En una partida nueva, al mirar los contratos del año siguiente de los patrocinadores de motores, los contratos de más de 1 año aparecen arriba en ese patrocinador, lo que hace que se muestren como «works deal» aunque el patrocinio real sea de cliente o de socio."
       },
       "hoy": {
-        "en": "In progress. In the 0.2 test build, the list of continuing contracts shows the level the team signed (customer, partner or works) and keeps it the next year. Still to check in a new game.",
-        "es": "En curso. En la versión de prueba 0.2, la lista de contratos que continúan enseña el nivel que firmó el equipo (cliente, socio o works) y lo mantiene el año siguiente. Falta comprobarlo en una partida nueva."
+        "en": "Done in 0.2: the list of continuing contracts shows the level the team signed (customer, partner or works) and keeps it the next year.",
+        "es": "Hecha en la 0.2: la lista de contratos que continúan enseña el nivel que firmó el equipo (cliente, socio o works) y lo mantiene el año siguiente."
       },
       "idioma_original": "en"
     },
@@ -615,7 +615,7 @@
     {
       "numero": 31,
       "categoria": "race",
-      "estado": "testing",
+      "estado": "done",
       "titulo": {
         "en": "Penalty time added at the end of the race is bugged",
         "es": "La penalización de tiempo añadida al final de la carrera falla"
@@ -625,15 +625,15 @@
         "es": "Si un piloto que va una vuelta o más por detrás del líder recibe una penalización de tiempo añadido al final de la carrera, el juego no la aplica correctamente."
       },
       "hoy": {
-        "en": "In progress. In the 0.2 test build the final classification already applied the time penalty to cars on the same lap, and two gaps have been closed: a stop-go that was applied but not served when the flag fell now adds 25 s, and a car whose penalty makes it lose to cars with fewer laps drops behind them and counts as one lap down. The Race Order panel shows \"+N L\" for that car and the penalty in seconds in red after the name. Still to see in a real race with lapped cars.",
-        "es": "En curso. En la versión de prueba 0.2 la clasificación final ya aplicaba la penalización de tiempo entre coches de la misma vuelta, y se han cerrado dos huecos: un stop-go aplicado y sin cumplir al caer la bandera suma ahora 25 s, y un coche al que la penalización hace perder frente a coches con menos vueltas cae detrás de ellos y pasa a contar como doblado. El panel Race Order enseña «+N L» en ese coche y la penalización en segundos en rojo detrás del nombre. Falta verlo en una carrera real con coches doblados."
+        "en": "Done in 0.2. The final classification already applied the time penalty to cars on the same lap, and two gaps have been closed: a stop-go that was applied but not served when the flag fell now adds 25 s, and a car whose penalty makes it lose to cars with fewer laps drops behind them and counts as one lap down. The Race Order panel shows \"+N L\" for that car and the penalty in seconds in red after the name.",
+        "es": "Hecha en la 0.2. La clasificación final ya aplicaba la penalización de tiempo entre coches de la misma vuelta, y se han cerrado dos huecos: un stop-go aplicado y sin cumplir al caer la bandera suma ahora 25 s, y un coche al que la penalización hace perder frente a coches con menos vueltas cae detrás de ellos y pasa a contar como doblado. El panel Race Order enseña «+N L» en ese coche y la penalización en segundos en rojo detrás del nombre."
       },
       "idioma_original": "en"
     },
     {
       "numero": 32,
       "categoria": "race",
-      "estado": "testing",
+      "estado": "done",
       "titulo": {
         "en": "Player serving a penalty is bugged",
         "es": "Cumplir una penalización en boxes falla para el jugador"
@@ -643,15 +643,15 @@
         "es": "Si tu piloto recibe una penalización para cumplir en boxes, el juego bloquea tu orden de «entrar ahora», espera 3 vueltas y la cumple. Esto está mal."
       },
       "hoy": {
-        "en": "In progress. In the 0.2 test build, with a stop-go penalty pending, the player keeps the 3-lap limit but can call the pits freely in the first two laps to refuel and change tyres (the \"Pit now\" button is back, and the stop is a normal one that leaves the penalty pending). On the third lap the penalty is served automatically as before. The AI does not change. Still to see on screen, in a race with a penalty.",
-        "es": "En curso. En la versión de prueba 0.2, con una sanción de stop-go pendiente, el jugador conserva el límite de 3 vueltas pero puede llamar libremente a boxes en las dos primeras para repostar y cambiar neumáticos (el botón «Pit now» vuelve a aparecer, y la parada es una normal que deja la sanción pendiente). En la tercera vuelta la sanción se cumple sola, como antes. La IA no cambia. Falta verlo en pantalla, en una carrera con una sanción."
+        "en": "Done in 0.2. With a stop-go penalty pending, the player keeps the 3-lap limit but can call the pits freely in the first two laps to refuel and change tyres (the \"Pit now\" button is back, and the stop is a normal one that leaves the penalty pending). On the third lap the penalty is served automatically as before. The AI does not change.",
+        "es": "Hecha en la 0.2. Con una sanción de stop-go pendiente, el jugador conserva el límite de 3 vueltas pero puede llamar libremente a boxes en las dos primeras para repostar y cambiar neumáticos (el botón «Pit now» vuelve a aparecer, y la parada es una normal que deja la sanción pendiente). En la tercera vuelta la sanción se cumple sola, como antes. La IA no cambia."
       },
       "idioma_original": "en"
     },
     {
       "numero": 33,
       "categoria": "ai",
-      "estado": "testing",
+      "estado": "done",
       "titulo": {
         "en": "AI pits but doesn't fix broken wings (and other stuff)",
         "es": "La IA entra a boxes pero no arregla alerones rotos (y otras cosas)"
@@ -661,8 +661,8 @@
         "es": "Si el piloto de la IA rompe un alerón, entra a boxes, no hace nada y vuelve a pista, con lo que se retira poco después.\n\nAdemás, como adenda: que un piloto con cualquier problema en el coche al final de la carrera y que va bajando posiciones intente entrar y «revisar el problema» para no retirarse sin sentido.\nEn cambio, un piloto que va en los puntos se arriesga a quedarse fuera y llegar al final."
       },
       "hoy": {
-        "en": "In progress. In the 0.2 test build the AI now really repairs a broken front wing (before, it pitted but the pit crew was never told to fix it), up to twice per car and not in the last 3 laps. A car with any other failure that is running outside the points (7th or lower) also pits to have it checked, while one in the points takes the risk and stays out. The repair can still fail (a quarter of the time, as in the base game). In addition, an unscheduled stop now counts as the first stop of a new plan: the AI refuels, changes tyres and re-plans its remaining stops from the laps left. Still to see in a race.",
-        "es": "En curso. En la versión de prueba 0.2 la IA repara ya de verdad el alerón delantero roto (antes entraba pero a los mecánicos nunca se les mandaba arreglarlo), hasta dos veces por coche y no en las tres últimas vueltas. Un coche con cualquier otra avería que va fuera de los puntos (7.º o peor) también entra a revisarla, y uno en los puntos se arriesga a seguir fuera. La reparación aún puede fallar (una cuarta parte de las veces, como en el juego base). Además, una parada imprevista cuenta ahora como la primera de un plan nuevo: la IA repuesta, cambia neumáticos y rehace las paradas que le quedan según las vueltas restantes. Falta verlo en carrera."
+        "en": "Done in 0.2. The AI now really repairs a broken front wing (before, it pitted but the pit crew was never told to fix it), up to twice per car and not in the last 3 laps. A car with any other failure that is running outside the points (7th or lower) also pits to have it checked, while one in the points takes the risk and stays out. The repair can still fail (a quarter of the time, as in the base game). In addition, an unscheduled stop now counts as the first stop of a new plan: the AI refuels, changes tyres and re-plans its remaining stops from the laps left.",
+        "es": "Hecha en la 0.2. La IA repara ya de verdad el alerón delantero roto (antes entraba pero a los mecánicos nunca se les mandaba arreglarlo), hasta dos veces por coche y no en las tres últimas vueltas. Un coche con cualquier otra avería que va fuera de los puntos (7.º o peor) también entra a revisarla, y uno en los puntos se arriesga a seguir fuera. La reparación aún puede fallar (una cuarta parte de las veces, como en el juego base). Además, una parada imprevista cuenta ahora como la primera de un plan nuevo: la IA reposta, cambia neumáticos y rehace las paradas que le quedan según las vueltas restantes."
       },
       "idioma_original": "en"
     },
@@ -687,7 +687,7 @@
     {
       "numero": 35,
       "categoria": "car",
-      "estado": "testing",
+      "estado": "done",
       "titulo": {
         "en": "Car wear on certain tracks",
         "es": "Desgaste del coche en ciertos circuitos"
@@ -697,15 +697,15 @@
         "es": "Ahora, tras la 0.1, hay 3 circuitos con un desgaste del chasis anormalmente alto: Brasil (que ya era así en el juego base), Alemania y Bélgica.\nPor favor, arregla el desgaste alto de Alemania y Bélgica: es casi imposible llegar al final de la carrera.\n\nY si te sientes magnánimo, reduce también el ritmo de desgaste de Brasil: con un equipo pequeño hace casi imposible llegar a la carrera 5."
       },
       "hoy": {
-        "en": "In progress. In the 0.2 test build the general wear table has been redone: after a full race (race plus session close) Germany goes from 94.5 to 74.3 wear points, Belgium from 94.0 to 72.6 and Japan from 98.5 to 79.5; Brazil's rate goes from 0.9 to 0.8. Austria, Hungary and Luxembourg rise slightly (to 32, 23 and 20, from 21, 15 and 13 in the original 1.03). Part wear also changed in Monaco (150%). Still to see in a race with a small team.",
-        "es": "En curso. En la versión de prueba 0.2 se ha rehecho la tabla de desgaste general: tras una carrera completa (carrera más cierre de sesión) Alemania pasa de 94,5 a 74,3 puntos de desgaste, Bélgica de 94,0 a 72,6 y Japón de 98,5 a 79,5; la tasa de Brasil baja de 0,9 a 0,8. Austria, Hungría y Luxemburgo suben algo (a 32, 23 y 20, desde 21, 15 y 13 en el 1.03 original). También cambió el desgaste de piezas en Mónaco (150 %). Falta verlo en una carrera con un equipo pequeño."
+        "en": "Done in 0.2. The general wear table has been redone: after a full race (race plus session close) Germany goes from 94.5 to 74.3 wear points, Belgium from 94.0 to 72.6 and Japan from 98.5 to 79.5; Brazil's rate goes from 0.9 to 0.8. Austria, Hungary and Luxembourg rise slightly (to 32, 23 and 20, from 21, 15 and 13 in the original 1.03). Part wear also changed in Monaco (150%).",
+        "es": "Hecha en la 0.2. Se ha rehecho la tabla de desgaste general: tras una carrera completa (carrera más cierre de sesión) Alemania pasa de 94,5 a 74,3 puntos de desgaste, Bélgica de 94,0 a 72,6 y Japón de 98,5 a 79,5; la tasa de Brasil baja de 0,9 a 0,8. Austria, Hungría y Luxemburgo suben algo (a 32, 23 y 20, desde 21, 15 y 13 en el 1.03 original). También cambió el desgaste de piezas en Mónaco (150 %)."
       },
       "idioma_original": "en"
     },
     {
       "numero": 36,
       "categoria": "race",
-      "estado": "testing",
+      "estado": "partial",
       "titulo": {
         "en": "SC bug: SC stays out on track",
         "es": "Fallo del SC: el SC se queda en pista"
@@ -715,8 +715,8 @@
         "es": "El fantasma del SC, cuando tiene que entrar a boxes al final de la vuelta, tiene probabilidad de pasarse la entrada de boxes al teletransportarse: si ocurre, la carrera se reanuda con normalidad, pero el fantasma del SC se queda en pista y sigue teletransportándose delante del líder, lo que hace más probable que se pase la entrada en las vueltas siguientes.\nEste comportamiento es más frecuente con velocidades de juego más altas."
       },
       "hoy": {
-        "en": "In progress, only partly. In the 0.2 test build the ghost slows down with the leader in the last lap and the limit before it is moved back is 5 sections instead of 3, which addresses the \"teleport\" that makes it miss the pit entry. What happens once it has missed the entry and stays out on track is not handled yet, and I have not checked whether the problem is worse at higher game speeds. To be seen in a race with a Safety Car.",
-        "es": "En curso, solo en parte. En la versión de prueba 0.2 el fantasma frena con el líder en la última vuelta y el límite antes de recolocarlo es de 5 secciones en lugar de 3, lo que ataca el «teletransporte» que le hace pasarse la entrada a boxes. Lo que ocurre cuando ya se ha pasado la entrada y se queda en pista no está resuelto todavía, y no he comprobado si empeora con más velocidad de juego. Falta verlo en una carrera con Safety Car."
+        "en": "Partly done in 0.2. The ghost slows down with the leader in the last lap and the limit before it is moved back is 5 sections instead of 3, which addresses the \"teleport\" that makes it miss the pit entry. What happens once it has missed the entry and stays out on track is not handled yet, and I have not checked whether the problem is worse at higher game speeds.",
+        "es": "Hecha en parte en la 0.2. El fantasma frena con el líder en la última vuelta y el límite antes de recolocarlo es de 5 secciones en lugar de 3, lo que ataca el «teletransporte» que le hace pasarse la entrada a boxes. Lo que ocurre cuando ya se ha pasado la entrada y se queda en pista no está resuelto todavía, y no he comprobado si empeora con más velocidad de juego."
       },
       "idioma_original": "en"
     },

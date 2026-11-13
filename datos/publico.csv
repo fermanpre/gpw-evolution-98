@@ -4,3 +4,91 @@ fecha,titulo,descripcion,categoria,figura_como,apoya
 However, these checks operate on random chance, and can be bypassed by asking the next round (or save scumming, that too). Which is how Minardi ends with Hakkinen and Adrian Newey. Would be better if those checks had a much much bigger chance of triggering. Like, I don't mind the ""Villeneuve goes to Tyrrell"" type news, but I mind them when it happens TOO often (aka all of year 1)","Market, contracts and sponsors / Mercado, contratos y patrocinadores",Jose21crisis,not sure
 46323.59788,Remove Sponsor royalty %,"Remove Sponsor royalty % contract for commercial director OR change it so that it reflects the skill (5 bar comm director asks for 5% max, 2 bar asks for 2% max).","Market, contracts and sponsors / Mercado, contratos y patrocinadores",Eddie Jordan,
 46323.60045,aaa,aaa,Race / Carrera,anónimo,
+46323.66567,"Mejor uso de las ""Driver Orders"" por los pilotos de otros equipos.","Actualmente, todos los pilotos de otros equipos generan sus ""Driver Orders"" de forma aleatoria. Esto provoca, por un lado, que no alcancen el nivel de rendimiento que pudieran obtener, y por otro que sufran más fallos por fiabilidad que el jugador. 
+
+Mi recomendación sería alterar la generación de las ""Driver Orders"" para que tuvieran reglas que seguir, y tratar de usar el máximo posible, más cierta variación dependiendo de estrategias y condición de carrera. Una idea general sería la siguiente:
+
+Acceleration: Máximo posible que permita que Clutch, Gearbox y Throttle lleguen a final de carrera. Reducir si se desea menor consumo y desgaste de neumáticos
+Braking: Máximo posible para que Brake, Clutch y Gearbox lleguen a final de carrera. Usar 1 si no se está atacando o defendiendo (reduce desgaste de neumáticos)
+Top Speed: Máximo Engine Rigidity + 1
+Kerb Use: Máximo que permita que Driver Stamina, Gearbox y Suspension lleguen a final de Carrera
+Off Racing Line: Máximo que permita que Suspension llegue a final de carrera
+Line Defence: Aleatorio, tendiendo a Máximo (no afecta fiabilidad, solo posibilidades de incidente si uno de los pilotos usa Do-or-Die)
+Overtake: Máximo que permita que Hydraulics llegue a final de carrera, tender a 1 si no se está atacando. Bajar Overtake - Backmarkers preferiblemente.",AI and strategy / IA y estrategia,Jose,
+46323.93163,sub mods,"Once a semi-working version of 1998 is implemented, ask the AI to make sub mods for other years (i'd love the 2001-adapted version).
+And, if it will ever be possible to easily build new tracks, make a sub mod for indycar, with its own drivers and circuits",Other / Otra,Acescheil,
+46324.54056,Reducir el efecto de Morale sobre el esfuerzo de los departamentos,"Cada departamento tiene tiene una medida de esfuerzo que viene basada en el valor de Morale asignado. Sus efectos son de modificar el esfuerzo por 60, 80, 100, 110 y 120%. Los valores de Morale 4 y 5 hacen que sea muy fácil mantener un equipo competitivo ya que, entre otros, permiten construir un mayor número de Spares para mantener a los autos en mejor condición, hacer Testing mucho más rápido y firmar Sponsors mucho más rápido. También permite ahorrar mucho dinero ya que se puede firmar menos personal, y personal menor que es más barato.
+
+Sugiero reducir el valor proporcionado por Morale 4 y 5 a 100% (no aumenta esfuerzo) o.a valores mínimos, como 102.5 y 105%, para que aún exista calor en formar mejor personal.","Market, contracts and sponsors / Mercado, contratos y patrocinadores",Jose21crisis,
+46324.54874,Bugs en Diseño,"Aquí una lista de bugs varios detectados en la sección de Diseño (Design)
+* Al completar un componente de Tecnología, el contador de progreso no se reinicia. Esto causa que, si se empieza a diseñar una nueva pieza está esté terminada en la ronda siguiente. El contador de progreso se reinicia de forma correcta si se inicia y luego se cancela la pieza. Lo mismo posiblemente ocurra con las Driving Aids.
+* Si las regulaciones de la FIA son favorables para el equipo, estos ganan puntos de progreso en el diseño del nuevo chassis. Sin embargo, al iniciar el diseño del nuevo chassis, estos puntos desaparecen.
+* POSIBLEMENTE el edificio CAD, el encargado de acelerar la fase 1 de diseño (Design) no tiene ningún efecto. Una revisión de código me indico que no tiene efecto. 
+* Las fases que llevan más tiempo para el diseño son las fases 1 (Design), 4 (Wind Tunnel), 3 (Model Design) y 2 (CFD). Sin embargo, la efectividad de una mejora o nuevo chassis depende de las fases 1 (40%), 2 (30%), 3 (20%) y 4 (10%). La fase de Wind Tunnel es fácilmente skippeable usando Research, y apenas tiene efecto sobre el diseño. Recomiendo modificar los pesos de las fases de forma que el peso relativo sobre el diseño coincida con la dificultad de la fase.
+* Debido a como estan hechas las tablas, el Rendimiento 5 tiene el mismo efecto que Rendimiento 4 sobre el frío del auto.",Car and set-up / Coche y reglaje,Jose21crisis,
+46324.56457,Bugs en Suppliers,"Acá una lista de bugs o comportamiento mejorable en cuanto a Proveedores
+* El parámetro Reliability de motores no tiene ningún efecto, no afecta la vida del motor ni su tasa de desgaste
+* Debido a como están configuradas las tablas, el parámetros Grip de neumáticos pueden tener efectos negativos. Grip reduce errores, aumenta la tasa de consumo de combustible y aumenta el frío del auto hasta 5. De 6 en adelante, no aumenta más el grip, por lo que potencialmente un neumatico de grip 5 es más rápido que uno de grip 10 debido a menor consumo de combustible.
+* Los equipos buscan el Supplier con mayor valor de R&D primero.
+* Los equipos con contrato Works no usan la opción de diseñar motores, combustible o neumáticos. Deberían hacerlo en base a la habilidad de su Chief Mechanic (Chief Mechanic nivel 5 = mejoras cada 1 o 2 carreras, nivel 4 cada 2 o 3, y así)
+* Darle a los equipos un proveedor preferencial, es decir Ferrari busca firmar motores Ferrari. Mercedes busca firmar motores Mercedes. Toyota busca firmar motores Toyota.
+* Si un proveedor no es firmado por ningún equipo, añadir la probabilidad de que estos bajen su nivel de Cash. Si un proveedor tiene Cash 1 y no es firmado, añadir la posibilidad de que estos dejen la F1.
+* Si un proveedor ve buenos resultados, que exista la posibilidad de que aumenten su valor de Cash y/o R&D.
+* Aumentar las probabilidades de que proveedores entren a la F1, sobretodo si otros proveedores quieren salir
+
+Y dos mejoras y un bug que aplica más a Sponsors en general, no solo a Suppliers.
+* Si se tiene Hospitality, VIP 3 es un patrocinador nuevo, y se tiene 0% en VIP 3 (y potencialmente al menos 1% en VIP 1), el patrocinador tendrá la ventaja de Hospitality en la ronda siguiente.
+* Aumentar la facilidad con la que se gana la ventaja de Hospitality, actualmente es imposible de obtener sin el bug previamente mencionado.
+* Permitir que los patrocinadores actuales, no solo los nuevos, tengan ventaja de Hospitality.","Market, contracts and sponsors / Mercado, contratos y patrocinadores",Jose21crisis,
+46324.61666,Statistics for No -F1 drivers,"In mods, some unused drivers can be Verstappen/Zanardi etc
+
+Would be good to be able to add historical stats for them",Drivers and attributes / Pilotos y atributos,anónimo,
+46324.61741,Up to 20 races,Explore the feasibility of extending the calendar (includes adding new tracks),Circuits / Circuitos,anónimo,
+46324.63218,Test Drivers develop,"Young test drivers (say under 25) should have the ability for a random attribute to increase, somehow tied to the amount of testing they do.
+
+IE, 500km + it triggers",Drivers and attributes / Pilotos y atributos,Jops,
+46324.63856,Driver speed/skill,"Agree with speed adding up to ~ 2 seconds of difference, only addition is id have skill as a multiplier or reaponsible for quali or consistency
+
+Ie 5/5 speed/skill would be 0.5 quicker than a 5/1 or even a 1/5 could be as quick in quali but not consistently…
+
+Or even just have skill as a consistency thing, which results in a +/- 1 second lap to lap.",Drivers and attributes / Pilotos y atributos,anónimo,10 - Drivers should weigh much more in pace
+46325.00505,Reparar Wear y Damage usa la habilidad del personal Comercial,"Las Time Units que el juego usar para la reparación de Wear y Damage causado por pruebas y carreras depende del personal Comercial, no del personal Mecánico.",Car and set-up / Coche y reglaje,Jose21crisis,
+46325.01513,More team personnel,"adding 2 race engineers to team personnel, so every team has 6 named employees",Other / Otra,anónimo,
+46325.02411,Driver Age,"Reduce tendency of AI to sign drivers over 38
+
+Id prefer default retirement at 40 but this feels like a good compromise",Drivers and attributes / Pilotos y atributos,Jops,
+46326.05470,Ajustar la simulación de clima en carrera,"Actualmente la simulación de clima en calificación y carrera se manejan de forma distinta. La de calificación depende del tiempo en la sesión, la de carrera depende de la vuelta del líder.
+
+Ajustarla para que en ambos casos dependa del tiempo en la sesión y por tanto no se pueda predecir que el clima cambiará cuando el líder cruza la línea de meta mejoraría la simulación.
+
+Adicionalmente, bug relacionados con clima:
+* Todo problema relacionado con la velocidad del viento, sea pérdida de grip o activación de problemas como ""High Pitch Sensitivity"" dependen del parámetro Wind del setup, no de la velocidad del viento. Y debido a como están configuradas las tablas, usar parámetros de Wind 6, 8 o 10 permiten evitar cualquier perdida de grip causada por alta velocidad del viento o problemas del auto. Hay que modificar parámetros, se forma que los problemas por grip dependan de la velocidad del viento, no de Wind.",Car and set-up / Coche y reglaje,anónimo,
+46328.48059,AI wet weather strategy,"Now that W.W. skill and set up matter less, it has become even easier to beat the AI in the rain.
+How about implementing a piece of code that says ""hey, it's raining, and the track has gotten wetter/less wet. Let's split strategies: the driver ahead on track pits for the tyres suitable to the new track dryness, and the other stays out as normal",Race / Carrera,Acescheil,
+46328.54132,Commercial sponsor page bug,"When, on a new game, checking the deals for next year of the engine sponsors, deals lasting longer than 1 year are shown at the top of that particular sponsors, which means they are shown as 'works deal' even though the actual sponsorship is a customer or partner deal",Graphics and audio / Gráficos y audio,Acescheil,
+46328.54675,Decrease race start failure chance,"This is simply a quality of life change: decrease the random failure chance the game has at the beginning of any race. 
+It's not fun to have both your driver's randomly retire within the first 2 laps, and then the following race have a 3rd failure on lap 1. What is this? The 2026 Aston Martin simulator???",Race / Carrera,Acescheil,
+46328.54877,Penalty Time added at the end of the race is bugged,"If a driver, one lap or more behind the leader, receives a penalty as time added at the end of the race, the game fails to correctly apply the penalty",Race / Carrera,Acescheil,
+46328.55091,Player serving a penalty is bugged,"If your driver receives a penalty to serve in the pits, the game locks your 'pit now' order, waits 3 laps and serves the penalty. This is wrong",Race / Carrera,Acescheil,
+46328.55469,AI pits but doesn't fix broken wings (and other stuff),"If the AI driver breaks a wing, it pits, does nothing, and goes back on track, thus retiring soon after. 
+
+Also, as an addendum to this, make it so a driver who has any kind of car issue at the end of the race, and is running down the order, attempts to pit and 'check issue' so as to not pointlessly DNF.
+Instead, a driver running in the points, takes the risk to stay out and make it to the end",AI and strategy / IA y estrategia,Acescheil,
+46328.65795,Time penalty is unbalanced,"The 10s stop and go loses 30 seconds. So why should it be converted into a +25 seconds time penalty?
+Turn it into a +30 seconds time penalty",Race / Carrera,Acescheil,
+46329.58088,Car wear on certain tracks,"Currently, after 0.1, there's 3 tracks with abnormally high car chassis wear. These are: Brazil (which was the case already in the base game), Germany and Belgium.
+Please fix Germany and Belgium's high wears, it is almost impossible to make it to the end of the race.
+
+And if you feel magnanimous, reduce the wear rate also for Brazil: it makes it almost impossible with a small team to make it to race 5",Car and set-up / Coche y reglaje,Acescheil,
+46329.58807,SC bug: SC stays out on track,"The SC ghost, once it is supposed to come in at the end of the lap, has a chance to, by teleporting around, miss the pit entry: if this happens, the race resumes as normal, but the SC ghost stays out on track and keeps being teleported in front of the leader, which makes it more likely to miss the pit entry on the following laps.
+This behaviour is more common at higher game speeds",Race / Carrera,Acescheil,
+46329.76932,Increase Driver Pool,"If we reduce driver signings over 38, would be good to increase the pool of drivers for more career variety in a save",Drivers and attributes / Pilotos y atributos,anónimo,
+46331.65071,Driver Injuries,"Historically, there is normally at least 1 driver injury a season, look at slightly increasing the volume of injuries to reflect this
+
+(conscious it may be too easy to go too far)",Drivers and attributes / Pilotos y atributos,anónimo,
+46335.68855,Mejoras en Licensing,"1. El progreso en items de Licensing se registra después que el procesador post turno afecta el Support para ese ítem, lo que significa que Support 5 en un ítem puede convertirse en Support 3 y atrasar un trato, o Support 3 convertirse en Support 1 y hacer que el jugador pierda tiempo del Staff Comercial. Sería recomendable que primero se calculé el progreso, luego que cambie el Support.
+2. El costo en Time Units de cada ítem de Licensing aumenta conforme sube el nivel. Fan Club requiere menos unidades que Cars, esto tiene sentido. El problema viene que el costo en Time Units es mayor, también requiere más puntos de progreso. Por tanto, Fan Club puede valer 1000 TU por bloque a 1 bloque, mientras que Cars puede valer 6000 TU a 6 bloques (valores no exactos). Sería mejor que cada Ítem de Licensing valiera 1000 TU y lo que cambiara es los bloques de progreso requeridos. Esto convertiría a Licensing en una opción más práctica de uso y le daría a los equipos menores una fuente de Manager Ratings, Morale y FIA Ranking, ya que actualmente no vale la pena ni para equipos de tabla media, alta o baja
+3. Existe un bug que en algunas semanas, el Licensing de ciertos items es 0. Esto causa que no valga la pena firmar ese acuerdo de Licensing hasta el turno siguiente, ya que si se firma, el jugador recibe 0$ de ese ítem por el resto del año.","Market, contracts and sponsors / Mercado, contratos y patrocinadores",Jose21crisis,
+46339.09499,"Mayor efecto del factor ""Engine Power""","Actualmente Engine Power se suma a Chassis Handling % directamente. Un mejor motor te vuelve mejor en Monza y en Monaco casi por igual.
+
+La propuesta es separar a Engine Power de Chassis Handling %, y hacer que Engine Power proporcione puntos de rendimiento en base al parametro Speed del Setup del Circuito (no el del Setup del auto, eso haría que Speed fuera muy OP). Esto permitiría que equipos con mejores motores pero chassis mediocres sean competitivos en circuitos de mucho Speed, y poco competitivos en circuitos de poco Speed (Ejemplo Arrows Supertec en 2000)",Car and set-up / Coche y reglaje,Jose21crisis,

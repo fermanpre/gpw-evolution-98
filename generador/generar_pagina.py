@@ -420,10 +420,9 @@ def copiar_descargas():
 
 
 def copiar_assets():
+    """Copia los recursos del sitio sobre assets/ sin borrar lo demás (por ejemplo assets/foro_0.2, las imágenes que enlaza el anuncio del foro)."""
     destino = os.path.join(CARPETA_SALIDA, "assets")
-    if os.path.exists(destino):
-        shutil.rmtree(destino)
-    shutil.copytree(os.path.join(CARPETA_SITIO, "assets"), destino)
+    shutil.copytree(os.path.join(CARPETA_SITIO, "assets"), destino, dirs_exist_ok=True)
 
 
 def main():

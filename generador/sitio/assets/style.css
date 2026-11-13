@@ -201,3 +201,11 @@ footer.pie a { color: var(--text-secondary); }
 .estado.later { color: var(--estado-luego); background: var(--estado-luego-fondo); }
 .estado.unlikely { color: var(--estado-quiza); background: var(--estado-quiza-fondo); }
 .estado.rejected { color: var(--estado-no); background: var(--estado-no-fondo); }
+
+/* Estado «En pruebas» (03/11/2026): ya está en el EXE de prueba de la 0.2 */
+:root { --estado-pruebas: #a02c74; --estado-pruebas-fondo: rgba(160,44,116,0.12); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --estado-pruebas: #f09ccc; --estado-pruebas-fondo: rgba(240,156,204,0.16); }
+}
+:root[data-theme="dark"] { --estado-pruebas: #f09ccc; --estado-pruebas-fondo: rgba(240,156,204,0.16); }
+.estado.testing { color: var(--estado-pruebas); background: var(--estado-pruebas-fondo); }

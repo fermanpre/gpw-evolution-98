@@ -755,6 +755,42 @@
         "es": "Sin revisar todavía."
       },
       "idioma_original": "en"
+    },
+    {
+      "numero": 39,
+      "categoria": "market",
+      "estado": "later",
+      "titulo": {
+        "en": "Licensing improvements",
+        "es": "Mejoras en Licensing"
+      },
+      "pide": {
+        "en": "1. Progress on Licensing items is recorded after the post-turn processor affects the Support of that item, which means that Support 5 on an item can become Support 3 and delay a deal, or Support 3 can become Support 1 and make the player waste Commercial Staff time. It would be advisable to calculate the progress first and only then change the Support.\n\n2. The cost in Time Units of each Licensing item goes up as the level rises. Fan Club needs fewer units than Cars, which makes sense. The problem is that, as the Time Unit cost is higher, it also requires more progress points. So Fan Club may cost 1000 TU per block for 1 block, while Cars may cost 6000 TU for 6 blocks (values not exact). It would be better if every Licensing item cost 1000 TU and what changed were the progress blocks required. This would make Licensing a more practical option and would give smaller teams a source of Manager Ratings, Morale and FIA Ranking, since at the moment it is not worth it even for top, mid-table or bottom teams.\n\n3. There is a bug whereby, in some weeks, the Licensing of certain items is 0. This makes it not worth signing that Licensing deal until the next turn, because if it is signed the player receives $0 from that item for the rest of the year.",
+        "es": "1. El progreso en items de Licensing se registra después de que el procesador post turno afecta el Support para ese ítem, lo que significa que Support 5 en un ítem puede convertirse en Support 3 y atrasar un trato, o Support 3 convertirse en Support 1 y hacer que el jugador pierda tiempo del Staff Comercial. Sería recomendable que primero se calcule el progreso y luego cambie el Support.\n\n2. El costo en Time Units de cada ítem de Licensing aumenta conforme sube el nivel. Fan Club requiere menos unidades que Cars, esto tiene sentido. El problema viene en que, al ser mayor el costo en Time Units, también requiere más puntos de progreso. Por tanto, Fan Club puede valer 1000 TU por bloque a 1 bloque, mientras que Cars puede valer 6000 TU a 6 bloques (valores no exactos). Sería mejor que cada ítem de Licensing valiera 1000 TU y lo que cambiara fueran los bloques de progreso requeridos. Esto convertiría a Licensing en una opción más práctica de uso y le daría a los equipos menores una fuente de Manager Ratings, Morale y FIA Ranking, ya que actualmente no vale la pena ni para equipos de tabla media, alta o baja.\n\n3. Existe un bug por el que, en algunas semanas, el Licensing de ciertos items es 0. Esto causa que no valga la pena firmar ese acuerdo de Licensing hasta el turno siguiente, ya que si se firma, el jugador recibe 0$ de ese ítem por el resto del año."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "es"
+    },
+    {
+      "numero": 40,
+      "categoria": "car",
+      "estado": "later",
+      "titulo": {
+        "en": "Greater effect of the \"Engine Power\" factor",
+        "es": "Mayor efecto del factor \"Engine Power\""
+      },
+      "pide": {
+        "en": "Currently Engine Power is added directly to Chassis Handling %. A better engine makes you better at Monza and at Monaco almost equally.\n\nThe proposal is to separate Engine Power from Chassis Handling % and make Engine Power provide performance points based on the Speed parameter of the Circuit Set-up (not the car's Set-up, which would make Speed far too strong). This would allow teams with better engines but mediocre chassis to be competitive at high-Speed circuits and not very competitive at low-Speed circuits (for example Arrows Supertec in 2000).",
+        "es": "Actualmente Engine Power se suma a Chassis Handling % directamente. Un mejor motor te vuelve mejor en Monza y en Monaco casi por igual.\n\nLa propuesta es separar a Engine Power de Chassis Handling %, y hacer que Engine Power proporcione puntos de rendimiento en base al parámetro Speed del Setup del Circuito (no el del Setup del auto, eso haría que Speed fuera muy OP). Esto permitiría que equipos con mejores motores pero chassis mediocres sean competitivos en circuitos de mucho Speed, y poco competitivos en circuitos de poco Speed (ejemplo: Arrows Supertec en 2000)."
+      },
+      "hoy": {
+        "en": "Not looked at yet.",
+        "es": "Sin revisar todavía."
+      },
+      "idioma_original": "es"
     }
   ]
 }
